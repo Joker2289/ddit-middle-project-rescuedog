@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="Rg_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.admin.goods_mall.goods_management.Add_goods_controller">
+   <children>
+      <AnchorPane fx:id="CenterPane" layoutY="88.0" prefHeight="449.0" prefWidth="1100.0">
+         <children>
+            <JFXTextField fx:id="Path_Img_Txt" focusColor="#f2f2f2" layoutX="341.0" layoutY="367.0" prefHeight="38.0" prefWidth="357.0" style="-fx-border-color: #eceff1;" unFocusColor="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="Find_Img_Btn" layoutX="73.0" layoutY="364.0" prefHeight="41.0" prefWidth="251.0" ripplerFill="WHITE" style="-fx-border-color: #c2c2c2;" text="    + 사진추가">
+               <font>
+                  <Font name="HCR Dotum" size="16.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIcon iconName="CAMERA" layoutX="127.0" layoutY="395.0" size="1.8em" />
+            <AnchorPane layoutX="73.0" layoutY="20.0" prefHeight="324.0" prefWidth="937.0" style="-fx-border-color: #c2c2c2;">
+               <children>
+                  <Label layoutX="456.0" layoutY="40.0" text="상품 명 " textFill="#607d8b">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="442.0" layoutY="94.0" text="상품 가격" textFill="#607d8b">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="442.0" layoutY="140.0" text="상품 정보" textFill="#607d8b">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="Prod_Name_Txt" alignment="CENTER" focusColor="#607d8b" layoutX="530.0" layoutY="33.0" prefHeight="36.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="Prod_Price_Txt" alignment="CENTER" focusColor="#607d8b" layoutX="530.0" layoutY="87.0" prefHeight="36.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <VBox fx:id="Vb_imgbox" alignment="CENTER" layoutX="29.0" layoutY="15.0" prefHeight="293.0" prefWidth="373.0" style="-fx-background-color: #ABBBC3;">
+                     <children>
+                        <ImageView fx:id="Find_Img_Iv" fitHeight="265.0" fitWidth="338.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <JFXTextArea fx:id="Prod_Info_Txt" focusColor="WHITE" layoutX="442.0" layoutY="165.0" prefHeight="139.0" prefWidth="469.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE" />
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="Add_Prod_Btn" layoutX="885.0" layoutY="364.0" prefHeight="41.0" prefWidth="125.0" style="-fx-background-color: #535962;" text="  등록" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </FontAwesomeIcon>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Text fill="#979494" layoutX="193.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="관리자가 상품을 등록하는 공간 입니다">
+         <font>
+            <Font name="HCR Dotum Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="#607f8d" layoutX="75.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="상품 추가">
+         <font>
+            <Font name="HCR Dotum Bold" size="20.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="173.0" layoutY="53.0" prefHeight="22.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="462.0" style="-fx-background-color: #5386C0;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.question.QuestionController">
+   <children>
+      <JFXTextField fx:id="question_tf" focusColor="WHITE" layoutX="23.0" layoutY="496.0" prefHeight="40.0" prefWidth="317.0" promptText="키워드 입력" />
+      <JFXButton fx:id="question_btn" layoutX="350.0" layoutY="496.0" prefHeight="40.0" prefWidth="98.0" style="-fx-background-color: #393939;" text="전송" textFill="#5386c0">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="23.0" />
+         </font></JFXButton>
+      <ImageView fitHeight="40.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ScrollPane fx:id="main_scroll" hbarPolicy="NEVER" layoutX="23.0" layoutY="77.0" prefHeight="391.0" prefWidth="415.0" style="-fx-background-color: #E9E9E9;" vbarPolicy="ALWAYS">
+        <content>
+          <AnchorPane fx:id="textPane" minHeight="0.0" minWidth="0.0" prefWidth="399.0" style="-fx-background-color: #E9E9E9;">
+               <children>
+                  <JFXTextArea fx:id="user_tf" disable="true" focusColor="WHITE" layoutX="14.0" layoutY="33.0" prefHeight="49.0" style="-fx-background-color: #BFBFBF;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXTextArea>
+                  <JFXTextArea fx:id="admin_tf" disable="true" focusColor="WHITE" layoutX="55.0" layoutY="102.0" prefHeight="49.0" style="-fx-background-color: #BFBFBF;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font></JFXTextArea>
+                  <FontAwesomeIcon iconName="USER" layoutX="362.0" layoutY="70.0" size="3em" wrappingWidth="13.0" />
+                  <FontAwesomeIcon iconName="ANDROID" layoutX="14.0" layoutY="140.0" size="3em" text="" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <AnchorPane layoutY="-3.0" prefHeight="57.0" prefWidth="462.0" style="-fx-background-color: #393939;">
+         <children>
+            <Label alignment="CENTER" layoutX="135.0" layoutY="12.0" prefHeight="34.0" prefWidth="192.0" text="1:1 문의" textFill="#5386c0">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="34.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="close_btn" layoutX="405.0" layoutY="4.0" text=" ">
+               <graphic>
+                  <FontAwesomeIcon fill="#5386c0" iconName="CLOSE" size="3em" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

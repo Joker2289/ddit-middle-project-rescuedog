@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="740.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.mainpage.sign_up.Signup_Shel_Controller">
+   <children>
+      <Label layoutX="108.0" layoutY="186.0" text="아이디">
+         <font>
+            <Font name="HCR Dotum" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="235.0" text="비밀번호">
+         <font>
+            <Font name="HCR Dotum" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="282.0" text="비밀번호 확인">
+         <font>
+            <Font name="HCR Dotum" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="128.0" layoutY="329.0" text="이름">
+         <font>
+            <Font name="HCR Dotum" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="379.0" prefHeight="30.0" prefWidth="75.0" text="주소 ">
+         <font>
+            <Font name="HCR Dotum" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="SignupShel_Id_Txt" focusColor="#535962" layoutX="183.0" layoutY="174.0" prefHeight="39.0" prefWidth="200.0">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="537.0" layoutY="192.0" prefHeight="21.0" prefWidth="209.0" text="(영문 소문자 / 숫자 4~12자)">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="394.0" layoutY="240.0" prefHeight="17.0" prefWidth="331.0" text="(영문 대소문자 / 숫자, 특수문자 4~8자)">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <JFXPasswordField fx:id="SignupShel_Pw1_Txt" focusColor="#535962" layoutX="181.0" layoutY="220.0" prefHeight="39.0" prefWidth="200.0">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font></JFXPasswordField>
+      <JFXPasswordField fx:id="SignupShel_Pw2_Txt" focusColor="#535962" layoutX="183.0" layoutY="267.0" prefHeight="39.0" prefWidth="200.0">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font></JFXPasswordField>
+      <JFXTextField fx:id="SignupShel_Name_Txt" focusColor="#535962" layoutX="182.0" layoutY="314.0" prefHeight="39.0" prefWidth="200.0">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="SignupShel_Addr2_Txt" focusColor="#535962" layoutX="183.0" layoutY="363.0" prefHeight="39.0" prefWidth="330.0">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="SignupShel_Tel_Txt" focusColor="#535962" layoutX="184.0" layoutY="412.0" prefHeight="39.0" prefWidth="330.0">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="SignupShel_Email_Txt" focusColor="#535962" layoutX="183.0" layoutY="458.0" prefHeight="39.0" prefWidth="330.0">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="SignupShel_Num_Txt" focusColor="#535962" layoutX="183.0" layoutY="502.0" prefHeight="41.0" prefWidth="330.0">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="SignupShel_Captcha_Txt" focusColor="WHITE" layoutX="464.0" layoutY="623.0" prefHeight="34.0" prefWidth="170.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="16.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fx:id="captchaImage" fitHeight="135.0" fitWidth="287.0" layoutX="160.0" layoutY="573.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="SignupShel_CaptchaOther_Btn" layoutX="452.0" layoutY="657.0" prefHeight="39.0" prefWidth="194.0" text="이미지 새로고침" textFill="#535962" underline="true">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="captchaKey" disable="true" layoutX="813.0" layoutY="613.0" prefHeight="27.0" prefWidth="8.0" textFill="WHITE" visible="false" />
+      <Label layoutX="86.0" layoutY="425.0" prefHeight="30.0" prefWidth="121.0" text="휴대 전화">
+         <font>
+            <Font name="HCR Dotum" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="111.0" layoutY="472.0" prefHeight="27.0" prefWidth="75.0" text="이메일">
+         <font>
+            <Font name="HCR Dotum" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="49.0" layoutY="515.0" prefHeight="34.0" prefWidth="170.0" text="보호기관 번호">
+         <font>
+            <Font name="HCR Dotum" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="Close_Btn" layoutX="703.0" prefHeight="41.0" prefWidth="45.0" text=" ">
+         <graphic>
+            <FontAwesomeIcon fill="#838383" iconName="CLOSE" size="2em" />
+         </graphic></JFXButton>
+      <Label layoutX="251.0" layoutY="53.0" text=" 보호기관 회원가입" textFill="#393939">
+         <font>
+            <Font name="HCR Dotum" size="29.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="SignupShel_Cancel_Btn" layoutX="392.0" layoutY="740.0" prefHeight="47.0" prefWidth="178.0" style="-fx-background-color: #eceff1;" text="   회원가입 취소">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="SignupShel_Join_Btn" layoutX="211.0" layoutY="740.0" prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #535962;" text="  회원가입" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="SignupShel_Id_Btn" layoutX="394.0" layoutY="173.0" prefHeight="42.0" prefWidth="134.0" style="-fx-background-color: #535962;" text="  중복확인" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="271.0" layoutY="101.0" text="아래 정보를 확인하여 주세요." textFill="#838080">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

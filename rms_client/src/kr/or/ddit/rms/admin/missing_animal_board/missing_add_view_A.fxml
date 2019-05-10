@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="kr.or.ddit.rms.admin.missing_animal_board.Missing_add_Acontroller" fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="tempPane" prefHeight="68.0" prefWidth="1100.0" style="-fx-background-color: #393939;">
+         <children>
+            <JFXButton fx:id="missing_add_btn" layoutX="901.0" layoutY="4.0" prefHeight="60.0" prefWidth="157.0" text=" 등록" textFill="#5584c3">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="27.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="21.0" layoutY="9.0" prefHeight="54.0" prefWidth="300.0" text="실종동물 등록" textFill="#5584c3">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="37.0" />
+               </font>
+            </Label>
+            <Label fx:id="Hide_Lbl" layoutX="364.0" layoutY="8.0" prefHeight="54.0" prefWidth="334.0" text=" " textFill="#5584c3">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="37.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="68.0" prefHeight="462.0" prefWidth="1100.0" style="-fx-background-color: #5682C2;">
+         <children>
+            <Label layoutX="105.0" layoutY="118.0" text="이 름" textFill="#393939">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="31.0" />
+               </font>
+            </Label>
+            <Label layoutX="106.0" layoutY="189.0" text="성별" textFill="#393939">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="31.0" />
+               </font>
+            </Label>
+            <Label layoutX="105.0" layoutY="256.0" text="종 류" textFill="#393939">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="31.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="320.0" text="실종 위치" textFill="#393939">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="31.0" />
+               </font>
+            </Label>
+            <Label layoutX="104.0" layoutY="383.0" text="특 징" textFill="#393939">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="31.0" />
+               </font>
+            </Label>
+            <Label layoutX="81.0" layoutY="50.0" text="글 제목" textFill="#393939">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="31.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="missing_add_title_tf" focusColor="WHITE" layoutX="187.0" layoutY="34.0" prefHeight="46.0" prefWidth="398.0" unFocusColor="#2c2929">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="25.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="missing_add_name_tf" focusColor="WHITE" layoutX="187.0" layoutY="103.0" prefHeight="46.0" prefWidth="292.0" unFocusColor="#2c2929">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="25.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="missing_add_gender_tf" focusColor="WHITE" layoutX="187.0" layoutY="175.0" prefHeight="46.0" prefWidth="292.0" unFocusColor="#2c2929">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="25.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="missing_add_kind_tf" focusColor="WHITE" layoutX="186.0" layoutY="242.0" prefHeight="46.0" prefWidth="292.0" unFocusColor="#2c2929">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="25.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="missing_add_loc_tf" focusColor="WHITE" layoutX="187.0" layoutY="309.0" prefHeight="46.0" prefWidth="292.0" unFocusColor="#2c2929">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="25.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="missing_add_content_tf" focusColor="WHITE" layoutX="186.0" layoutY="376.0" prefHeight="46.0" prefWidth="292.0" unFocusColor="#2c2929">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="25.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="missing_add_file_tf" focusColor="WHITE" layoutX="641.0" layoutY="376.0" prefHeight="46.0" prefWidth="292.0" unFocusColor="#2c2929">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="25.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="missing_add_file_btn" layoutX="943.0" layoutY="378.0" prefHeight="46.0" prefWidth="108.0" style="-fx-background-color: #393939;" text="파일 찾기" textFill="#5780c2">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+               </font>
+            </JFXButton>
+            <VBox alignment="CENTER" layoutX="641.0" layoutY="42.0" prefHeight="312.0" prefWidth="413.0" style="-fx-background-color: #393939;">
+               <children>
+                  <ImageView fx:id="missing_add_imgV" fitHeight="278.0" fitWidth="368.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

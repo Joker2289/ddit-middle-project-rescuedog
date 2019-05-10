@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.shelter.service_center.notice.Notice_Shel_Detail_Controller">
+   <children>
+      <HBox alignment="CENTER_RIGHT" layoutX="348.0" layoutY="495.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="53.0" prefWidth="584.0" spacing="15.0">
+         <padding>
+            <Insets right="15.0" />
+         </padding>
+      </HBox>
+      <JFXButton fx:id="notice_gotolist_btn" layoutX="924.0" layoutY="548.0" prefHeight="41.0" prefWidth="107.0" ripplerFill="BLACK" style="-fx-background-color: #eceff1;" text="    목록">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXHamburger layoutX="942.0" layoutY="560.0" opacity="0.8" prefHeight="17.0" prefWidth="17.0" />
+      <GridPane id="gride" gridLinesVisible="true" layoutX="70.0" layoutY="102.0" prefHeight="432.0" prefWidth="960.0" style="-fx-border-color: #c6c6c6;" stylesheets="@../../../user/donation_board/gridepane.css">
+         <children>
+            <AnchorPane prefHeight="57.0" prefWidth="958.0">
+               <children>
+                  <Label layoutX="21.0" layoutY="10.0" text="제목 ">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="notice_newtitle_txtF" focusColor="WHITE" layoutX="83.0" layoutY="4.0" prefHeight="29.0" prefWidth="313.0" style="-fx-border-color: #ffffff;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum" size="17.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="18.0" layoutY="14.0" text="작성자 ">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="notice_id_txtF" focusColor="WHITE" layoutX="83.0" layoutY="7.0" prefHeight="29.0" prefWidth="313.0" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum" size="17.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Label layoutX="16.0" layoutY="14.0" prefHeight="15.0" prefWidth="50.0" text="글번호">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="notice_num" layoutX="86.0" layoutY="13.0" prefHeight="18.0" prefWidth="65.0" text="Label">
+                     <font>
+                        <Font name="HCR Dotum" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="176.0" layoutY="14.0" prefHeight="23.0" prefWidth="77.0" text="작성일">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="notice_add_date_label" layoutX="253.0" layoutY="9.0" prefHeight="33.0" prefWidth="289.0" text="Label">
+                     <font>
+                        <Font name="HCR Dotum" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="305.0" prefWidth="963.0" GridPane.rowIndex="3">
+               <children>
+                  <JFXTextArea fx:id="notice_content_txtA" focusColor="WHITE" layoutX="11.0" layoutY="11.0" maxWidth="-Infinity" prefHeight="266.0" prefWidth="936.0" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </JFXTextArea>
+               </children>
+            </AnchorPane>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="202.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="293.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="289.0" minHeight="10.0" prefHeight="285.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <AnchorPane layoutX="173.0" layoutY="62.0" prefHeight="22.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+      <Text fill="#727272" layoutX="194.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="공인중견사 공지사항입니다.">
+         <font>
+            <Font name="HCR Dotum Bold" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#607f8d" layoutX="67.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="공지 사항">
+         <font>
+            <Font name="HCR Dotum Bold" size="25.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.volunteer_board.VolunteerBoard_Controller">
+   <children>
+      <AnchorPane fx:id="servicePane1" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0">
+         <children>
+            <AnchorPane fx:id="tempPane1" layoutX="10.0" layoutY="7.0" prefHeight="44.0" prefWidth="1100.0">
+               <children>
+                  <Text fill="#41474a" layoutX="96.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="자원봉사모집">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="HCR Dotum" size="26.0" />
+                     </font>
+                  </Text>
+                  <AnchorPane layoutX="254.0" layoutY="32.0" prefHeight="26.0" prefWidth="4.0" style="-fx-background-color: #6B7B8E;" />
+                  <Text fill="#808080" layoutX="277.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="자원봉사 모집글을 확인 할 수 있는 게시판입니다.">
+                     <font>
+                        <Font name="HCR Dotum" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <JFXTextField fx:id="VolunteerSerch_fd" alignment="CENTER" focusColor="#535962" layoutX="728.0" layoutY="96.0" prefHeight="27.0" prefWidth="158.0" promptText="Search" />
+            <JFXButton fx:id="VolunteerSerch_btn" layoutX="892.0" layoutY="99.0" prefHeight="24.0" prefWidth="102.0" style="-fx-background-color: #798697;" text=" 검색" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="SEARCH" size="1.2em" text="" wrappingWidth="25.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIcon>
+               </graphic>
+            </JFXButton>
+            <Pagination fx:id="Table_search_page" layoutX="107.0" layoutY="134.0" prefHeight="366.0" prefWidth="887.0" />
+            <TableView fx:id="VolunteerBoard_tb" layoutX="107.0" layoutY="134.0" prefHeight="311.0" prefWidth="887.0" stylesheets="@../free_board/app.css">
+               <columns>
+                  <TableColumn fx:id="VolunteerBoard_No" prefWidth="75.0" text="번호" />
+                  <TableColumn fx:id="VolunteerBoard_Title" prefWidth="433.0" text="제목" />
+                  <TableColumn fx:id="VolunteerBoard_Writer" minWidth="0.0" prefWidth="135.0" text="작성자" />
+                  <TableColumn fx:id="VolunteerBoard_Date" minWidth="2.0" prefWidth="154.0" text="작성일" />
+                  <TableColumn fx:id="VolunteerBoard_Lookup" minWidth="0.0" prefWidth="89.0" text="조회" />
+               </columns>
+            </TableView>
+            <Label layoutX="642.0" layoutY="101.0" prefHeight="23.0" prefWidth="97.0" text="제목 / 작성자" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

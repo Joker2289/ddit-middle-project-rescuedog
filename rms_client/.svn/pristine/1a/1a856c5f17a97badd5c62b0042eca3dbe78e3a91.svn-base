@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="detailPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.adopt_board.Adopt_request_controller">
+   <children>
+      <AnchorPane layoutX="93.0" layoutY="113.0" prefHeight="370.0" prefWidth="947.0" style="-fx-border-color: #c2c2c2;">
+         <children>
+            <Label layoutX="57.0" layoutY="29.0" text="이 름" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="57.0" layoutY="86.0" text="주 소" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="57.0" layoutY="141.0" text="나 이" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="197.0" text="주민 번호" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="Request_Name" alignment="CENTER" focusColor="#607d8b" layoutX="131.0" layoutY="22.0" prefHeight="36.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="Request_Addr" alignment="CENTER" focusColor="#607d8b" layoutX="131.0" layoutY="77.0" prefHeight="41.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="Request_Age" alignment="CENTER" focusColor="#607d8b" layoutX="131.0" layoutY="134.0" prefHeight="36.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="Request_ID1" alignment="CENTER" focusColor="#607d8b" layoutX="131.0" layoutY="190.0" prefHeight="36.0" prefWidth="164.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="51.0" layoutY="251.0" text="이메일" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="Request_Email" alignment="CENTER" focusColor="#607d8b" layoutX="131.0" layoutY="244.0" prefHeight="36.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </JFXTextField>
+            <ScrollPane hbarPolicy="NEVER" layoutX="528.0" layoutY="19.0" prefHeight="302.0" prefWidth="405.0" style="-fx-border-color: #c2c2c2; -fx-border-width: 2;" vbarPolicy="NEVER">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="518.0" prefWidth="388.0">
+                     <children>
+                        <TextArea layoutY="-6.0" prefHeight="525.0" prefWidth="397.0" text="1. 개인정보의 수집항목 및 이용 목적&#10;    A. 회사는 다음과 같이 개인정보를 수집하여 이용합니다.&#10;         ⅰ. 필수항목 : 이름,생년월일,휴대폰번호,이동통신사,&#10;            암호화된 계정정보,휴대폰 기종, USIM정보,&#10;            백업/복구용, 이메일 정보&#10; &#10;    B. 서비스 이용과정이나 사업처리과정에서 다음과 같은 &#10;         정보들이 생성되어 수집될 수 있습니다.&#10;         ⅰ. 서비스 신청기록, 이용/해지 기록 등 서비스 이용시 &#10;            발생한 내역&#10;         ⅱ. 접속로그, 접속IP정보, 가입경로, 서비스 이용정보&#10;     &#10;    C. 이용목적&#10;         ⅰ. 사용자관리&#10;             가) 서비스 이용에 따른 본인확인, 개인식별&#10;             나) 가입의사 확인, 가입&#10;             다) 기기 변경시 개인정보의 이동&#10;             라) 고지사항 전달 및 가입자 불만 접수 및 처리 &#10;                   의사소통 경로 확보&#10;&#10;         ⅱ. 서비스 제공에 따른 요금정산&#10;             가) 구매 및 요금결제, 거래내역 관리&#10;             나) 컨텐츠 제공, 이벤트/경품당첨 결과안내 및&#10;                   상품배송&#10;         ⅲ. 마케팅 및 광고 활용&#10;             가) 가입자에게 최적화된 서비스 제공&#10;             나) 서비스 이용에 대한 통계&#10;             다) 서비스 및 상품 안내&#10;&#10;2. 개인정보의 수집 방법&#10;    A. 회사는 이동전화 기타 디지털 디바이스, &#10;        서비스 어플리케이션에서의 가입 절차, 이벤트나 &#10;        경품 행사, 개인정보 취급업무 수탁사 또는 제휴사 &#10;        등으로부터의 수집, 이동 전화 및 유,무선 인터넷 서비스&#10;        사용시 생성정보 수집 툴을 통한 방법 등으로 &#10;        개인 정보를 수집합니다.&#10;&#10;3. 개인정보의 보유 및 이용기간&#10;    A. 가입자의 개인정보는 본 서비스 가입자에게 &#10;        서비스를 제공하는 기간 동안에 보유 및 이용되고, &#10;        서비스 탈회 시 수집된 개인의 정보가 열람 또는 이용될 &#10;        수 없도록 파기 처리됩니다. 다만, 관계법령의 규정에 &#10;        의하여 보존할 필요성이 있는 경우에는 관계법령에 따라 &#10;        보존합니다.&#10;    B. 가입자의 동의를 받아 보유하고 있는 거래정보에 대해 &#10;        가입자가 열람을 요구하는 경우에는 지체 없이 해당 &#10;        정보를 열람/ 확인할 수 있도록 조치합니다.&#10;    C. 가입자가 자발적으로 서비스를 탈회한 경우 서비스 &#10;        재가입, 임의 해지 등을 반복적으로 행함으로써 &#10;        본 서비스가 제공하는 할인쿠폰, 이벤트 혜택 등의 &#10;        경제상의 이익을 불법 편법적으로 수취하거나 &#10;        이 과정에서 명의도용 등의 행위가 발생하는 것을 &#10;        방지하기 위한 목적으로 서비스 탈회 후 6개월 동안 &#10;        사용자의 식별정보를 보관합니다.&#10;    D. 가입자가 서비스 사용을 종료하신 이후 서비스 제공과 &#10;        관련된 각종 문의사항에 응대하기 위해 서비스 &#10;        사용로그는 서비스 종료 후 12개월간 보관하며, &#10;        위치정보 이용, 제공사실 확인자료는 6개월간 보관합니다.&#10;        개인정보 취급방침 [전문보기]&#10;" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <JFXCheckBox fx:id="Request_Agree" checkedColor="#628290" layoutX="535.0" layoutY="330.0" prefHeight="21.0" prefWidth="372.0" text="개인정보 수집 및 이용, 제공에 대한 동의">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXCheckBox>
+            <Label layoutX="311.0" layoutY="182.0" prefHeight="52.0" prefWidth="31.0" text="-">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="299.0" text="동거 애견 여부" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="330.0" text="가족 동의 여부" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <JFXCheckBox fx:id="Request_N1" checkedColor="#628290" layoutX="272.0" layoutY="301.0" text="NO">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="Request_Y1" checkedColor="#628290" layoutX="161.0" layoutY="301.0" text="YES">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="Request_Y2" checkedColor="#628290" layoutX="161.0" layoutY="331.0" text="YES">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="Request_N2" checkedColor="#628290" layoutX="272.0" layoutY="331.0" text="NO">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXPasswordField focusColor="WHITE" layoutX="342.0" layoutY="190.0" prefHeight="36.0" prefWidth="164.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE" />
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="Adopt_Close_Btn" layoutX="904.0" layoutY="497.0" prefHeight="35.0" prefWidth="134.0" style="-fx-background-color: #eceff1;" text=" 취소">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="#535962" iconName="CLOSE" size="1.2em" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="Adopt_Request_Btn" layoutX="750.0" layoutY="497.0" prefHeight="35.0" prefWidth="134.0" style="-fx-background-color: #535962;" text="  신청" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <Text fill="#607f8d" layoutX="93.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="입양 신청">
+         <font>
+            <Font name="HCR Dotum Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#979494" layoutX="219.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="유기견을 입양하는 첫번 째 과정 입니다">
+         <font>
+            <Font name="HCR Dotum Bold" size="20.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="193.0" layoutY="34.0" prefHeight="22.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+      <Text fill="#979494" layoutX="93.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 새로운 가족을 입양하는 일이므로 신중한 결정을 바랍니다">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

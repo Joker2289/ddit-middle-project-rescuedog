@@ -1,0 +1,398 @@
+package kr.or.ddit.rms.shelter.missing_animal_board;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javax.imageio.ImageIO;
+
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
+
+import javafx.embed.swing.SwingFXUtils;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+import kr.or.ddit.rms.main.ChangePane;
+import kr.or.ddit.rms.main.Main;
+import kr.or.ddit.rms.mainpage.main_page.Main_page_controller;
+import kr.or.ddit.rms.vo.MissingVO;
+
+public class MissingTableSController implements Initializable {
+
+	@FXML
+	AnchorPane servicePane;
+	@FXML
+	AnchorPane tempPane;
+	@FXML
+	AnchorPane loadPane;
+
+	@FXML
+	AnchorPane MissingTable_Pane;
+	@FXML JFXButton Missing_btn;
+	@FXML Label inviserble_lb;
+	@FXML JFXComboBox Search_Comb;
+	@FXML JFXTextField Missing_fd;
+	// 유기동물 정보(AccessibleText에 정보값 숨김)
+	public static ImageView log = null;
+
+	public static Stage missing_view_dialog;
+	ArrayList<MissingVO> list;
+	ImageView view;
+	VBox main_box;
+
+	String[] slice;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// 메인박스 생성 / 너비지정
+		main_box = new VBox();
+		main_box.setPrefWidth(1038);
+		List<MissingVO> rdlist;
+		try {
+			rdlist = Main.ma_u.getmissingAll();
+			setMissTable(rdlist);
+		} catch (RemoteException e1) {
+			e1.printStackTrace();
+		}
+		
+		
+
+	
+	//검색버튼 클릭
+		String[] search_item = {"작성자명", "실종위치" ,"견종"};
+	
+	for(int i=0; i<search_item.length; i++) {
+		Search_Comb.getItems().add(search_item[i]);
+	}
+	
+	//검색버튼 클릭
+	Missing_btn.setOnAction(e->{
+		if(Search_Comb.getSelectionModel().isEmpty()) {
+			alertTest("검색설정을 해주세요");
+			return;
+		}
+		
+		switch(Search_Comb.getValue().toString()) {
+//			case "제목 이름":
+//				MissingVO Titlevo = new MissingVO();
+//				Titlevo.setTitle(Missing_fd.getText());
+//				if (Missing_fd.getText().isEmpty()) {
+//					MissingTable_Pane.getChildren().clear();
+//					VBox v = new VBox();
+//					v.getChildren().add(inviserble_lb);
+//					v.setPrefWidth(1100);
+//					v.setPrefHeight(524);
+//					v.setAlignment(Pos.CENTER);
+//					MissingTable_Pane.getChildren().add(v);
+//					return;
+//				}
+//				try {
+//					List<MissingVO> list = Main.ma_u.getmissingTextSearch(Titlevo);
+//					if (list.size() == 0) {
+//						MissingTable_Pane.getChildren().clear();
+//						System.out.println("검색없음");
+//						inviserble_lb.setText("검색된 결과가 없습니다.");
+//						VBox v = new VBox();
+//						v.getChildren().add(inviserble_lb);
+//						v.setPrefWidth(1100);
+//						v.setPrefHeight(524);
+//						v.setAlignment(Pos.CENTER);
+//						MissingTable_Pane.getChildren().add(v);
+//						return;
+//					}
+//					main_box.getChildren().clear();
+//					setMissTable(list);
+//
+//				} catch (RemoteException e1) {
+//					e1.printStackTrace();
+//				}
+//				break;
+				
+			case "작성자명":
+				MissingVO Membervo = new MissingVO();
+				Membervo.setMem_id(Missing_fd.getText());
+				if (Missing_fd.getText().isEmpty()) {
+					MissingTable_Pane.getChildren().clear();
+					VBox v = new VBox();
+//					v.getChildren().add(inviserble_lb);
+					v.setPrefWidth(1100);
+					v.setPrefHeight(524);
+					v.setAlignment(Pos.CENTER);
+					MissingTable_Pane.getChildren().add(v);
+					return;
+				}
+				try {
+					List<MissingVO> list = Main.ma_s.getmissingTextSearch(Membervo);
+					if (list.size() == 0) {
+						MissingTable_Pane.getChildren().clear();
+						System.out.println("검색없음");
+						inviserble_lb.setText("검색된 결과가 없습니다.");
+						VBox v = new VBox();
+					v.getChildren().add(inviserble_lb);
+						v.setPrefWidth(1100);
+						v.setPrefHeight(524);
+						v.setAlignment(Pos.CENTER);
+						MissingTable_Pane.getChildren().add(v);
+						return;
+					}
+					main_box.getChildren().clear();
+					setMissTable(list);
+
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
+				break;
+				
+			case "실종위치":
+				MissingVO MssingLocVO = new MissingVO();
+				MssingLocVO.setMiss_loc(Missing_fd.getText());
+				if (Missing_fd.getText().isEmpty()) {
+					MissingTable_Pane.getChildren().clear();
+					VBox v = new VBox();
+					v.getChildren().add(inviserble_lb);
+					v.setPrefWidth(1100);
+					v.setPrefHeight(524);
+					v.setAlignment(Pos.CENTER);
+					MissingTable_Pane.getChildren().add(v);
+					return;
+				}
+				try {
+					List<MissingVO> list = Main.ma_s.getmissingTextSearch(MssingLocVO);
+					System.out.println(list.size());
+					if (list.size() == 0) {
+						MissingTable_Pane.getChildren().clear();
+						System.out.println("검색없음");
+						inviserble_lb.setText("검색된 결과가 없습니다.");
+						VBox v = new VBox();
+//						v.getChildren().add(inviserble_lb);
+						v.setPrefWidth(1100);
+						v.setPrefHeight(524);
+						v.setAlignment(Pos.CENTER);
+						MissingTable_Pane.getChildren().add(v);
+						return;
+					}
+					main_box.getChildren().clear();
+					setMissTable(list);
+
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
+				break;
+
+				
+			case "견종":
+				MissingVO ContentVO = new MissingVO();
+				ContentVO.setContent(Missing_fd.getText());
+				if (Missing_fd.getText().isEmpty()) {
+					MissingTable_Pane.getChildren().clear();
+					VBox v = new VBox();
+//					v.getChildren().add(inviserble_lb);
+					v.setPrefWidth(1100);
+					v.setPrefHeight(524);
+					v.setAlignment(Pos.CENTER);
+					MissingTable_Pane.getChildren().add(v);
+					return;
+				}
+				try {
+					List<MissingVO> list = Main.ma_s.getmissingTextSearch(ContentVO);
+					System.out.println(list.size());
+					if (list.size() == 0) {
+						MissingTable_Pane.getChildren().clear();
+						System.out.println("검색없음");
+						inviserble_lb.setText("검색된 결과가 없습니다.");
+						VBox v = new VBox();
+						v.getChildren().add(inviserble_lb);
+						v.setPrefWidth(1100);
+						v.setPrefHeight(524);
+						v.setAlignment(Pos.CENTER);
+						MissingTable_Pane.getChildren().add(v);
+						return;
+					}
+					main_box.getChildren().clear();
+					setMissTable(list);
+
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
+				break;
+			default:
+				break;
+		}
+		
+	});
+
+	}
+
+	private void setMissTable(List<MissingVO> list) {
+		
+		if(!MissingTable_Pane.getChildren().isEmpty()) {
+			MissingTable_Pane.getChildren().clear();
+		}
+			
+
+			for (int i = 0; i < list.size(); i++) {
+				// 노드 생성 구역
+				// 글 1개당 Hbox 생성 / 사이즈 지정
+				HBox H = new HBox();
+				H.setPrefWidth(1036.0);
+				H.setPrefHeight(100.0);
+				// H.setAccessibleText(i+"");
+
+
+				// 이미지 담기
+				File loadFile = new File("\\\\Sem-pc\\공유폴더\\Rescuedog\\Missing_animal\\" + list.get(i).getBoard_num()
+						+ "," + list.get(i).getMem_id()+","+ list.get(i).getImg());
+//				File loadFile = new File("src/image/missing/" + list.get(i).getBoard_num()
+//						+ "," + list.get(i).getMem_id()+","+ list.get(i).getImg());
+				System.out.println(loadFile.getName());
+				BufferedImage missing_imgB;
+				Image missing_img = null;
+				try {
+					missing_imgB = ImageIO.read(loadFile);
+					missing_img = SwingFXUtils.toFXImage(missing_imgB, null);
+				} catch (IOException e1) {
+					continue; // 97라인에서 익셉션 걸리면 72라인 포문 한바퀴를 스킵
+				}
+				// Image missing_img = new
+				// Image("file:\\\\Sem-pc\\공유폴더\\Rescuedog\\Missing_animal\\"
+				// +list.get(i).getBoard_num()
+				// +","+
+				// list.get(i).getMem_id()+
+				// list.get(i).getImg());
+
+				view = new ImageView();
+				view.setImage(missing_img);
+				view.setFitWidth(170);
+				view.setFitHeight(132);
+				view.setAccessibleText(list.get(i).getBoard_num() + "/" + list.get(i).getMem_id() + "/"
+						+ list.get(i).getMiss_loc() + "/" + list.get(i).getTitle() + "/" + list.get(i).getBoard_num()
+						+ "," + list.get(i).getMem_id() +","+ list.get(i).getImg() // Missing_animal_DetailController 220라인
+																				// 참고 이미지 앞에 인덱스 부여
+						+ "/" + list.get(i).getContent());
+
+				String temp = list.get(i).getContent();
+				slice = temp.split("/");
+
+				// 실종동물 이름 라벨에 담기
+				Label missing_name = new Label();
+				missing_name.setText("     이름 : " + slice[0]); // 서브스트링 해야함
+				missing_name.setPrefWidth(150);
+				missing_name.setPrefHeight(30);
+				missing_name.setFont(Font.font("HCR Dotum", 15));
+
+				// 실종동물 종 라벨에 담기
+				Label missing_kind = new Label();
+				missing_kind.setText("     성별 : " + slice[1]); // 서브스트링 해야함
+				missing_kind.setPrefWidth(150);
+				missing_kind.setPrefHeight(30.0);
+				missing_kind.setFont(Font.font("HCR Dotum", 15));
+
+				// 실종동물 성별 라벨에 담기
+				Label missing_gender = new Label();
+				missing_gender.setText("     견종 : " + slice[2]); // 서브스트링 해야함
+				missing_gender.setPrefWidth(150);
+				missing_gender.setPrefHeight(30);
+				missing_gender.setFont(Font.font("HCR Dotum", 15));
+
+				// 이름 종 성별 VBox에 담기
+				VBox Info = new VBox();
+				Info.setPrefWidth(150);
+				Info.setPrefHeight(100);
+				Info.setAlignment(Pos.CENTER);
+				Info.getChildren().add(missing_name);
+				Info.getChildren().add(missing_kind);
+				Info.getChildren().add(missing_gender);
+
+				// 이미지 + 정보 HBox에 담기
+				HBox imagInfo = new HBox();
+				imagInfo.setPrefWidth(400.0);
+				imagInfo.setPrefHeight(200.0);
+				imagInfo.getChildren().add(view);
+				imagInfo.getChildren().add(Info);
+
+				// 작성자 라벨에 담기
+				Label missing_mem = new Label();
+				missing_mem.setText(list.get(i).getMem_id());
+				missing_mem.setPrefWidth(180);
+				missing_mem.setPrefHeight(191);
+				missing_mem.setAlignment(Pos.CENTER);
+				missing_mem.setFont(Font.font("HCR DotumI", 15));
+				
+				// 지역 라벨에 담기
+				Label missing_loc = new Label();
+				missing_loc.setText(list.get(i).getMiss_loc());
+				missing_loc.setPrefWidth(200);
+				missing_loc.setPrefHeight(100);
+				missing_loc.setAlignment(Pos.CENTER);
+				missing_loc.setFont(Font.font("HCR Dotum", 15));
+
+				// 작성일 라벨에 담기
+				Label missing_date = new Label();
+				missing_date.setText(list.get(i).getUpd_date().substring(0, 10));
+				missing_date.setPrefWidth(189);
+				missing_date.setPrefHeight(100);
+				missing_date.setAlignment(Pos.CENTER);
+				missing_date.setFont(Font.font("HCR Dotum", 15));
+
+
+				// HBox에 출력할 순서대로 담기
+				H.getChildren().add(imagInfo);
+				H.getChildren().add(missing_mem);
+				H.getChildren().add(missing_loc);
+				H.getChildren().add(missing_date);
+
+				HBox line = new HBox();
+				line.setPrefWidth(1036.0);
+				line.setPrefHeight(1.0);
+				line.setStyle("-fx-background-color: #dadada");
+
+				// 메인박스에 담기
+				main_box.getChildren().add(H);
+				main_box.getChildren().add(line);
+				view.setOnMouseClicked(e -> {
+					MissingDetailSController.fileName = loadFile.getName();
+					// 사진을 클릭하면 상세페이지로 이동
+					log = (ImageView) e.getSource();
+					System.out.println(log.getAccessibleText());
+					gotoD(IMissing_animalSService.class.getResource("missing_detail_view.fxml"));
+
+				});
+			}
+			MissingTable_Pane.getChildren().add(main_box);
+		} 
+
+
+	private void gotoD(URL resource) {
+		ChangePane cp = Main_page_controller.fxmlLoad.getController();
+		cp.clearing();
+		ChangePane.changePane(resource);
+		cp.add();
+	}
+	private void alertTest(String message) {
+		Alert alertErorr = new Alert(AlertType.INFORMATION);
+		alertErorr.setTitle("검색");
+		alertErorr.setContentText(message);
+		alertErorr.showAndWait();
+	}
+
+}

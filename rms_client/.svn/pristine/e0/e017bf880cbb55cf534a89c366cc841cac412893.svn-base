@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.admin.goods_mall.delivery_management.Delivery_management_controller">
+   <children>
+      <AnchorPane fx:id="tempPane" layoutY="28.0" prefHeight="44.0" prefWidth="1100.0">
+         <children>
+            <Text fill="#41474a" layoutX="86.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="배송 관리">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="HCR Dotum" size="18.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="69.0" layoutY="19.0" prefHeight="23.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+            <Label fx:id="Hide_Lbl" layoutX="170.0" layoutY="19.0" prefHeight="23.0" prefWidth="121.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="scPane" hbarPolicy="NEVER" layoutX="68.0" layoutY="126.0" prefHeight="357.0" prefWidth="978.0" vbarPolicy="ALWAYS">
+         <content>
+            <AnchorPane fx:id="Delivery_Main_Pane" minHeight="0.0" minWidth="0.0" prefWidth="961.0" />
+         </content>
+      </ScrollPane>
+      <HBox layoutX="68.0" layoutY="92.0" prefHeight="34.0" prefWidth="978.0" style="-fx-background-color: #628290;">
+         <children>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="55.0" text="번호" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="222.0" text="상품명" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="151.0" text="구매일" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="147.0" text="구매자" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="268.0" text="배송지" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="135.0" text="배송하기" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

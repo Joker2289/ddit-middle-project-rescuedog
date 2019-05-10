@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.goods_mall.order_history.Order_historyController">
+   <children>
+      <AnchorPane prefHeight="70.0" prefWidth="1100.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Label layoutX="54.0" layoutY="33.0" text="구매내역조회" textFill="#5b5656">
+               <font>
+                  <Font name="HCR Dotum" size="25.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="39.0" layoutY="38.0" prefHeight="27.0" prefWidth="5.0" style="-fx-background-color: #628290;" />
+         </children>
+      </AnchorPane>
+      <HBox layoutX="32.0" layoutY="170.0" prefHeight="39.0" prefWidth="1036.0" style="-fx-background-color: #6B7B8E;">
+         <children>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="77.0" text="번호" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="349.0" text="상품 정보" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="71.0" text="수량" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="153.0" text="가격" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="162.0" text="구매일" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="146.0" text="상태" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="39.0" prefWidth="79.0" text="환불" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ScrollPane hbarPolicy="NEVER" layoutX="32.0" layoutY="209.0" prefHeight="379.0" prefWidth="1036.0" vbarPolicy="ALWAYS">
+        <content>
+          <AnchorPane fx:id="Order_Main_Pane" minHeight="0.0" minWidth="0.0" prefWidth="1036.0" />
+        </content>
+      </ScrollPane>
+      <Label layoutX="32.0" layoutY="135.0" text="- 환불은 구매일 기준 7일이 지난 상품은  환불이 불가능  합니다">
+         <font>
+            <Font name="HCR Dotum" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="107.0" text="- 환불 시 환불영수증이 계정에 등록된 e-mail로 발송됩니다">
+         <font>
+            <Font name="HCR Dotum" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

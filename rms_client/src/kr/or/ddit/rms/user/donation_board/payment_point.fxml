@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.donation_board.DonationBoard_PointController">
+   <children>
+      <Text layoutX="123.0" layoutY="77.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="포인트 후원하기">
+         <font>
+            <Font name="HCR Dotum" size="26.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="point_cancel_btn" layoutX="220.0" layoutY="317.0" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: #eceff1;" text="  취소">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="point_donation_btn" layoutX="72.0" layoutY="318.0" prefHeight="28.0" prefWidth="130.0" style="-fx-background-color: #535962;" text="  후원" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="#fb7777" iconName="HEART" />
+         </graphic>
+      </JFXButton>
+      <Label layoutX="127.0" layoutY="144.0" text="마이포인트">
+         <font>
+            <Font name="HCR Dotum" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="my_point_lable" layoutX="238.0" layoutY="145.0" text="Label">
+         <font>
+            <Font name="HCR Dotum" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="donation_point_txtF" focusColor="WHITE" layoutX="123.0" layoutY="215.0" prefHeight="28.0" prefWidth="149.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="289.0" layoutY="219.0" text="원">
+         <font>
+            <Font name="HCR Dotum" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

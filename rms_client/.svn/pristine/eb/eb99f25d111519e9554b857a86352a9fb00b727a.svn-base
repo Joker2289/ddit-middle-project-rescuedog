@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="500.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.question.QuestionController">
+   <children>
+      <JFXTextField fx:id="question_tf" focusColor="WHITE" layoutX="49.0" layoutY="552.0" prefHeight="30.0" prefWidth="312.0" promptText="  키워드 입력" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="question_btn" layoutX="372.0" layoutY="552.0" prefHeight="33.0" prefWidth="89.0" style="-fx-background-color: #6b7b8e;" text=" 전송" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK_CIRCLE_ALT" size="1.2em" text="">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic></JFXButton>
+      <ImageView fitHeight="40.0" fitWidth="42.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ScrollPane fx:id="main_scroll" hbarPolicy="NEVER" layoutX="49.0" layoutY="137.0" prefHeight="391.0" prefWidth="415.0" vbarPolicy="ALWAYS">
+         <content>
+          <AnchorPane fx:id="textPane" prefHeight="168.0" prefWidth="399.0">
+               <children>
+                  <JFXTextArea fx:id="user_tf" focusColor="WHITE" layoutX="14.0" layoutY="33.0" prefHeight="49.0" prefWidth="334.0" style="-fx-background-color: f0d9da;" unFocusColor="#dddddd">
+                     <font>
+                        <Font name="HCR Dotum" size="13.0" />
+                     </font>
+                  </JFXTextArea>
+                  <JFXTextArea fx:id="admin_tf" focusColor="#b1bed5" layoutX="55.0" layoutY="102.0" prefHeight="49.0" prefWidth="326.0" style="-fx-background-color: #b1bed5;" unFocusColor="#b1bed5">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXTextArea>
+                  <FontAwesomeIcon fill="#fcb84c" iconName="USER" layoutX="362.0" layoutY="70.0" size="3em" wrappingWidth="13.0" />
+                  <FontAwesomeIcon fill="#6ea495" iconName="ANDROID" layoutX="14.0" layoutY="140.0" size="3em" text="" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <JFXButton fx:id="close_btn" layoutX="466.0" text=" " textFill="#808080">
+         <graphic>
+            <FontAwesomeIcon fill="#757575" iconName="CLOSE" size="1.8em">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="88.0" layoutY="79.0" text="어떤점이 궁금하세요. 정확한 답변드리겠습니다." textFill="#838080">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="203.0" layoutY="35.0" text="1대1 문의" textFill="#393939">
+         <font>
+            <Font name="HCR Dotum" size="26.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

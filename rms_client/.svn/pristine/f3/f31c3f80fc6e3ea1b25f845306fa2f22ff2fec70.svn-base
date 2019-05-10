@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.member.map.Map_capture_controller">
+   <children>
+      <WebView fx:id="map_view" prefHeight="672.0" prefWidth="974.0" />
+      <JFXButton fx:id="Close_Btn" layoutX="911.0" layoutY="8.0" text=" ">
+         <graphic>
+            <FontAwesomeIcon iconName="CLOSE" size="3em" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="Cqpture_Btn" layoutY="672.0" prefHeight="40.0" prefWidth="974.0" style="-fx-background-color: #393939;" text="지도 저장" textFill="WHITE">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="285.0" layoutY="152.0" prefHeight="368.0" prefWidth="404.0" style="-fx-border-color: red; -fx-border-width: 5;" />
+      <Label layoutX="285.0" layoutY="129.0" text="- 실종위치를 빨간선 안에 맞춰 주세요" textFill="RED" />
+   </children>
+</AnchorPane>

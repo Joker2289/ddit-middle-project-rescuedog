@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.donation_board.DonationBoard_CardController">
+   <children>
+      <Label layoutX="44.0" layoutY="144.0" text="이용약관">
+         <font>
+            <Font name="HCR Dotum Bold" size="16.0" />
+         </font></Label>
+      <JFXCheckBox fx:id="check_all" layoutX="383.0" layoutY="144.0" onAction="#ch_all" text="전체동의">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></JFXCheckBox>
+      <JFXCheckBox fx:id="check_1" layoutX="38.0" layoutY="237.0" text="개인정보 수집/이용안내">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></JFXCheckBox>
+      <JFXComboBox fx:id="card_choice" focusColor="#bcbab8" layoutX="69.0" layoutY="333.0" prefHeight="34.0" prefWidth="127.0" promptText="카드" />
+      <GridPane gridLinesVisible="true" layoutX="29.0" layoutY="383.0" prefHeight="84.0" prefWidth="440.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="76.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="412.0" minWidth="10.0" prefWidth="364.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="54.0" prefWidth="354.0" GridPane.columnIndex="1">
+               <children>
+                  <JFXTextField fx:id="cardnum_1" focusColor="#bbbbbb" layoutX="5.0" layoutY="6.0" prefHeight="22.0" prefWidth="73.0" style="-fx-border-color: #A6A6A6;" unFocusColor="WHITE" />
+                  <JFXTextField fx:id="cardnum_2" focusColor="#bbbbbb" layoutX="94.0" layoutY="6.0" prefHeight="22.0" prefWidth="73.0" style="-fx-border-color: #A6A6A6;" unFocusColor="WHITE" />
+                  <JFXTextField fx:id="cardnum_3" focusColor="#bbbbbb" layoutX="181.0" layoutY="6.0" prefHeight="22.0" prefWidth="73.0" style="-fx-border-color: #A6A6A6;" unFocusColor="WHITE" />
+                  <JFXTextField fx:id="cardnum_4" focusColor="#bbbbbb" layoutX="269.0" layoutY="6.0" prefHeight="22.0" prefWidth="73.0" style="-fx-border-color: #A6A6A6;" unFocusColor="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="63.0" prefWidth="393.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <JFXTextField fx:id="cvcnum" focusColor="#bbbbbb" layoutX="5.0" layoutY="6.0" prefHeight="23.0" prefWidth="73.0" style="-fx-border-color: #A6A6A6;" unFocusColor="WHITE" />
+                  <Label layoutX="92.0" layoutY="10.0" text="(카드 뒷면 숫자 3자리)">
+                     <font>
+                        <Font name="HCR Dotum" size="15.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="7.0" layoutY="12.0" text="카드번호">
+                     <font>
+                        <Font name="HCR Dotum" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="48.0" prefWidth="81.0" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="10.0" layoutY="12.0" text="cvc번호">
+                     <font>
+                        <Font name="HCR Dotum" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <JFXButton fx:id="card_confirm_btn" layoutX="176.0" layoutY="548.0" prefHeight="34.0" prefWidth="76.0" style="-fx-background-color: #050099;" text="확인" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="card_cancel_btn" layoutX="262.0" layoutY="548.0" prefHeight="34.0" prefWidth="76.0" style="-fx-background-color: #eceff1;" text="취소">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></JFXButton>
+      <JFXCheckBox fx:id="check_2" layoutX="38.0" layoutY="277.0" text="개인정보 제3자 제공/위탁아내">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></JFXCheckBox>
+      <Label layoutX="28.0" layoutY="484.0" text="후원금액">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></Label>
+      <JFXTextField fx:id="donation_price" layoutX="97.0" layoutY="471.0" prefHeight="23.0" prefWidth="95.0">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></JFXTextField>
+      <Label layoutX="196.0" layoutY="479.0" prefHeight="23.0" prefWidth="17.0" text="원">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></Label>
+      <AnchorPane prefHeight="101.0" prefWidth="514.0" style="-fx-background-color: #050099;">
+         <children>
+            <Label layoutX="44.0" layoutY="34.0" text="▶(주)공인중견사" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="376.0" layoutY="14.0" text="KG 이니시스" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="30.0" layoutY="175.0" prefHeight="1.0" prefWidth="440.0" style="-fx-background-color: bcbab8;" />
+      <AnchorPane layoutX="31.0" layoutY="133.0" prefHeight="1.0" prefWidth="440.0" style="-fx-background-color: bcbab8;" />
+      <FontAwesomeIcon fill="#fa0559" iconName="CREDIT_CARD" layoutX="31.0" layoutY="364.0" size="1.7em" />
+      <Label layoutX="62.0" layoutY="189.0" text=" 전자금융거래 이용약관">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="29.0" layoutY="306.0" prefHeight="1.0" prefWidth="440.0" style="-fx-background-color: bcbab8;" />
+   </children>
+</AnchorPane>

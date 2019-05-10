@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.admin.goods_mall.sales_management.Sales_management_controller">
+   <children>
+      <AnchorPane layoutX="51.0" layoutY="14.0" prefHeight="39.0" prefWidth="965.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <AnchorPane layoutX="7.0" layoutY="28.0" prefHeight="23.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+            <Text fill="#41474a" layoutX="24.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="매출 내역">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="HCR Dotum" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="990.0" layoutY="585.0" prefHeight="39.0" prefWidth="64.0" text="원" textFill="#41474a">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="701.0" layoutY="585.0" prefHeight="39.0" prefWidth="95.0" text="총 매출액" textFill="#41474a">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="Sales_Price_Lbl" alignment="CENTER_RIGHT" layoutX="796.0" layoutY="587.0" prefHeight="36.0" prefWidth="194.0" text="10000" textFill="#41474a">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="Sales_Chart_Btn" layoutX="822.0" layoutY="58.0" prefHeight="15.0" prefWidth="22.0" text=" ">
+         <graphic>
+            <FontAwesomeIcon iconName="BAR_CHART" size="3em" />
+         </graphic>
+      </JFXButton>
+      <JFXTabPane layoutX="53.0" layoutY="122.0" prefHeight="456.0" prefWidth="995.0" style="-fx-border-color: #C3c3c3; -fx-border-width: 3;">
+         <tabs>
+            <Tab fx:id="All_Tab" text="전체">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="333.0" prefWidth="916.0">
+                     <children>
+                        <HBox prefHeight="34.0" prefWidth="989.0" style="-fx-background-color: #628290;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="55.0" text="번호" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="222.0" text="상품명" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="151.0" text="거래 금액" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="181.0" text="구매일" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="117.0" text="구매ID" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="129.0" text="카드사" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="122.0" text="상태" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ScrollPane hbarPolicy="NEVER" layoutX="1.0" layoutY="32.0" prefHeight="389.0" prefWidth="989.0" vbarPolicy="ALWAYS">
+                           <content>
+                              <AnchorPane fx:id="Sales_All_Pane" minHeight="0.0" minWidth="0.0" prefWidth="975.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="기간별">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane prefHeight="44.0" prefWidth="989.0" style="-fx-background-color: #dddddd;">
+                           <children>
+                              <JFXButton fx:id="Date_Search_Btn" layoutX="458.0" layoutY="10.0" prefHeight="27.0" prefWidth="74.0" style="-fx-background-color: #000054;" text="조회" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXButton>
+                              <Text layoutX="233.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="~" />
+                              <DatePicker fx:id="Start_Date" layoutX="20.0" layoutY="10.0" prefHeight="21.0" prefWidth="194.0" />
+                              <DatePicker fx:id="End_Date" layoutX="261.0" layoutY="10.0" />
+                           </children>
+                        </AnchorPane>
+                        <HBox layoutY="44.0" prefHeight="34.0" prefWidth="989.0" style="-fx-background-color: #628290;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="55.0" text="번호" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="222.0" text="상품명" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="151.0" text="거래 금액" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="181.0" text="구매일" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="117.0" text="구매ID" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="129.0" text="카드사" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="122.0" text="상태" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ScrollPane hbarPolicy="NEVER" layoutX="1.0" layoutY="76.0" prefHeight="342.0" prefWidth="988.0" vbarPolicy="ALWAYS">
+                           <content>
+                              <AnchorPane fx:id="Date_Pane" minHeight="0.0" minWidth="0.0" prefWidth="975.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="상품별">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="333.0" prefWidth="916.0">
+                     <children>
+                        <AnchorPane prefHeight="44.0" prefWidth="989.0" style="-fx-background-color: #dddddd;">
+                           <children>
+                              <JFXComboBox fx:id="Prod_Comb" layoutX="14.0" layoutY="9.0" prefHeight="27.0" prefWidth="217.0" />
+                              <JFXButton fx:id="Prod_Search_Btn" layoutX="244.0" layoutY="9.0" prefHeight="27.0" prefWidth="74.0" style="-fx-background-color: #000054;" text="조회" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                        <HBox layoutY="44.0" prefHeight="34.0" prefWidth="989.0" style="-fx-background-color: #628290;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="55.0" text="번호" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="222.0" text="상품명" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="151.0" text="거래 금액" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="181.0" text="구매일" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="117.0" text="구매ID" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="129.0" text="카드사" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="122.0" text="상태" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ScrollPane hbarPolicy="NEVER" layoutX="1.0" layoutY="76.0" prefHeight="342.0" prefWidth="989.0" vbarPolicy="ALWAYS">
+                           <content>
+                              <AnchorPane fx:id="Prod_Pane" minHeight="0.0" minWidth="0.0" prefWidth="975.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="카드사별">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane prefHeight="44.0" prefWidth="989.0" style="-fx-background-color: #dddddd;">
+                           <children>
+                              <JFXComboBox fx:id="Card_Comb" layoutX="14.0" layoutY="9.0" prefHeight="27.0" prefWidth="217.0" />
+                              <JFXButton fx:id="Card_Search_Btn" layoutX="244.0" layoutY="9.0" prefHeight="27.0" prefWidth="74.0" style="-fx-background-color: #000054;" text="조회" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                        <ScrollPane hbarPolicy="NEVER" layoutY="76.0" prefHeight="342.0" prefWidth="989.0" vbarPolicy="ALWAYS">
+                           <content>
+                              <AnchorPane fx:id="Card_Pane" minHeight="0.0" minWidth="0.0" prefWidth="975.0" />
+                           </content>
+                        </ScrollPane>
+                        <HBox layoutX="-1.0" layoutY="44.0" prefHeight="34.0" prefWidth="989.0" style="-fx-background-color: #628290;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="55.0" text="번호" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="222.0" text="상품명" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="151.0" text="거래 금액" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="181.0" text="구매일" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="117.0" text="구매ID" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="129.0" text="카드사" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="34.0" prefWidth="122.0" text="상태" textFill="WHITE">
+                                 <font>
+                                    <Font name="HCR Dotum" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <Label fx:id="Hide_Label" alignment="CENTER_RIGHT" layoutX="243.0" layoutY="587.0" prefHeight="36.0" prefWidth="447.0" text=" " textFill="#41474a">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="74.0" text="- 환불 품목을 제외한 매출내역 입니다" />
+      <Label layoutX="60.0" layoutY="93.0" text="- 환불 품목을 제외한 총 매출액 입니다" />
+   </children>
+</AnchorPane>

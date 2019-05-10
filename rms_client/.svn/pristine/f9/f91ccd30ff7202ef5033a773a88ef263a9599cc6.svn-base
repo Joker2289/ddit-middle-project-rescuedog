@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="675.0" prefWidth="250.0" style="-fx-background-color: #393939;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton fx:id="Mypagem_Hide_Btn" accessibleText="취소" prefHeight="198.0" prefWidth="108.0" text="취소">
+         <graphic>
+            <FontAwesomeIcon fill="#68a0e1" iconName="ARROW_CIRCLE_O_LEFT" size="6em" wrappingWidth="74.0" />
+         </graphic>
+      </JFXButton>
+      <Label alignment="CENTER" prefHeight="134.0" prefWidth="250.0" text="회원관리" textFill="#6a9ee1">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="31.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="Mypagem_InfoUpd_Btn" accessibleText="회원 조회" prefHeight="75.0" prefWidth="250.0" text="회원 조회" textFill="#70acf2">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="Mypagem_InfoUpd_Btn1" accessibleText="블랙리스트 관리" prefHeight="75.0" prefWidth="250.0" text="블랙리스트 관리" textFill="#70acf2">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="21.0" />
+         </font>
+      </JFXButton>
+   </children>
+</VBox>

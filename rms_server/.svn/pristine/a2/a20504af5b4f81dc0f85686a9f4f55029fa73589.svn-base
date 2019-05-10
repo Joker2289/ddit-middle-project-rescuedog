@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할 때 같이 사용된다. -->			
+<sqlMap namespace="spon_log">
+	<!-- 
+		이 영역에 sql문에 맞는 태그를 사용하여 SQL문을 기술한다.
+		
+		사용할 수 있는 기본적인 태그들
+		<select> ~~~ </select>
+		<insert> ~~~ </insert>
+		<update> ~~~ </update>
+		<delete> ~~~ </delete>
+	 -->
+	 
+	 <!-- 
+	 	위 태그에서 사용되는 속성들
+	 		1) id속성 : 해당 태그를 호출할 때 <sqlMap>태그의 namespace와
+	 							  연결하여 사용하는 이름
+	 		2) parameterClass속성 : sql문에 사용될 데이터가 들어있는 객체를
+	 							  지정한다. 
+	 							  (보통 VO클래스, 자바의 자료형이름 등이 사용된다.)
+	 							  (typeAlia로 지정한 alias명을 사용할 수 있다.)							  
+			3) resultClass속성 : select문을 실행한 결과를 담을 객체를 지정한다.
+									(보통 VO클래스나 자바의 자료형이름을 사용한다.)							 
+	 -->
+	 
+	 <!-- insert 연습 -->
+	 <insert id="insertSpon_log" parameterClass="Spon_LogVO">
+	 		insert into spon_log (spon_num,custom_id,price,spon_date,shel_id)
+	 		values (#spon_num#, #custom_id#,#price#, sysdate, #shel_id#)
+	 </insert>
+	 
+	 <!-- update 연습 (parameterClass에 alias를 지정할 수 있다.) -->
+	 <update id="updateSpon_log" parameterClass="Spon_LogVO">
+	 		update spon_log set spon_num=#spon_num#,
+	 										custom_id=#custom_id#,
+	 										price=#price#,
+	 										spon_date=to_date(#spon_date#,'yyyy-MM-dd HH24:MI:SS'),
+	 										shel_id=#shel_id#
+	 		where spon_num=#spon_num#
+	 </update>
+	 
+	 <!-- 
+	 		parameterClass에 설정되는 값이 단일값(즉 1개의 데이터)이면
+	 		SQL문에 이 값을 나타내는 변수는 특별히 이름이 정해지지 않았다.
+	 		(즉, 사용자가 임의로 지정할 수 있다.)
+	 -->
+	 <!-- delete 연습 -->
+	 <delete id="deleteSpon_log" parameterClass="String">
+<!-- 	 		delete from mymember where mem_id=#mem_id# -->
+			delete from spon_log where spon_num=#sss# 
+	 </delete>
+	 
+	  <delete id="deleteSpon_logAll" parameterClass="Spon_LogVO">
+<!-- 	 		delete from mymember where mem_id=#mem_id# -->
+			delete from spon_log where spon_num=#spon_num# 
+	 </delete>
+	 
+	 <!-- select 연습 -->
+	 <select id="getSpon_logAll" resultClass="Spon_LogVO">
+	 		select spon_num,custom_id,price,spon_date,shel_id from spon_log
+	 </select>
+	 
+	 <select id="getSpon_log" resultClass="int" parameterClass="String">
+	 		select count(*) from spon_log where spon_num=#spon_num#
+	 </select>
+	 
+	 <select id="getSpon_log_shelname" resultClass="ShelterVO" parameterClass="Spon_LogVO">
+		 select distinct shel_name, shelter.shel_id
+			from spon_log, shelter
+			where custom_id = #custom_id# 
+			and spon_log.shel_id = shelter.shel_id
+	</select>
+	 		
+	 <select id="getSearchSpon_log" parameterClass="Spon_LogVO" resultClass="Spon_LogVO">
+	 		select spon_num,custom_id,price,spon_date,shel_id from spon_log
+	 		<dynamic prepend="where">
+		 		<isNotEmpty property="spon_num" prepend="and">
+					spon_num = #spon_num#
+				</isNotEmpty>
+					<isNotEmpty property="custom_id" prepend="and">
+	 				custom_id = #custom_id#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="price" prepend="and">
+					price = #price#
+				</isNotEmpty>
+				<isNotEmpty property="spon_date" prepend="and">
+	 				spon_date = #spon_date#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="shel_id" prepend="and">
+					shel_id = #shel_id#
+				</isNotEmpty>
+	 		</dynamic>
+	 		
+	 		order by spon_num
+	 		
+	 		<!-- select * from mymember where 1=1
+	 			<isNotEmpty property="mem_id">
+					and mem_id = #mem_id#
+				</isNotEmpty>
+				<isNotEmpty property="mem_name">
+	 				and mem_name = #mem_name#
+	 			</isNotEmpty>
+ 				<isNotEmpty property="mem_tel">
+	 				and mem_tel = #mem_tel#
+	 			</isNotEmpty>
+ 				<isNotEmpty property="mem_addr">
+	 				and mem_addr like '%' || #mem_addr# || '%'
+	 			</isNotEmpty>
+	 			 -->
+	 </select>
+
+</sqlMap>			
+
+
+
+
+

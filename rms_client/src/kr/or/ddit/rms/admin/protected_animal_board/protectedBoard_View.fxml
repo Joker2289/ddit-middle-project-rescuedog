@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.admin.protected_animal_board.ProtectedBoard_Cotroller">
+   <children>
+      <AnchorPane fx:id="tempPane" prefHeight="44.0" prefWidth="1100.0">
+         <children>
+            <Text fill="#41474a" layoutX="58.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="보호동물게시판">
+               <font>
+                  <Font name="HCR Dotum Bold" size="23.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+            <AnchorPane layoutX="221.0" layoutY="32.0" prefHeight="24.0" prefWidth="5.0" style="-fx-background-color: #628290;" />
+            <JFXButton fx:id="ProtectedSerch_btn" layoutX="962.0" layoutY="24.0" text=" " />
+            <Label fx:id="inviserble_lb" layoutX="261.0" layoutY="18.0" prefHeight="15.0" prefWidth="304.0" />
+            <Label layoutX="243.0" layoutY="30.0" prefHeight="24.0" prefWidth="644.0" text="현재 보호하고있는 동물의 정보를 검색 할 수있는 보호동물 게시판입니다." textFill="#a89999">
+               <font>
+                  <Font name="HCR Dotum" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <HBox fx:id="pr_box" layoutX="61.0" layoutY="152.0" prefHeight="34.0" prefWidth="978.0" style="-fx-background-color: #628290;">
+         <children>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="124.0" text="사진" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="200.0" text="특징" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="60.0" />
+               </HBox.margin>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="203.0" text="작성자" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="205.0" text="찾은지역" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="112.0" text="등록일" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <ScrollPane fx:id="scPane" hbarPolicy="NEVER" layoutX="61.0" layoutY="186.0" prefHeight="400.0" prefWidth="978.0" vbarPolicy="ALWAYS">
+        <content>
+          <AnchorPane fx:id="Protected_Pane" minHeight="0.0" minWidth="0.0" prefWidth="1036.0" />
+        </content>
+      </ScrollPane>
+      <HBox fx:id="pr_registerBox" alignment="BOTTOM_RIGHT" layoutX="67.0" layoutY="462.0" prefHeight="10.0" prefWidth="1016.0" />
+      <JFXComboBox fx:id="Search_Comb" focusColor="#748c99" layoutX="577.0" layoutY="109.0" prefHeight="34.0" prefWidth="153.0" promptText=" 검색 조건" style="-fx-border-color: #c3c3c3;" unFocusColor="WHITE" />
+      <JFXTextField fx:id="ProtectedSerch_fd" focusColor="#748c99" layoutX="743.0" layoutY="112.0" prefHeight="28.0" prefWidth="202.0" promptText="Search" style="-fx-text-inner-color: #00000; -fx-prompt-text-fill: #00000;" />
+      <JFXButton fx:id="ProtectedSerch_btn" layoutX="956.0" layoutY="109.0" prefHeight="34.0" prefWidth="83.0" style="-fx-background-color: #748C99;" text=" 검색" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="SEARCH" />
+         </graphic>
+      </JFXButton>
+      <Label fx:id="top_lb" layoutX="61.0" layoutY="92.0" text="- 유저와 보호기관이 등록한 보호동물목록을 확인 할 수 있습니다" textFill="#a19d9d">
+         <font>
+            <Font name="HCR Dotum" size="14.0" />
+         </font></Label>
+      <Label fx:id="top_lb2" layoutX="60.0" layoutY="112.0" text="- 이미지 클릭시 보호동물 상세정보를 확인 할 수 있습니다" textFill="#a19d9d">
+         <font>
+            <Font name="HCR Dotum" size="14.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

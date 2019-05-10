@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.goods_mall.order.Order_view_controller">
+   <children>
+      <AnchorPane prefHeight="44.0" prefWidth="508.0" style="-fx-background-color: #FED9CA;">
+         <children>
+            <Label layoutX="54.0" layoutY="12.0" text="주문 / 결제" textFill="#605d5d">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="26.0" />
+               </font>
+            </Label>
+            <FontAwesomeIcon fill="#605d5d" iconName="WON" layoutX="14.0" layoutY="37.0" size="2.5em" wrappingWidth="34.14285659790039" />
+            <Label fx:id="Order_Message_Lbl" layoutX="476.0" layoutY="18.0" text=" " textFill="#d32121">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="27.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="Close_Btn" layoutX="458.0" layoutY="1.0" prefHeight="16.0" prefWidth="0.0" text=" ">
+               <graphic>
+                  <FontAwesomeIcon fill="#605d5d" iconName="CLOSE" size="2.5em" />
+               </graphic>
+            </JFXButton>
+            <Label fx:id="Order_Amount_Lbl" layoutX="175.0" layoutY="10.0" prefHeight="33.0" prefWidth="52.0" text=" " textFill="#605d5d">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ScrollPane hbarPolicy="NEVER" layoutX="21.0" layoutY="59.0" prefHeight="518.0" prefWidth="473.0" vbarPolicy="ALWAYS">
+        <content>
+          <AnchorPane fx:id="Order_Main_Pane" minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="457.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="23.0" layoutY="43.0" prefHeight="17.0" prefWidth="188.0" text="구매자 정보">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="82.0" layoutY="109.0" text="이름 : ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="62.0" layoutY="155.0" text="이메일 : ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Order_Name_Lbl" layoutX="144.0" layoutY="110.0" prefHeight="26.0" prefWidth="123.0" text="박정권">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Order_Email_Lbl" layoutX="145.0" layoutY="154.0" prefHeight="26.0" prefWidth="258.0" text="pjk2289@naver.com">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="23.0" layoutY="200.0" prefHeight="26.0" prefWidth="122.0" text="핸드폰번호 : ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Order_Tel_Lbl" layoutX="145.0" layoutY="200.0" prefHeight="26.0" prefWidth="258.0" text="01044332289">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="14.0" layoutY="262.0" prefHeight="3.0" prefWidth="420.0" style="-fx-background-color: #6E6E6E;" />
+                  <Label layoutX="21.0" layoutY="299.0" prefHeight="17.0" prefWidth="188.0" text=" 받는사람 정보">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="385.0" text="이름 : ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="430.0" text="배송 주소 : ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="Order_Name_Txt" focusColor="#e13c3c" layoutX="140.0" layoutY="380.0" prefHeight="34.0" prefWidth="103.0" text="박정권" unFocusColor="#514e4e">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="Order_Addr_Txt" alignment="BOTTOM_LEFT" focusColor="#e13c3c" layoutX="140.0" layoutY="423.0" prefHeight="34.0" prefWidth="280.0" text="대전광역시 서구 둔산동" unFocusColor="#514e4e">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="Order_Tel_Txt" alignment="BOTTOM_LEFT" focusColor="#e13c3c" layoutX="140.0" layoutY="468.0" prefHeight="34.0" prefWidth="280.0" text="01044332289" unFocusColor="#514e4e">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="58.0" layoutY="475.0" text="연락처 : ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="Order_Request_Txt" alignment="BOTTOM_LEFT" focusColor="#e13c3c" layoutX="140.0" layoutY="511.0" prefHeight="34.0" prefWidth="280.0" unFocusColor="#514e4e">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="33.0" layoutY="518.0" text="요청 사항 : ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="14.0" layoutY="585.0" prefHeight="3.0" prefWidth="420.0" style="-fx-background-color: #6E6E6E;" />
+                  <Label layoutX="27.0" layoutY="660.0" prefHeight="17.0" prefWidth="188.0" text="결제 정보">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Order_Price_Lbl2" layoutX="166.0" layoutY="731.0" prefHeight="26.0" prefWidth="123.0" text="20000원">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="731.0" text="총 결제 금액 :">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="774.0" text="적립 포인트 :">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Order_Point_Lbl" layoutX="166.0" layoutY="774.0" prefHeight="26.0" prefWidth="123.0" text="20000원">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="Order_Selcard_Comb" focusColor="#e13c3c" layoutX="35.0" layoutY="817.0" prefHeight="27.0" prefWidth="215.0" promptText="카드사선택" />
+                  <JFXTextField fx:id="Order_Card1_Txt" alignment="CENTER" focusColor="#e13c3c" layoutX="150.0" layoutY="872.0" prefHeight="34.0" prefWidth="62.0" unFocusColor="#514e4e">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="48.0" layoutY="876.0" text="카드번호 : ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="87.0" layoutY="927.0" text="CVC : ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="Order_Card2_Txt" alignment="CENTER" focusColor="#e13c3c" layoutX="222.0" layoutY="872.0" prefHeight="34.0" prefWidth="62.0" unFocusColor="#514e4e">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="Order_Card3_Txt" alignment="CENTER" focusColor="#e13c3c" layoutX="297.0" layoutY="872.0" prefHeight="34.0" prefWidth="62.0" unFocusColor="#514e4e">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="Order_Card4_Txt" alignment="CENTER" focusColor="#e13c3c" layoutX="369.0" layoutY="872.0" prefHeight="34.0" prefWidth="62.0" unFocusColor="#514e4e">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="Order_CVC_Txt" alignment="CENTER" focusColor="#e13c3c" layoutX="151.0" layoutY="921.0" prefHeight="34.0" prefWidth="62.0" unFocusColor="#514e4e">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="217.0" layoutY="928.0" prefHeight="26.0" prefWidth="194.0" text="(카드 뒷면 3자리)">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+      <HBox alignment="CENTER" layoutX="21.0" layoutY="584.0" prefHeight="44.0" prefWidth="473.0" style="-fx-background-color: #F0D1C2;">
+         <children>
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="163.0" text="총 결제 금액" textFill="#605d5d">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="Order_Price_Lbl" alignment="CENTER" prefHeight="44.0" prefWidth="113.0" text="27000" textFill="#605d5d">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="54.0" text="원" textFill="#605d5d">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="Order_Pay_Btn" alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="149.0" text="결제 진행" textFill="#605d5d">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="18.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIcon fill="#605d5d" iconName="ARROW_RIGHT" size="1.5em" text="" wrappingWidth="30.285715103149414" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

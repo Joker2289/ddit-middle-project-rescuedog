@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.shelter.mypage.updateshelter.UpdatePWSController">
+   <children>
+      <AnchorPane fx:id="tempPane" prefHeight="560.0" prefWidth="1100.0">
+         <children>
+            <AnchorPane layoutX="167.0" layoutY="178.0" prefHeight="374.0" prefWidth="793.0" style="-fx-border-color: #c2c2c2;">
+               <children>
+                  <FontAwesomeIcon iconName="CHEVRON_RIGHT" layoutX="47.0" layoutY="69.0" size="0.8em" />
+                  <Label layoutX="63.0" layoutY="96.0" prefHeight="23.0" prefWidth="112.0" text="현재 비밀번호">
+                     <font>
+                        <Font name="HCR Dotum" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="63.0" layoutY="140.0" text="새 비밀번호">
+                     <font>
+                        <Font name="HCR Dotum" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="62.0" layoutY="211.0" text="새 비밀번호확인">
+                     <font>
+                        <Font name="HCR Dotum" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="63.0" layoutY="54.0" prefHeight="23.0" prefWidth="58.0" text="아이디">
+                     <font>
+                        <Font name="HCR Dotum" size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="mypage_ok_btn" layoutX="241.0" layoutY="298.0" prefHeight="40.0" prefWidth="166.0" style="-fx-background-color: #535962;" text="  비밀번호 변경" textFill="WHITE">
+                     <font>
+                        <Font name="HCR Dotum" size="17.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </FontAwesomeIcon>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="mypage_no_btn" layoutX="419.0" layoutY="298.0" prefHeight="40.0" prefWidth="149.0" style="-fx-background-color: #eceff1;" text="  다음에 변경">
+                     <font>
+                        <Font name="HCR Dotum" size="17.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXPasswordField fx:id="out_pw_txt1" focusColor="WHITE" layoutX="254.0" layoutY="92.0" prefHeight="31.0" prefWidth="210.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE" />
+                  <JFXPasswordField fx:id="out_newpw_txt1" focusColor="WHITE" layoutX="254.0" layoutY="136.0" prefHeight="31.0" prefWidth="210.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE" />
+                  <JFXPasswordField fx:id="out_newpw_txt2" focusColor="WHITE" layoutX="254.0" layoutY="207.0" prefHeight="31.0" prefWidth="210.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE" />
+                  <FontAwesomeIcon iconName="CHEVRON_RIGHT" layoutX="47.0" layoutY="111.0" size="0.8em" />
+                  <FontAwesomeIcon iconName="CHEVRON_RIGHT" layoutX="47.0" layoutY="156.0" size="0.8em" />
+                  <FontAwesomeIcon iconName="CHEVRON_RIGHT" layoutX="47.0" layoutY="228.0" size="0.8em" />
+                  <Label fx:id="mypage_id" layoutX="255.0" layoutY="52.0" prefHeight="23.0" prefWidth="195.0" text="Label1">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="255.0" layoutY="174.0" prefHeight="23.0" prefWidth="380.0" text="(영문대소문자/숫자/특수문자 조합, 8자 ~ 12자)">
+                     <font>
+                        <Font name="HCR Dotum" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="487.0" layoutY="40.0" prefHeight="33.0" prefWidth="149.0" text="비밀번호변경">
+               <font>
+                  <Font name="HCR Dotum" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="87.0" prefHeight="33.0" prefWidth="682.0" text="회원님의 개인정보를 안전하게 보호하고, 개인정보 도용으로 인한 피해를 예방하기 위해" textFill="#968f8f">
+               <font>
+                  <Font name="HCR Dotum" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="285.0" layoutY="109.0" prefHeight="33.0" prefWidth="631.0" text="180일 이상 비밀번호를 변경하지 않은 경우 비밀번호 변경을 권장하고 있습니다. " textFill="#968f8f">
+               <font>
+                  <Font name="HCR Dotum" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

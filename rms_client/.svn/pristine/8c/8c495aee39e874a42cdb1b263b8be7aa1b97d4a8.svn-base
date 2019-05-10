@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.mypage.activeList.DonationListController">
+   <children>
+      <AnchorPane fx:id="tempPane" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pagination fx:id="dona_list_paging" layoutX="128.0" layoutY="74.0" prefHeight="422.0" prefWidth="873.0" />
+            <AnchorPane layoutX="128.0" layoutY="41.0" prefHeight="22.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+            <Text fill="#607f8d" layoutX="142.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="후원내역">
+               <font>
+                  <Font name="HCR Dotum Bold" size="24.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="mypage_back_btn" layoutX="873.0" layoutY="464.0" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #eceff1;" text="   뒤로가기">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+               <graphic>
+                  <JFXHamburger opacity="0.46" prefHeight="17.0" prefWidth="17.0" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="dona_list_tv" layoutX="128.0" layoutY="84.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="873.0" stylesheets="@../../volunteer_board/app.css">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <columns>
+            <TableColumn fx:id="dona_list_numCol1" prefWidth="128.0" text="후원번호" />
+            <TableColumn fx:id="dona_list_nameCol2" prefWidth="188.0" text="단체명" />
+            <TableColumn fx:id="dona_list_priceCol3" prefWidth="71.0" text="후원금액" />
+            <TableColumn fx:id="dona_list_dateCol4" prefWidth="85.0" text="날짜" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

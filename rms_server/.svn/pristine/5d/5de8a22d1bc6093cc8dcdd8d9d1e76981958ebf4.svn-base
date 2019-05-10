@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할 때 같이 사용된다. -->			
+<sqlMap namespace="blacklist">
+	<!-- 
+		이 영역에 sql문에 맞는 태그를 사용하여 SQL문을 기술한다.
+		
+		사용할 수 있는 기본적인 태그들
+		<select> ~~~ </select>
+		<insert> ~~~ </insert>
+		<update> ~~~ </update>
+		<delete> ~~~ </delete>
+	 -->
+	 
+	 <!-- 
+	 	위 태그에서 사용되는 속성들
+	 		1) id속성 : 해당 태그를 호출할 때 <sqlMap>태그의 namespace와
+	 							  연결하여 사용하는 이름
+	 		2) parameterClass속성 : sql문에 사용될 데이터가 들어있는 객체를
+	 							  지정한다. 
+	 							  (보통 VO클래스, 자바의 자료형이름 등이 사용된다.)
+	 							  (typeAlia로 지정한 alias명을 사용할 수 있다.)							  
+			3) resultClass속성 : select문을 실행한 결과를 담을 객체를 지정한다.
+									(보통 VO클래스나 자바의 자료형이름을 사용한다.)							 
+	 -->
+	 
+	 <!-- insert 연습 -->
+	 <insert id="insertBlacklist" parameterClass="BlacklistVO">
+	 		insert into blacklist (mem_id,reason,add_date)
+	 		values (#mem_id#, #reason#,sysdate)
+	 </insert>
+	 
+	 <!-- update 연습 (parameterClass에 alias를 지정할 수 있다.) -->
+	 <update id="updateBlacklist" parameterClass="BlacklistVO">
+	 		update blacklist set mem_id=#mem_id#,
+	 										reason=#reason#,
+	 										add_date=to_date(#add_date#,'yyyy-MM-dd HH24:MI:SS')
+	 		where mem_id=#mem_id#
+	 </update>
+	 
+	 <!-- 
+	 		parameterClass에 설정되는 값이 단일값(즉 1개의 데이터)이면
+	 		SQL문에 이 값을 나타내는 변수는 특별히 이름이 정해지지 않았다.
+	 		(즉, 사용자가 임의로 지정할 수 있다.)
+	 -->
+	 <!-- delete 연습 -->
+	 <delete id="deleteBlacklist" parameterClass="BlacklistVO">
+<!-- 	 		delete from mymember where mem_id=#mem_id# -->
+			delete from blacklist where mem_id=#mem_id# and add_date = to_date(#add_date#,'yyyy-MM-dd HH24:MI:SS')
+	 </delete>
+	 
+	 <!-- select 연습 -->
+	 <select id="getBlacklistAll" resultClass="BlacklistVO">
+	 		select mem_id,reason,add_date from blacklist
+	 </select>
+	 
+	 <select id="getBlacklist" resultClass="int" parameterClass="String">
+	 		select count(*) from blacklist where mem_id=#mem_id#
+	 </select>
+	 		
+	 <select id="getSearchBlacklist" parameterClass="BlacklistVO" resultClass="BlacklistVO">
+	 		select mem_id,reason,add_date from blacklist
+	 		<dynamic prepend="where">
+		 		<isNotEmpty property="mem_id" prepend="and">
+					mem_id = #mem_id#
+				</isNotEmpty>
+					<isNotEmpty property="reason" prepend="and">
+	 				reason = #reason#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="add_date" prepend="and">
+					add_date = #add_date#
+				</isNotEmpty>
+	 			
+	 			
+	 			
+	 		</dynamic>
+	 </select>
+
+</sqlMap>			
+
+
+
+
+

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.web.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.shelter.review_board.Review_board_detailSController">
+   <children>
+      <AnchorPane fx:id="forRemove_vb" layoutX="6.0" prefHeight="530.0" prefWidth="1100.0">
+         <children>
+            <AnchorPane layoutX="219.0" prefHeight="133.0" prefWidth="739.0">
+               <children>
+                  <Label layoutX="205.0" layoutY="33.0" text="제목">
+                     <font>
+                        <Font name="HCR Dotum" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="190.0" layoutY="77.0" text="작성자">
+                     <font>
+                        <Font name="HCR Dotum" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="review_title_tf" focusColor="WHITE" layoutX="254.0" layoutY="29.0" prefHeight="29.0" prefWidth="313.0" style="-fx-border-color: #d3d3d3;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum" size="12.0" />
+                     </font></JFXTextField>
+                  <JFXTextField fx:id="review_id_tf" focusColor="WHITE" layoutX="254.0" layoutY="76.0" prefHeight="29.0" prefWidth="313.0" style="-fx-border-color: #d3d3d3;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum" size="12.0" />
+                     </font></JFXTextField>
+                  <ImageView fx:id="Layout_logo_note_img" fitHeight="83.0" fitWidth="36.0" layoutX="642.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="kr/or/ddit/rms/user/free_board/note.png" />
+                     </image>
+                  </ImageView>
+                  <HBox layoutX="-119.0" layoutY="82.0" prefHeight="21.0" prefWidth="291.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="15.0" prefWidth="50.0" text="작성일">
+                           <font>
+                              <Font name="HCR Dotum" size="13.0" />
+                           </font></Label>
+                        <Label fx:id="review_upd_date_label" prefHeight="18.0" prefWidth="139.0" text="Label">
+                           <font>
+                              <Font name="HCR Dotum" size="13.0" />
+                           </font></Label>
+                        <Label prefHeight="18.0" prefWidth="47.0" text="조회수">
+                           <font>
+                              <Font name="HCR Dotum" size="13.0" />
+                           </font></Label>
+                        <Label fx:id="review_cnt_label" prefHeight="18.0" prefWidth="46.0" text="Label">
+                           <font>
+                              <Font name="HCR Dotum" size="13.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="90.0" layoutY="122.0" prefHeight="208.0" prefWidth="928.0" style="-fx-border-color: #c2c2c2;">
+               <children>
+                  <WebView fx:id="review_content_wv" layoutX="187.0" layoutY="15.0" prefHeight="180.0" prefWidth="730.0" />
+                  <ImageView fx:id="review_content_iv" fitHeight="167.0" fitWidth="159.0" layoutX="23.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <ScrollPane layoutX="91.0" layoutY="428.0" prefHeight="150.0" prefWidth="926.0">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="163.0" prefWidth="929.0">
+                     <children>
+                        <TableView fx:id="comment_table" layoutX="-1.0" layoutY="-3.0" prefHeight="167.0" prefWidth="932.0" stylesheets="@../../../../../../../bin/kr/or/ddit/rms/user/free_board/detail.css">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <columns>
+                              <TableColumn fx:id="comment_table_col1" prefWidth="75.0" text="번호" />
+                              <TableColumn fx:id="comment_table_col2" prefWidth="75.0" text="글번호" />
+                              <TableColumn fx:id="comment_table_col3" prefWidth="75.0" text="작성자" />
+                              <TableColumn fx:id="comment_table_col4" prefWidth="75.0" text="날짜" />
+                              <TableColumn fx:id="comment_table_col5" prefWidth="75.0" text="내용" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <JFXTextArea fx:id="review_comment_add_ta" layoutX="90.0" layoutY="338.0" prefHeight="77.0" prefWidth="801.0" style="-fx-border-color: #cacaca;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="review_comment_name_textfield" layoutX="897.0" layoutY="340.0" prefHeight="29.0" prefWidth="118.0" promptText=" NAME" style="-fx-border-color: #cacaca;" unFocusColor="WHITE" />
+            <JFXButton fx:id="review_comment_add_btn" cancelButton="true" layoutX="899.0" layoutY="379.0" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #535962;" text="댓글등록" textFill="WHITE">
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+               <font>
+                  <Font name="HCR Dotum" size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CHECK_CIRCLE_ALT" size="1.2em">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </FontAwesomeIcon>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="report_btn" layoutX="911.0" layoutY="78.0" prefHeight="36.0" prefWidth="90.0" ripplerFill="#ffe9ef" style="-fx-border-color: e6dedd;" text="       신고">
+               <font>
+                  <Font name="Arial Unicode MS" size="15.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIcon fill="#e4406f" iconName="USER_TIMES" layoutX="924.0" layoutY="104.0" size="1.5em" text="" wrappingWidth="32.0" />
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER_RIGHT" layoutX="841.0" layoutY="587.0" prefHeight="35.0" prefWidth="185.0">
+         <children>
+            <JFXButton fx:id="review_upd_btn" text="수정">
+               <font>
+                  <Font name="HCR Dotum" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="review_del_btn" text="삭제">
+               <font>
+                  <Font name="HCR Dotum" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="review_gotolist_btn" text="목록">
+               <font>
+                  <Font name="HCR Dotum" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

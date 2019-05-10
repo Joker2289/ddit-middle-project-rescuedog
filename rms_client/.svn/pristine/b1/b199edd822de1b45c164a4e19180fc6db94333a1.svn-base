@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.shape.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="700.0" style="-fx-background-color: #ffffff;" styleClass="Volunteer_deteail" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="Up_Writer_lb" layoutX="125.0" layoutY="205.0" prefHeight="15.0" prefWidth="48.0" text="label" textFill="#656565">
+         <font>
+            <Font name="HCR Dotum Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="LookUp_lb" layoutX="441.0" layoutY="247.0" opacity="0.7" prefHeight="15.0" prefWidth="36.0" text="label">
+         <font>
+            <Font name="HCR Dotum Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="383.0" layoutY="245.0" opacity="0.7" text="조회수">
+         <font>
+            <Font name="HCR Dotum Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="243.0" opacity="0.7" text="글 번호">
+         <font>
+            <Font name="HCR Dotum Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="Page_No" layoutX="126.0" layoutY="244.0" opacity="0.7" prefHeight="15.0" prefWidth="36.0" text="label">
+         <font>
+            <Font name="HCR Dotum Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="Up_Vb_CntPeople_ld" layoutX="589.0" layoutY="158.0" prefHeight="15.0" prefWidth="36.0" text="label" textFill="#4a4a4a">
+         <font>
+            <Font name="HCR Dotum Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextArea fx:id="Up_Content" focusColor="#8591b5" layoutX="56.0" layoutY="275.0" prefHeight="218.0" prefWidth="588.0" unFocusColor="#b5b5b5">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </JFXTextArea>
+      <Line endX="500.0" layoutX="144.0" layoutY="187.0" startX="-90.0" stroke="#bcbcbc" />
+      <Line endX="490.0" layoutX="155.0" layoutY="145.0" startX="-100.0" stroke="#bcbcbc" />
+      <Label layoutX="212.0" layoutY="36.0" text="자원봉사모집수정" textFill="#7ca196">
+         <font>
+            <Font name="DX몽블랑라운드ExB" size="36.0" />
+         </font>
+      </Label>
+      <Line endX="487.0" layoutX="155.0" layoutY="233.0" startX="-100.0" stroke="#bcbcbc" />
+      <Label layoutX="61.0" layoutY="203.0" opacity="0.7" text="작성자">
+         <font>
+            <Font name="HCR Dotum Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="508.0" layoutY="155.0" opacity="0.7" text="신청인원">
+         <font>
+            <Font name="HCR Dotum Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="157.0" opacity="0.7" text="제목">
+         <font>
+            <Font name="HCR Dotum Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="Update_Btn" layoutX="226.0" layoutY="511.0" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #535962;" text="수정" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="Board_List_Btn" layoutX="469.0" layoutY="511.0" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #eceff1;" text="  목록">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <JFXHamburger opacity="0.46" prefHeight="17.0" prefWidth="17.0" />
+         </graphic>
+      </JFXButton>
+      <Label layoutX="227.0" layoutY="96.0" text="의미있는 자원봉사 가치있는 당신" textFill="#ee6c6c">
+         <font>
+            <Font name="DX몽블랑라운드ExB" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="18.0" prefWidth="700.0" style="-fx-background-color: #b3ccc8;" />
+      <AnchorPane layoutY="562.0" prefHeight="18.0" prefWidth="700.0" style="-fx-background-color: #b3ccc8;" />
+      <JFXTextField fx:id="Up_Vb_Title_fd" focusColor="#f4f4f4" layoutX="120.0" layoutY="153.0" prefHeight="29.0" prefWidth="262.0" style="-fx-background-color: #f4f4f4;" unFocusColor="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="Delete_Btn" layoutX="346.0" layoutY="511.0" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #535962;" text="삭제" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CLOSE" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="507.0" layoutY="201.0" opacity="0.7" text="모집인원">
+         <font>
+            <Font name="HCR Dotum Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="Vb_sumpeople_fb" layoutX="587.0" layoutY="194.0" prefHeight="23.0" prefWidth="51.0" unFocusColor="WHITE">
+         <font>
+            <Font name="HCR Dotum Bold" size="15.0" />
+         </font></JFXTextField>
+   </children>
+</AnchorPane>

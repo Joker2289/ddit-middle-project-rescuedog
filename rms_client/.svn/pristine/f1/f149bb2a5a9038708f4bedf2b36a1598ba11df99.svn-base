@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.shelter.adopt_board.Request_view_controller">
+   <children>
+      <AnchorPane fx:id="tempPane" layoutY="8.0" prefHeight="44.0" prefWidth="1100.0">
+         <children>
+            <Text fill="#41474a" layoutX="59.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="입양 신청 심사">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="HCR Dotum" size="25.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="230.0" layoutY="17.0" prefHeight="27.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+            <Text fill="#979494" layoutX="253.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="등록한 유기견의 모든 입양 신청 내역을 확인 할 수 있습니다">
+               <font>
+                  <Font name="HCR Dotum Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="scPane" hbarPolicy="NEVER" layoutX="61.0" layoutY="186.0" prefHeight="400.0" prefWidth="978.0" vbarPolicy="ALWAYS">
+         <content>
+            <AnchorPane fx:id="Request_List_Pane" minHeight="0.0" minWidth="0.0" prefWidth="960.0" />
+         </content>
+      </ScrollPane>
+      <HBox layoutX="61.0" layoutY="152.0" prefHeight="34.0" prefWidth="978.0" style="-fx-background-color: #628290;">
+         <children>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="63.0" text="번호" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="194.0" text="대상 유기견" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="160.0" text="신청자 ID" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="146.0" text="신청자" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="82.0" text="나이" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="189.0" text="신청 날짜" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="142.0" text="신청 상태" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Text fill="#979494" layoutX="62.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 입양 신청을 한 회원의 정보를 확인하고 신중하게 심사 해주세요">
+         <font>
+            <Font name="HCR Dotum" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#979494" layoutX="60.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 리스트 클릭시 회원이 작성한 입양 신청서를 확인 할 수 있습니다">
+         <font>
+            <Font name="HCR Dotum" size="14.0" />
+         </font>
+      </Text>
+      <Label fx:id="Hide_Lbl" layoutX="379.0" layoutY="597.0" text=" " textFill="#979494">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

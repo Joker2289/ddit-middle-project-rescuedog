@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="560.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.mainpage.find_id.Find_id_controller">
+   <children>
+      <JFXTextField fx:id="Findid_Name_Txt" focusColor="#5c7893" layoutX="251.0" layoutY="253.0" prefHeight="38.0" prefWidth="260.0" style="-fx-background-color: #eceff1;" unFocusColor="#d7d7d7">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="Findid_Tel_Txt" focusColor="#5c7893" layoutX="251.0" layoutY="324.0" prefHeight="38.0" prefWidth="260.0" promptText="       " style="-fx-background-color: #eceff1;" unFocusColor="#dadada">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="216.0" layoutY="48.0" text="아이디 찾기" textFill="#393939">
+         <font>
+            <Font name="HCR Dotum" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="Findid_result_Lbl" layoutX="169.0" layoutY="387.0" prefHeight="49.0" prefWidth="223.0" text="   " textAlignment="CENTER" textFill="#5c8d89">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="Findid_Select_Com" focusColor="#5c7893" layoutX="251.0" layoutY="182.0" prefHeight="38.0" prefWidth="260.0" promptText="      SELECT" style="-fx-background-color: #eceff1;" unFocusColor="#f5f5f5" />
+      <JFXButton fx:id="Findid_Findid_Btn" layoutX="116.0" layoutY="465.0" prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #535962;" text="  아이디 찾기" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="Findid_Cancel_Btn" layoutX="297.0" layoutY="465.0" prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #eceff1;" text="   취소">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+      <Text layoutX="85.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" 전화번호로 찾기">
+         <font>
+            <Font name="HCR Dotum" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="∙">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="74.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="∙">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="92.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이름">
+         <font>
+            <Font name="HCR Dotum" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="74.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="∙">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="92.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="회원유형">
+         <font>
+            <Font name="HCR Dotum" size="19.0" />
+         </font>
+      </Text>
+      <Label layoutX="124.0" layoutY="89.0" text="가입하신 방법에 따라 아이디 찾기가 가능합니다." textFill="#838080">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

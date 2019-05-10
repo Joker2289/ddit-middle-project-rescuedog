@@ -1,0 +1,94 @@
+package kr.or.ddit.rms.mainpage.sign_up;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ibatis.sqlmap.client.SqlMapClient;
+
+import kr.or.ddit.rms.vo.CustomVO;
+import kr.or.ddit.rms.vo.MemberVO;
+import kr.or.ddit.rms.vo.ShelterVO;
+import kr.or.ddit.rms.xmls.XmlConnection;
+
+public class SignupDaoImpl implements ISignupDao {
+
+	private static SignupDaoImpl dao;
+	private SqlMapClient smc;
+
+	private SignupDaoImpl() {
+		smc = XmlConnection.getConnection();
+	}
+
+	public static SignupDaoImpl getInstance() {
+		if (dao == null) {
+			dao = new SignupDaoImpl();
+		}
+		return dao;
+	}
+
+	@Override
+	public int insertCustom(CustomVO vo) {
+		int num = 0;
+		try {
+			Object obj = smc.insert("custom.insertCustom", vo);
+			if (obj == null) {
+				num = 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return num;
+	}
+
+	@Override
+	public int insertMember(MemberVO vo) {
+		int num = 0;
+		try {
+			Object obj = smc.insert("member.insertMember", vo);
+			if (obj == null) {
+				num = 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return num;
+	}
+
+	@Override
+	public int insertShelter(ShelterVO vo) {
+		int num = 0;
+		try {
+			Object obj = smc.insert("shelter.insertShelter", vo);
+			if (obj == null) {
+				num = 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return num;
+	}
+
+	@Override
+	public List<ShelterVO> getShelterAll() {
+		List<ShelterVO> list = new ArrayList<ShelterVO>();
+		try {
+			list = smc.queryForList("shelter.getShelterAll");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<CustomVO> getCustomAll() {
+		List<CustomVO> list = new ArrayList<CustomVO>();
+		try {
+			list = smc.queryForList("custom.getCustomAll");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+}

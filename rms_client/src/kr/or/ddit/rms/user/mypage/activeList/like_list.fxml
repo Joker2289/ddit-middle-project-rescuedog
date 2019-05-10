@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.mypage.activeList.LikeListController">
+   <children>
+      <AnchorPane fx:id="tempPane" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="like_list_tv" layoutX="178.0" layoutY="58.0" prefHeight="377.0" prefWidth="744.0">
+              <columns>
+                  <TableColumn fx:id="like_list_numCol1" prefWidth="75.0" text="번호" />
+                <TableColumn fx:id="like_list_nameCol2" prefWidth="75.0" text="이름" />
+                <TableColumn fx:id="like_list_kindCol3" prefWidth="75.0" text="종" />
+                  <TableColumn fx:id="like_list_genderCol4" prefWidth="75.0" text="성별" />
+                  <TableColumn fx:id="like_list_chkCol5" prefWidth="142.0" text="입양유무" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Pagination fx:id="like_list_paging" layoutX="178.0" layoutY="58.0" prefHeight="435.0" prefWidth="744.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

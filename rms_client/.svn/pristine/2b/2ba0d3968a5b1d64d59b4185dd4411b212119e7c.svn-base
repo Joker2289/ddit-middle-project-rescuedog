@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.mypage.note.NoteController">
+   <children>
+      <AnchorPane fx:id="tempPane" layoutX="63.0" layoutY="59.0" prefHeight="415.0" prefWidth="675.0">
+         <children>
+            <Pagination fx:id="note_main_paging" layoutX="59.0" layoutY="51.0" prefHeight="365.0" prefWidth="603.0" />
+            <TableView fx:id="note_main_tableView" layoutX="70.0" layoutY="58.0" prefHeight="303.0" prefWidth="584.0">
+               <columns>
+                  <TableColumn fx:id="note_main_from_col1" prefWidth="145.0" text="보낸사람" />
+                  <TableColumn fx:id="note_main_title_col2" prefWidth="145.0" text="제목" />
+                  <TableColumn fx:id="note_main_date_col3" prefWidth="145.0" text="날짜" />
+                  <TableColumn fx:id="note_main_cnt_col4" prefWidth="145.0" text="읽기여부" />
+               </columns>
+            </TableView>
+            <Button fx:id="note_main_sel_btn" layoutX="437.0" layoutY="378.0" mnemonicParsing="false" text="선택삭제" />
+            <Button fx:id="note_main_selAll_btn" layoutX="509.0" layoutY="378.0" mnemonicParsing="false" text="전체삭제" />
+            <Button fx:id="note_main_send_btn" layoutX="579.0" layoutY="378.0" mnemonicParsing="false" text="쪽지 보내기" />
+            <VBox alignment="CENTER" layoutX="-9.0" layoutY="61.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Label text="선택" />
+                  <CheckBox fx:id="note_main_cb1" mnemonicParsing="false" />
+                  <CheckBox fx:id="note_main_cb2" mnemonicParsing="false" />
+                  <CheckBox fx:id="note_main_cb3" mnemonicParsing="false" />
+                  <CheckBox fx:id="note_main_cb4" mnemonicParsing="false" />
+                  <CheckBox fx:id="note_main_cb5" mnemonicParsing="false" />
+                  <CheckBox fx:id="note_main_cb6" mnemonicParsing="false" />
+                  <CheckBox fx:id="note_main_cb7" mnemonicParsing="false" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <Label layoutX="14.0" layoutY="33.0" text="읽은 쪽지 :" />
+            <Label fx:id="note_main_read" layoutX="85.0" layoutY="33.0" text="Label" />
+            <Label fx:id="note_main_notread" layoutX="223.0" layoutY="33.0" text="Label" />
+            <Label layoutX="135.0" layoutY="33.0" text="안 읽은 쪽지 : " />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

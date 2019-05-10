@@ -1,0 +1,127 @@
+package kr.or.ddit.rms.admin.service_center.notice;
+
+import java.net.URL;
+import java.rmi.RemoteException;
+import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.HTMLEditor;
+import kr.or.ddit.rms.main.ChangePane;
+import kr.or.ddit.rms.main.Main;
+import kr.or.ddit.rms.mainpage.login.Login_controller;
+import kr.or.ddit.rms.mainpage.main_page.Main_page_controller;
+import kr.or.ddit.rms.vo.NoticeVO;
+
+public class Notice_Admin_Add_Controller implements Initializable {
+
+	public static String notice_num;
+	// public static String fileName;
+
+	@FXML
+	AnchorPane servicePane;
+	@FXML
+	AnchorPane tempPane;
+	@FXML
+	AnchorPane loadPane;
+
+	@FXML
+	JFXTextField notice_title_txtF;
+	@FXML
+	JFXTextField notice_writer_txtF;
+	@FXML
+	HTMLEditor notice_content_txtA;
+	@FXML
+	JFXButton cancel_btn;
+	@FXML
+	JFXButton add_btn;
+
+	NoticeVO vo;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		notice_writer_txtF.setText(Login_controller.log_a.getAdmin_id());
+		add_btn.setOnAction(e -> addCheck(notice_title_txtF, notice_content_txtA)); // 등록
+		cancel_btn.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				ChangePane cp = Main_page_controller.fxmlLoad.getController();
+				cp.clearing();
+				ChangePane.changePane(getClass().getResource("notice_table.fxml"));
+				cp.add();
+			}
+		});
+
+	}
+
+	// 글 작성할때 빈칸 있는지 체크
+	private void addCheck(JFXTextField notice_title_txtF, HTMLEditor notice_content_txtA2) {
+		if (notice_title_txtF.getText().isEmpty()) { // 제목이 비어있을때
+			alertInfo("제목을 입력하세요.");
+		} else if (notice_content_txtA2.getHtmlText().isEmpty()) { // 내용이 비어있을때
+			alertInfo("내용을 입력하세요.");
+		} else {
+			NoticeVO vo = new NoticeVO();
+			vo.setAdmin_id(Login_controller.log_a.getAdmin_id());
+			vo.setNotice_num(Notice_Admin_Add_Controller.notice_num);
+			NoticeVO tempvo = new NoticeVO();
+			tempvo.setNotice_num(Notice_Admin_Add_Controller.notice_num);
+			alertConfirm("글이 등록되었습니다.");
+			vo.setContent(notice_content_txtA2.getHtmlText());
+			vo.setTitle(notice_title_txtF.getText());
+			try {
+				Main.n_a.insertNotice(vo);
+				ChangePane cp = Main_page_controller.fxmlLoad.getController();
+				cp.clearing();
+				ChangePane.changePane(getClass().getResource("notice_table.fxml"));
+				cp.add();
+			} catch (RemoteException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	public boolean alertConfirm(String ment) {
+		Alert alertConfirm = new Alert(AlertType.CONFIRMATION);
+
+		alertConfirm.setTitle("확인 창");
+		alertConfirm.setContentText(ment);
+
+		// Alert창을 보여주고 사용자가 누른 버튼 값 읽어오기
+		ButtonType confirmResult = alertConfirm.showAndWait().get();
+
+		if (confirmResult == ButtonType.OK) {
+			return true;
+		} else if (confirmResult == ButtonType.CANCEL) {
+			return false;
+		}
+		return false;
+	}
+
+	public void alertInfo(String temp) {
+		Alert alertInfo = new Alert(AlertType.INFORMATION);
+		alertInfo.setTitle("INFO");
+		alertInfo.setContentText(temp);
+		alertInfo.showAndWait();
+	}
+
+	public void alertError(String temp) {
+		Alert alertError = new Alert(AlertType.ERROR);
+		alertError.setTitle("ERROR");
+		alertError.setContentText(temp);
+		alertError.showAndWait();
+	}
+
+}

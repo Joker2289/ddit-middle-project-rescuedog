@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="kr.or.ddit.rms.user.mypage.note.NoteSendController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="58.0" fitWidth="72.0" layoutX="43.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="kr\or\ddit\rms\user\mypage\note\note.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="note_send_to_txtfield" layoutX="150.0" layoutY="39.0" prefHeight="23.0" prefWidth="233.0" />
+      <JFXTextField fx:id="note_send_title_txtField" layoutX="150.0" layoutY="80.0" prefHeight="23.0" prefWidth="233.0" />
+      <JFXTextArea fx:id="note_send_textarea" layoutX="54.0" layoutY="106.0" prefHeight="216.0" prefWidth="407.0" />
+      <JFXButton fx:id="note_send_sendBtn" layoutX="187.0" layoutY="340.0" text="보내기" />
+      <JFXButton fx:id="note_send_cancleBtn" layoutX="277.0" layoutY="340.0" text="취소" />
+   </children>
+</AnchorPane>

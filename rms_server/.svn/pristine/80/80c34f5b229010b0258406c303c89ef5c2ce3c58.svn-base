@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<!-- 
+	DB와 연결하는 정보를 properties파일에 설정해 놓고 이 properties파일의
+	내용을 읽어와 설정한다.
+	 -->
+	<properties resource="SqlMapConfig.properties" />
+	
+	<!-- ibatis를 처리하기 위한 환경설정 부분 -->
+	<settings cacheModelsEnabled="true" enhancementEnabled="true"
+		lazyLoadingEnabled="true" maxRequests="32" maxSessions="10"
+		maxTransactions="5" useStatementNamespaces="true" />
+
+	<!-- 
+	VO클래스등의 이름이 패키지명까지 기술하면 길어지는데 이것을 간단히
+	표시하기 위해서 alias를 지정할 수 있다.
+	형식) <typeAlias alias="alias명" type="클래스의 풀네임"/>
+	 -->
+	<!-- 1 basic 경로-->
+	<!-- <typeAlias alias="memVO" type="basic.spon_logVO"/> -->
+	
+	<!-- 2 ibatis.spon_log.vo 패키지 경로 -->
+	<typeAlias alias="AdminVO" type="kr.or.ddit.rms.vo.AdminVO"/>
+	<typeAlias alias="Adopt_LogVO" type="kr.or.ddit.rms.vo.Adopt_LogVO"/>
+	<typeAlias alias="Ask_LogVO" type="kr.or.ddit.rms.vo.Ask_LogVO"/>
+	<typeAlias alias="BlacklistVO" type="kr.or.ddit.rms.vo.BlacklistVO"/>
+	<typeAlias alias="Board_classVO" type="kr.or.ddit.rms.vo.Board_classVO"/>
+	<typeAlias alias="Board_detailVO" type="kr.or.ddit.rms.vo.Board_detailVO"/>
+	<typeAlias alias="Buy_LogVO" type="kr.or.ddit.rms.vo.Buy_LogVO"/>
+	<typeAlias alias="CardVO" type="kr.or.ddit.rms.vo.CardVO"/>
+	<typeAlias alias="CartVO" type="kr.or.ddit.rms.vo.CartVO"/>
+	<typeAlias alias="CommentsVO" type="kr.or.ddit.rms.vo.CommentsVO"/>
+	<typeAlias alias="CustomVO" type="kr.or.ddit.rms.vo.CustomVO"/>
+	<typeAlias alias="HospitalVO" type="kr.or.ddit.rms.vo.HospitalVO"/>
+	<typeAlias alias="MemberVO" type="kr.or.ddit.rms.vo.MemberVO"/>
+	<typeAlias alias="MissingVO" type="kr.or.ddit.rms.vo.MissingVO"/>
+	<typeAlias alias="NoteVO" type="kr.or.ddit.rms.vo.NoteVO"/>
+	<typeAlias alias="NoticeVO" type="kr.or.ddit.rms.vo.NoticeVO"/>
+	<typeAlias alias="PostVO" type="kr.or.ddit.rms.vo.PostVO"/>
+	<typeAlias alias="ProdVO" type="kr.or.ddit.rms.vo.ProdVO"/>
+	<typeAlias alias="Protected_boardVO" type="kr.or.ddit.rms.vo.Protected_boardVO"/>
+	<typeAlias alias="RescuedogVO" type="kr.or.ddit.rms.vo.RescuedogVO"/>
+	<typeAlias alias="ShelterVO" type="kr.or.ddit.rms.vo.ShelterVO"/>
+	<typeAlias alias="Spon_LogVO" type="kr.or.ddit.rms.vo.Spon_LogVO"/>
+	<typeAlias alias="SponVO" type="kr.or.ddit.rms.vo.SponVO"/>
+	<typeAlias alias="Volunteer_BoardVO" type="kr.or.ddit.rms.vo.Volunteer_BoardVO"/>
+	<typeAlias alias="Volunteer_LogVO" type="kr.or.ddit.rms.vo.Volunteer_LogVO"/>
+	<typeAlias alias="ZipVO" type="kr.or.ddit.rms.vo.ZipVO"/>
+	
+	<!-- 
+	DB와의 연결을 처리하는 부분
+	SqlMapConfig.properties에 설정해 놓은 정보를 이용하여 구성한다.
+	 -->
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+		<!--
+			각종 설정을 직접 기술해서 처리할 수도 있다. 
+			<property name="JDBC.Driver" value="oracle.jdbc.driver.OracleDriver" />
+		 -->
+			<property name="JDBC.Driver" value="${driver}" />
+			<property name="JDBC.ConnectionURL" value="${url}" />
+			<property name="JDBC.Username" value="${username}" />
+			<property name="JDBC.Password" value="${password}" />
+		</dataSource>
+	</transactionManager>
+	
+	<!-- 
+	실제 처리할 SQL문은 xml문서로 따로 만든 후
+	그 xml문서와 아래와 같이 연결하여 사용한다.
+	형식) <sqlMap resource="경로명/파일명.xml"/> 
+	-->
+	<sqlMap resource="kr/or/ddit/rms/xmls/admin.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/adopt_log.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/ask_log.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/blackList.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/board_class.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/board_detail.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/buy_log.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/card.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/cart.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/comments.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/custom.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/freeboard_detail.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/hospital.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/member.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/missing.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/note.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/notice.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/post.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/prod.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/protected.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/rescuedog.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/review_detail.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/share_detail.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/shelter.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/spon.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/spon_log.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/volunteer_board.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/volunteer_log.xml"/>
+	<sqlMap resource="kr/or/ddit/rms/xmls/zip.xml"/>
+<!-- 	<sqlMap resource="ibatis/spon_log/spon_logMain.xml"/> -->
+</sqlMapConfig>
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.testapps.*?>
+<?import java.lang.*?>
+
+
+<AnchorPane fx:controller="kr.or.ddit.rms.shelter.missing_animal_board.ShowMapSController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#607f8d" layoutX="206.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="실종위치 지도보기">
+         <font>
+            <Font name="HCR Dotum Bold" size="23.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="195.0" layoutY="28.0" prefHeight="22.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+      <AnchorPane layoutX="406.0" layoutY="28.0" prefHeight="22.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+      <ImageView fx:id="Map_View" fitHeight="419.0" fitWidth="499.0" layoutX="52.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="Close_Btn" layoutX="250.0" layoutY="504.0" prefHeight="41.0" prefWidth="107.0" style="-fx-background-color: #535962;" text=" 닫기" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CLOSE" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

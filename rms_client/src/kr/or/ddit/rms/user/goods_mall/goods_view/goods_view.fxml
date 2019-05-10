@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.goods_mall.goods_view.U_goods_view_controller">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" layoutY="113.0" prefHeight="506.0" prefWidth="1100.0">
+         <content>
+          <AnchorPane fx:id="Good_View_Pane" minHeight="0.0" minWidth="0.0" prefWidth="1098.0">
+               <children>
+                  <JFXDrawer fx:id="Goods_Bascket_Drawer" defaultDrawerSize="260.0" direction="RIGHT" layoutX="816.0" layoutY="-1.0" prefHeight="480.0" prefWidth="268.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <AnchorPane layoutY="-1.0" prefHeight="114.0" prefWidth="1100.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <JFXTextField fx:id="Goods_Search_Txt" alignment="CENTER" focusColor="WHITE" layoutX="345.0" layoutY="63.0" prefHeight="36.0" prefWidth="436.0" promptText="Search" style="-fx-text-inner-color: ##5a5a5a; -fx-prompt-text-fill: #000000; -fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="16.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="503.0" layoutY="17.0" style="-fx-font-family: &quot;DX하얀토끼B&quot;; -fx-font-size: 33;" text="Goods Mall" textFill="#393939">
+               <font>
+                  <Font name="DX하얀토끼B" size="33.0" />
+               </font>
+            </Label>
+            <Label fx:id="Hide_Lbl" layoutX="120.0" layoutY="34.0" text=" ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="Goods_Search_Btn" layoutX="787.0" layoutY="63.0" prefHeight="15.0" prefWidth="22.0" text=" ">
+               <graphic>
+                  <FontAwesomeIcon fill="#e84545" iconName="SEARCH" size="2em" text="" wrappingWidth="34.14285659790039" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

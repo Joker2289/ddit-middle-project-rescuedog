@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextArea fx:id="main_info_ta" layoutX="14.0" layoutY="14.0" prefHeight="142.0" prefWidth="683.0" />
+      <AnchorPane layoutX="766.0" layoutY="22.0" prefHeight="200.0" prefWidth="277.0">
+         <children>
+            <Label fx:id="main_name_label" layoutX="130.0" layoutY="53.0" prefHeight="15.0" prefWidth="42.0" />
+            <Label layoutX="183.0" layoutY="53.0" text="님" />
+            <ImageView fx:id="main_name_img" fitHeight="103.0" fitWidth="113.0" layoutX="14.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="kr/or/ddit/rms/admin/free_board/ddd1.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="layout_name_label11" layoutX="130.0" layoutY="79.0" prefHeight="15.0" prefWidth="42.0" text="쪽지">
+               <font>
+                  <Font name="NanumGothic" size="12.0" />
+               </font></Label>
+            <Label fx:id="main_note_label" layoutX="174.0" layoutY="79.0" prefHeight="15.0" prefWidth="42.0" />
+         </children>
+      </AnchorPane>
+      <Pagination fx:id="Table_search_page" layoutX="14.0" layoutY="175.0" prefHeight="442.0" prefWidth="683.0" />
+      <TableView fx:id="notice_table" layoutX="14.0" layoutY="175.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="683.0">
+        <columns>
+          <TableColumn fx:id="Table_notice_col1" prefWidth="75.0" text="번호" />
+          <TableColumn fx:id="Table_notice_col2" prefWidth="75.0" text="제목" />
+            <TableColumn fx:id="Table_notice_col3" prefWidth="75.0" text="작성자" />
+            <TableColumn fx:id="Table_notice_col4" prefWidth="75.0" text="작성일" />
+            <TableColumn fx:id="Table_notice_col5" prefWidth="75.0" text="조회" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <ImageView fx:id="main_ad_img" fitHeight="349.0" fitWidth="270.0" layoutX="746.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="kr/or/ddit/rms/admin/free_board/ddd1.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

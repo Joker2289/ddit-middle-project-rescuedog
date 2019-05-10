@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할 때 같이 사용된다. -->			
+<sqlMap namespace="missing">
+	<!-- 
+		이 영역에 sql문에 맞는 태그를 사용하여 SQL문을 기술한다.
+		
+		사용할 수 있는 기본적인 태그들
+		<select> ~~~ </select>
+		<insert> ~~~ </insert>
+		<update> ~~~ </update>
+		<delete> ~~~ </delete>
+	 -->
+	 
+	 <!-- 
+	 	위 태그에서 사용되는 속성들
+	 		1) id속성 : 해당 태그를 호출할 때 <sqlMap>태그의 namespace와
+	 							  연결하여 사용하는 이름
+	 		2) parameterClass속성 : sql문에 사용될 데이터가 들어있는 객체를
+	 							  지정한다. 
+	 							  (보통 VO클래스, 자바의 자료형이름 등이 사용된다.)
+	 							  (typeAlia로 지정한 alias명을 사용할 수 있다.)							  
+			3) resultClass속성 : select문을 실행한 결과를 담을 객체를 지정한다.
+									(보통 VO클래스나 자바의 자료형이름을 사용한다.)							 
+	 -->
+	 
+	 <!-- insert 연습 -->
+	 <insert id="insertmissing" parameterClass="MissingVO">
+	 		insert into miss_board (board_num,title,upd_date,mem_id,img,com_idx,miss_loc,content,miss_loc_img)
+	 		values (#board_num#, #title#, sysdate, #mem_id#,
+	 		#img#, 0, #miss_loc#,#content#,#miss_loc_img#)
+	 </insert>
+	 
+	 <!-- update 연습 (parameterClass에 alias를 지정할 수 있다.) -->
+	 <update id="updatemissing" parameterClass="MissingVO">
+	 		update miss_board set board_num=#board_num#,
+	 										title=#title#,
+	 										upd_date=to_date(#upd_date#,'yyyy-MM-dd HH24:MI:SS'),
+	 										mem_id=#mem_id#,
+	 										img=#img#,
+	 										com_idx=#com_idx#,
+	 										miss_loc=#miss_loc#,
+	 										content=#content#,
+	 										miss_loc_img=#miss_loc_img#
+	 		where mem_id=#mem_id#
+	 </update>
+	 
+	 <update id="updatemissing_free" parameterClass="MissingVO">
+	 		update miss_board set 			board_num=#board_num#,
+	 										title=#title#,
+	 										mem_id=#mem_id#,
+	 										miss_loc=#miss_loc#,
+	 										img=#img#,
+	 										content=#content#,
+	 										com_idx=#com_idx#,
+	 										miss_loc_img=#miss_loc_img#
+	 		where board_num=#board_num#
+	 </update>
+	 
+	 <!-- 
+	 		parameterClass에 설정되는 값이 단일값(즉 1개의 데이터)이면
+	 		SQL문에 이 값을 나타내는 변수는 특별히 이름이 정해지지 않았다.
+	 		(즉, 사용자가 임의로 지정할 수 있다.)
+	 -->
+	 <!-- delete 연습 -->
+	 <delete id="deletemissing" parameterClass="MissingVO">
+<!-- 	 		delete from mymember where mem_id=#mem_id# -->
+			delete from miss_board where board_num=#board_num# and 
+											mem_id=#mem_id#
+	 </delete>
+	 
+	 <!-- select 연습 -->
+	 <select id="getmissingAll" resultClass="MissingVO">
+	 		select board_num,title,upd_date,mem_id,img,com_idx,miss_loc,content,miss_loc_img
+	 		from miss_board 
+	 		order by board_num
+	<!--  		where mem_id=#mem_id# -->
+	 </select>
+	 
+	 <select id="getmissing" resultClass="int" parameterClass="String">
+	 		select count(*) from miss_board where board_num=#board_num#
+	 </select>
+	 		
+	 <select id="getmissingTextSearch" resultClass="MissingVO" parameterClass="MissingVO">
+	 			select board_num,title,upd_date,mem_id,img,com_idx,miss_loc,content,miss_loc_img 
+	 		from miss_board 
+	 		<dynamic prepend="where">
+		 		<isNotEmpty property="title" prepend="or">
+					title like '%' || #title# || '%'
+					
+				</isNotEmpty>
+					<isNotEmpty property="mem_id" prepend="or">
+	 				mem_id like '%' || #mem_id# || '%'
+					
+	 			</isNotEmpty>
+                <isNotEmpty property="miss_loc" prepend="or">
+	 				miss_loc like '%' || #miss_loc# || '%'
+					
+	 			</isNotEmpty>
+                <isNotEmpty property="content" prepend="or">
+	 				content like '%' || #content# || '%'
+					
+	 			</isNotEmpty>
+			</dynamic>
+	 </select>
+	 <select id="getSeq" resultClass="String">
+	 	select max(board_num) as board_num from miss_board
+	 </select>
+	 
+	 
+	 
+	 		
+	 <select id="getSearchmissing" parameterClass="MissingVO" resultClass="MissingVO">
+	 		select board_num ,title,upd_date,mem_id,img,com_idx,miss_loc,content,miss_loc_img
+from miss_board
+	 		<dynamic prepend="where">
+		 		<isNotEmpty property="board_num" prepend="and">
+					board_num = #board_num#
+				</isNotEmpty>
+					<isNotEmpty property="title" prepend="and">
+	 				title = #title#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="upd_date" prepend="and">
+					upd_date = #upd_date#
+				</isNotEmpty>
+				<isNotEmpty property="mem_id" prepend="and">
+	 				mem_id = #mem_id#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="img" prepend="and">
+					img = #img#
+				</isNotEmpty>
+					<isNotEmpty property="com_idx" prepend="and">
+	 				com_idx = #com_idx#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="miss_loc" prepend="and">
+					miss_loc = #miss_loc#
+				</isNotEmpty>
+				<isNotEmpty property="content" prepend="and">
+					content = #content#
+				</isNotEmpty>
+				<isNotEmpty property="miss_loc_img" prepend="and">
+					miss_loc_img = #miss_loc_img#
+				</isNotEmpty>
+				
+	 			
+	 
+	 			
+	 		</dynamic>
+	 </select>
+	 			
+
+</sqlMap>			
+
+
+
+
+

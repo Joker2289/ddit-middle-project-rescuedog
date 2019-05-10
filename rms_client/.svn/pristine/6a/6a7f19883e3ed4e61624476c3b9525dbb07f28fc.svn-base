@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="700.0" style="-fx-background-color: #ffffff;" styleClass="Volunteer_deteail" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextArea fx:id="Board_Content" focusColor="#7682a4" layoutX="59.0" layoutY="281.0" prefHeight="204.0" prefWidth="582.0" styleClass="Volunteer_Area" unFocusColor="#b5b5b5" />
+      <Label fx:id="Date_lb" layoutX="211.0" layoutY="237.0" prefHeight="15.0" prefWidth="152.0" text="3">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></Label>
+      <Label fx:id="LookUp_lb" layoutX="425.0" layoutY="237.0" opacity="0.7" prefHeight="15.0" prefWidth="36.0" text="label">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></Label>
+      <ImageView fx:id="dog_img" fitHeight="90.0" fitWidth="201.0" layoutX="393.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="Possible_Btn" layoutX="244.0" layoutY="508.0" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #535962;" text=" 승인허가" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <AnchorPane layoutY="562.0" prefHeight="18.0" prefWidth="700.0" style="-fx-background-color: #b3ccc8;" />
+      <AnchorPane prefHeight="18.0" prefWidth="700.0" style="-fx-background-color: #b3ccc8;" />
+      <Label layoutX="280.0" layoutY="49.0" text="봉사신청서" textFill="#7ca196">
+         <font>
+            <Font name="DX몽블랑라운드ExB" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="149.0" opacity="0.7" text="제목">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="537.0" layoutY="148.0" opacity="0.7" text="모집인원">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="195.0" opacity="0.7" text="작성자">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="164.0" layoutY="237.0" opacity="0.7" text="작성일">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Line endX="490.0" layoutX="161.0" layoutY="137.0" startX="-100.0" stroke="#bcbcbc" />
+      <Line endX="500.0" layoutX="150.0" layoutY="179.0" startX="-90.0" stroke="#bcbcbc" />
+      <Label fx:id="sumpeople_lb" layoutX="603.0" layoutY="148.0" prefHeight="15.0" prefWidth="36.0" text="label">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="Page_No" layoutX="122.0" layoutY="237.0" opacity="0.7" prefHeight="15.0" prefWidth="36.0" text="label">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="235.0" opacity="0.7" text="글 번호">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="373.0" layoutY="237.0" opacity="0.7" text="조회수">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="Title_lb" layoutX="122.0" layoutY="137.0" prefHeight="42.0" prefWidth="372.0" text="title">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="Writer_lb" layoutX="603.0" layoutY="193.0" prefHeight="15.0" prefWidth="48.0" text="label">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Line endX="487.0" layoutX="161.0" layoutY="225.0" startX="-100.0" stroke="#bcbcbc" />
+      <Label layoutX="537.0" layoutY="193.0" opacity="0.7" text="신청인">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="Writer_lb2" layoutX="122.0" layoutY="195.0" prefHeight="15.0" prefWidth="48.0" text="label">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="537.0" layoutY="116.0" opacity="0.7" text="신청인원" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="people_lb" layoutX="603.0" layoutY="116.0" prefHeight="15.0" prefWidth="36.0" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="Impossible_Btn" layoutX="380.0" layoutY="508.0" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #535962;" text=" 승인불가" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CLOSE" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="Board_List_Btn" layoutX="545.0" layoutY="508.0" prefHeight="35.0" prefWidth="117.0" style="-fx-background-color: #eceff1;" text="   목록">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <JFXHamburger opacity="0.46" prefHeight="17.0" prefWidth="17.0" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

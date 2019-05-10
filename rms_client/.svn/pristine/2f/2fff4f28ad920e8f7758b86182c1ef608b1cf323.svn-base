@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="kr.or.ddit.rms.user.mypage.note.NoteMainDetailController" fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="tempPane" layoutY="21.0" prefHeight="458.0" prefWidth="788.0">
+         <children>
+            <GridPane layoutX="101.0" layoutY="60.0" prefHeight="292.0" prefWidth="568.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="61.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="162.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="68.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="141.0" minHeight="9.0" prefHeight="9.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="191.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="228.0" minHeight="10.0" prefHeight="228.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="보낸사람 :" />
+                  <Label text="받은시간 :" GridPane.rowIndex="1" />
+                  <Label fx:id="note_detail_from" text="Label" GridPane.columnIndex="1" />
+                  <Label fx:id="note_detail_time" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="제목 :" GridPane.rowIndex="2" />
+                  <JFXTextField fx:id="note_detail_title_txtfield" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="내용 :" GridPane.rowIndex="3" />
+                  <JFXTextArea fx:id="note_detail_txtarea" prefHeight="231.0" prefWidth="497.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <JFXButton fx:id="note_detail_sendBtn" layoutX="329.0" layoutY="387.0" text="답장" />
+            <JFXButton fx:id="note_detail_delBtn" layoutX="379.0" layoutY="387.0" text="삭제" />
+            <JFXButton fx:id="note_detail_listBtn" layoutX="432.0" layoutY="387.0" text="목록" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

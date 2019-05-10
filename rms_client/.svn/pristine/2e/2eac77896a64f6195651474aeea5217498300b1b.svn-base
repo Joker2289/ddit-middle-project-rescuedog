@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.donation_board.DonationBoard_ChoiceController">
+   <children>
+      <Text layoutX="87.0" layoutY="190.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="후원방법">
+         <font>
+            <Font name="HCR Dotum" size="22.0" />
+         </font>
+      </Text>
+      <JFXRadioButton fx:id="card_Btn" layoutX="218.0" layoutY="154.0" text="카드결제">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="choice" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="point_Btn" layoutX="218.0" layoutY="189.0" text="포인트결제" toggleGroup="$choice">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+      </JFXRadioButton>
+      <JFXButton fx:id="Confirm_Btn" layoutX="76.0" layoutY="308.0" prefHeight="28.0" prefWidth="130.0" style="-fx-background-color: #535962;" text="  확인" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="Cancel_Btn" layoutX="224.0" layoutY="308.0" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: #eceff1;" text="  취소">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+      <Text layoutX="140.0" layoutY="75.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="후원하기 ">
+         <font>
+            <Font name="HCR Dotum" size="26.0" />
+         </font>
+      </Text>
+      <FontAwesomeIcon fill="#fb7777" iconName="HEART" layoutX="260.0" layoutY="77.0" size="2em" />
+   </children>
+</AnchorPane>

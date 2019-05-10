@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할 때 같이 사용된다. -->			
+<sqlMap namespace="buy_log">
+	<!-- 
+		이 영역에 sql문에 맞는 태그를 사용하여 SQL문을 기술한다.
+		
+		사용할 수 있는 기본적인 태그들
+		<select> ~~~ </select>
+		<insert> ~~~ </insert>
+		<update> ~~~ </update>
+		<delete> ~~~ </delete>
+	 -->
+	 
+	 <!-- 
+	 	위 태그에서 사용되는 속성들
+	 		1) id속성 : 해당 태그를 호출할 때 <sqlMap>태그의 namespace와
+	 							  연결하여 사용하는 이름
+	 		2) parameterClass속성 : sql문에 사용될 데이터가 들어있는 객체를
+	 							  지정한다. 
+	 							  (보통 VO클래스, 자바의 자료형이름 등이 사용된다.)
+	 							  (typeAlia로 지정한 alias명을 사용할 수 있다.)							  
+			3) resultClass속성 : select문을 실행한 결과를 담을 객체를 지정한다.
+									(보통 VO클래스나 자바의 자료형이름을 사용한다.)							 
+	 -->
+	 
+	 <!-- insert 연습 -->
+	 <insert id="insertBuy_log" parameterClass="Buy_logVO">
+	 		insert into buy_log (buy_num,prod_name,custom_id,buy_date,price,
+	 		buy_quan,refund_check,card_name,prod_num)
+	 		values (#buy_num#, #prod_name#,#custom_id#, sysdate,
+	 		#price#, #buy_quan#, #refund_check#, #card_name#, #prod_num#)
+	 </insert>
+	 
+	 <!-- update 연습 (parameterClass에 alias를 지정할 수 있다.) -->
+	 <update id="updateBuy_log" parameterClass="Buy_logVO">
+	 		update buy_log set buy_num=#buy_num#,
+	 										prod_name=#prod_name#,
+	 										custom_id=#custom_id#,
+	 										buy_date=to_date(#buy_date#,'yyyy-MM-dd HH24:MI:SS'),
+	 										price=#price#,
+	 										buy_quan=#buy_quan#,
+	 										refund_check=#refund_check#,
+	 										card_name=#card_name#,
+	 										prod_num=#prod_num#
+	 		where buy_num=#buy_num#
+	 </update>
+	 
+	 <update id="updateRefund_check" parameterClass="Buy_logVO">
+	 		update buy_log set 
+	 						refund_check=#refund_check#
+	 		where buy_num=#buy_num#
+	 </update>
+	 
+	 <!-- 
+	 		parameterClass에 설정되는 값이 단일값(즉 1개의 데이터)이면
+	 		SQL문에 이 값을 나타내는 변수는 특별히 이름이 정해지지 않았다.
+	 		(즉, 사용자가 임의로 지정할 수 있다.)
+	 -->
+	 <!-- delete 연습 -->
+	 <delete id="deleteBuy_log" parameterClass="String">
+<!-- 	 		delete from mymember where mem_id=#mem_id# -->
+			delete from buy_log where buy_num=#sss# 
+	 </delete>
+	 
+	 <!-- select 연습 -->
+	 <select id="getBuy_logAll" resultClass="Buy_logVO">
+	 		select buy_num,prod_name,custom_id,buy_date,price,
+	 		buy_quan,refund_check,card_name,prod_num, (price * buy_quan) as all_price from buy_log order by buy_num
+	 </select>
+	  
+	 <select id="getBuyTo" resultClass="Buy_logVO" parameterClass="String">
+	 		select buy_num,prod_name,custom_id,buy_date,price,
+	 		buy_quan,refund_check,card_name,prod_num,(price * buy_quan) as all_price from buy_log where custom_id=#custom_id#
+	 </select>
+	 
+	 <select id="getBuy_log" resultClass="int" parameterClass="String">
+	 		select count(*) from buy_log where buy_num=#buy_num#
+	 </select>
+	 
+	 <select id="getBuy_num" resultClass="String">
+	 		select max(buy_num) as buy_num from buy_log
+	 </select>
+	 
+	 <select id="getBetweenProd" resultClass="Buy_logVO" parameterClass="Buy_logVO">
+	 		select buy_num,prod_name,custom_id,buy_date,price,
+	 		buy_quan,refund_check,card_name,prod_num , (price * buy_quan) as all_price
+	 		from buy_log 
+	 		where to_date(buy_date,'yy/mm/dd') between to_date(#pre_date#,'yy/mm/dd')
+	 		and to_date(#post_date#,'yy/mm/dd')
+	 		and	custom_id = #custom_id#
+	 </select>  
+	 
+	 <select id="getBetweenSell" resultClass="Buy_logVO" parameterClass="Buy_logVO">
+	 		select buy_num,prod_name,custom_id,buy_date,price,
+	 		buy_quan,refund_check,card_name,prod_num 
+	 		from buy_log 
+	 		where to_date(buy_date,'yy/mm/dd') between to_date(#pre_date#,'yy/mm/dd')
+	 		and to_date(#post_date#,'yy/mm/dd')
+	 </select>  
+	 
+	 		
+	 <select id="getSearchBuy_log" parameterClass="Buy_logVO" resultClass="Buy_logVO">
+	 		select buy_num,prod_name,custom_id,buy_date,price,
+	 		buy_quan,refund_check,card_name,prod_num from buy_log
+	 		<dynamic prepend="where">
+		 		<isNotEmpty property="buy_num" prepend="and">
+					buy_num = #buy_num#
+				</isNotEmpty>
+					<isNotEmpty property="prod_name" prepend="and">
+	 				prod_name = #prod_name#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="custom_id" prepend="and">
+					custom_id = #custom_id#
+				</isNotEmpty>
+				<isNotEmpty property="buy_date" prepend="and">
+	 				buy_date = #buy_date#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="price" prepend="and">
+					price = #price#
+				</isNotEmpty>
+	 			<isNotEmpty property="buy_quan" prepend="and">
+					buy_quan = #buy_quan#
+				</isNotEmpty>
+				<isNotEmpty property="refund_check" prepend="and">
+	 				refund_check = #refund_check#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="card_name" prepend="and">
+					card_name = #card_name#
+				</isNotEmpty>
+				<isNotEmpty property="prod_num" prepend="and">
+	 				prod_num = #prod_num#
+	 			</isNotEmpty>
+	 		</dynamic>
+	 </select>
+
+</sqlMap>			
+
+
+
+
+

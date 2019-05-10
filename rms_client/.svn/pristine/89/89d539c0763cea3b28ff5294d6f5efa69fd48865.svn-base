@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.volunteer_board.VolunteerBoard_Controller">
+   <children>
+      <TableView fx:id="VolunteerBoard_tb" layoutX="127.0" layoutY="78.0" prefHeight="344.0" prefWidth="880.0" stylesheets="@../../../../../../../bin/kr/or/ddit/rms/user/volunteer_board/app.css">
+         <columns>
+            <TableColumn fx:id="VolunteerBoard_No" prefWidth="75.0" text="번호" />
+            <TableColumn fx:id="VolunteerBoard_Title" prefWidth="523.0" text="제목" />
+            <TableColumn fx:id="VolunteerBoard_Writer" prefWidth="86.0" text="작성자" />
+            <TableColumn fx:id="VolunteerBoard_Date" prefWidth="103.0" text="작성일" />
+            <TableColumn fx:id="VolunteerBoard_Lookup" prefWidth="92.0" text="조회" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="VolunteerSerch_fd" layoutX="758.0" layoutY="31.0" prefHeight="29.0" prefWidth="209.0" />
+      <Pagination fx:id="Table_search_page" layoutX="127.0" layoutY="79.0" prefHeight="430.0" prefWidth="880.0" />
+      <JFXButton fx:id="VolunteerSerch_btn" layoutX="967.0" layoutY="40.0" text=" ">
+         <graphic>
+            <FontAwesomeIcon fx:id="Serch_Btn" fill="#c98f8f" iconName="SEARCH" size="1.4em" text="" wrappingWidth="25.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

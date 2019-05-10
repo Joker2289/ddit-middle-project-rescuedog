@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="935.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.goods_mall.orderOrder_view_controller">
+   <children>
+    <AnchorPane fx:id="Order_Main_Pane" minHeight="0.0" minWidth="0.0" prefHeight="496.0" prefWidth="934.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <JFXTextField fx:id="Order_Request_Txt" alignment="BOTTOM_LEFT" focusColor="#e13c3c" layoutX="615.0" layoutY="225.0" prefHeight="30.0" prefWidth="280.0" unFocusColor="#00000022">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="495.0" layoutY="230.0" text="요청 사항">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="73.0" prefHeight="22.0" prefWidth="113.0" text="구매자 정보">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="77.0" layoutY="124.0" text="이름 ">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="63.0" layoutY="166.0" text="이메일 ">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Order_Name_Lbl" layoutX="137.0" layoutY="121.0" prefHeight="26.0" prefWidth="123.0" text="박정권">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Order_Email_Lbl" layoutX="137.0" layoutY="163.0" prefHeight="26.0" prefWidth="258.0" text="pjk2289@naver.com">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="209.0" prefHeight="26.0" prefWidth="77.0" text="핸드폰번호 ">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Order_Tel_Lbl" layoutX="135.0" layoutY="209.0" prefHeight="26.0" prefWidth="258.0" text="01044332289">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <AnchorPane prefHeight="50.0" prefWidth="934.0" style="-fx-background-color: #F0D1C2;">
+               <children>
+                  <Label layoutX="48.0" layoutY="9.0" text="주문 / 결제" textFill="#605d5d">
+                     <font>
+                        <Font name="HCR Dotum" size="23.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIcon fill="#605d5d" iconName="WON" layoutX="14.0" layoutY="37.0" size="2em" wrappingWidth="34.14285659790039" />
+                  <Label fx:id="Order_Message_Lbl" layoutX="476.0" layoutY="18.0" text=" " textFill="#d32121">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="27.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="Close_Btn" layoutX="856.0" layoutY="6.0" prefHeight="16.0" prefWidth="0.0" text=" ">
+                     <graphic>
+                        <FontAwesomeIcon fill="#605d5d" iconName="CLOSE" size="2.5em" />
+                     </graphic>
+                  </JFXButton>
+                  <Label fx:id="Order_Amount_Lbl" layoutX="195.0" layoutY="9.0" prefHeight="33.0" prefWidth="52.0" text=" " textFill="#605d5d">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="35.0" layoutY="300.0" prefHeight="23.0" prefWidth="83.0" text="결제 정보">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="Order_Price_Lbl2" layoutX="133.0" layoutY="339.0" prefHeight="26.0" prefWidth="123.0" text="20000원">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="342.0" text="총 결제 금액">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="380.0" text="적립 포인트">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Order_Point_Lbl" layoutX="133.0" layoutY="377.0" prefHeight="26.0" prefWidth="123.0" text="20000원">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="Order_Selcard_Comb" focusColor="#e13c3c" layoutX="494.0" layoutY="310.0" prefHeight="27.0" prefWidth="90.0" promptText="카드사선택" unFocusColor="#00000069" />
+            <JFXTextField fx:id="Order_Card1_Txt" alignment="CENTER" focusColor="#e13c3c" layoutX="680.0" layoutY="350.0" prefHeight="11.0" prefWidth="62.0" unFocusColor="#0000001b">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="499.0" layoutY="355.0" text="카드번호 ">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="Order_Card2_Txt" alignment="CENTER" focusColor="#e13c3c" layoutX="606.0" layoutY="350.0" prefHeight="30.0" prefWidth="62.0" unFocusColor="#00000025">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="Order_Card3_Txt" alignment="CENTER" focusColor="#e13c3c" layoutX="757.0" layoutY="345.0" prefHeight="34.0" prefWidth="62.0" unFocusColor="#00000025">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="Order_Card4_Txt" alignment="CENTER" focusColor="#e13c3c" layoutX="829.0" layoutY="346.0" prefHeight="34.0" prefWidth="62.0" unFocusColor="#00000025">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="523.0" layoutY="394.0" text="CVC">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="Order_CVC_Txt" alignment="CENTER" focusColor="#e13c3c" layoutX="606.0" layoutY="382.0" prefHeight="34.0" prefWidth="62.0" unFocusColor="#00000023">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="692.0" layoutY="392.0" prefHeight="26.0" prefWidth="123.0" text="(카드 뒷면 3자리)" textFill="#00000070">
+               <font>
+                  <Font name="HCR Dotum" size="10.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutY="452.0" prefHeight="44.0" prefWidth="934.0" style="-fx-background-color: #F0D1C2;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="44.0" prefWidth="163.0" text="총 결제 금액" textFill="#605d5d">
+                     <font>
+                        <Font name="HCR Dotum" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Order_Price_Lbl" alignment="CENTER" prefHeight="44.0" prefWidth="113.0" text="27000" textFill="#605d5d">
+                     <font>
+                        <Font name="HCR Dotum" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="44.0" prefWidth="54.0" text="원" textFill="#605d5d">
+                     <font>
+                        <Font name="HCR Dotum" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="Order_Pay_Btn" alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="149.0" text="결제 진행" textFill="#605d5d">
+                     <font>
+                        <Font name="HCR Dotum" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <FontAwesomeIcon fill="#605d5d" iconName="ARROW_RIGHT" size="1.5em" text="" wrappingWidth="30.285715103149414" />
+               </children>
+            </HBox>
+            <Label layoutX="451.0" layoutY="61.0" prefHeight="23.0" prefWidth="113.0" text=" 받는사람 정보">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="528.0" layoutY="101.0" text="이름">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="495.0" layoutY="143.0" text="배송 주소">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="513.0" layoutY="189.0" text="연락처">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="Order_Name_Txt" focusColor="#e13c3c" layoutX="622.0" layoutY="96.0" prefHeight="30.0" prefWidth="270.0" text="박정권" unFocusColor="#00000014">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="Order_Addr_Txt" alignment="BOTTOM_LEFT" focusColor="#e13c3c" layoutX="615.0" layoutY="138.0" prefHeight="23.0" prefWidth="280.0" text="대전광역시 서구 둔산동" unFocusColor="#00000023">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="Order_Tel_Txt" alignment="BOTTOM_LEFT" focusColor="#e13c3c" layoutX="615.0" layoutY="184.0" prefHeight="30.0" prefWidth="280.0" text="01044332289" unFocusColor="#00000024">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </JFXTextField>
+            <HBox layoutX="14.0" layoutY="266.0" opacity="0.11" prefHeight="18.0" prefWidth="905.0" style="-fx-background-color: #6E6E6E;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

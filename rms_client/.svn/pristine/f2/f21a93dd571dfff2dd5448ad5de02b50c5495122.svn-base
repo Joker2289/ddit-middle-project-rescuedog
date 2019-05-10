@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="kr.or.ddit.rms.member.note.Note_detail_viewController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="813.0" style="-fx-background-color: #BDBDBD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="52.0" prefWidth="813.0" style="-fx-background-color: #393939;">
+         <children>
+            <Label layoutX="23.0" layoutY="10.0" prefHeight="37.0" prefWidth="218.0" text="보낸사람 이름 " textFill="#5584c3">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="31.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="close_btn" layoutX="753.0" layoutY="4.0" prefHeight="45.0" prefWidth="40.0" text=" ">
+               <graphic>
+                  <FontAwesomeIcon  fill="#5584c3" iconName="CLOSE" size="2.5em" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="noteDetail_resend_btn" layoutX="214.0" layoutY="486.0" prefHeight="39.0" prefWidth="162.0" style="-fx-background-color: #393939;" text="답장 하기" textFill="#5584c3">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </JFXButton>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="75.0" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: #393939;" text="보낸 ID" textFill="#5584c3">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="117.0" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: #393939;" text="제 목" textFill="#5584c3">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="159.0" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: #393939;" text="받은 날짜" textFill="#5584c3">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="203.0" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: #393939;" text="내 용" textFill="#5584c3">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="idFrom_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="170.0" layoutY="75.0" prefHeight="32.0" prefWidth="162.0" text="내용" textFill="#393939">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="title_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="170.0" layoutY="117.0" prefHeight="32.0" prefWidth="162.0" text="내용" textFill="#393939">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="date_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="170.0" layoutY="159.0" prefHeight="32.0" prefWidth="162.0" text="내용" textFill="#393939">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="close_btn1" layoutX="449.0" layoutY="486.0" prefHeight="39.0" prefWidth="162.0" style="-fx-background-color: #393939;" text="취소" textFill="#5584c3">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXTextArea fx:id="content_ta" layoutX="26.0" layoutY="241.0" prefHeight="232.0" prefWidth="764.0" />
+   </children>
+</AnchorPane>

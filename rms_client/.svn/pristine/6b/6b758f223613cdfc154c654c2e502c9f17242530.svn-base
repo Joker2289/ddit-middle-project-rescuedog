@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="1050.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.adopt_board.Adopt_detail_viewController">
+   <children>
+      <Text fill="#607f8d" layoutX="42.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="유기견 정보">
+         <font>
+            <Font name="HCR Dotum Bold" size="25.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="178.0" layoutY="45.0" prefHeight="27.0" prefWidth="5.0" style="-fx-background-color: #628290;" />
+      <Text fill="#837a7a" layoutX="202.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="유기견의 상세정보를 확인 할 수 있습니다">
+         <font>
+            <Font name="HCR Dotum Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#7c7a7a" layoutX="42.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 입양신청 버튼을 누르고 신청서를 작성 해주세요">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></Text>
+      <Text fill="#7c7a7a" layoutX="42.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 입양이 완료된 유기견은 입양신청을 진행 할 수 없습니다 ">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font></Text>
+      <AnchorPane layoutX="42.0" layoutY="102.0" prefHeight="369.0" prefWidth="972.0" style="-fx-border-color: #c2c2c2;">
+         <children>
+            <Label layoutX="521.0" layoutY="23.0" text="이 름" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="521.0" layoutY="63.0" text="종 류" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="521.0" layoutY="111.0" text="성 별" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="493.0" layoutY="157.0" text="등록 번호" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" layoutX="27.0" layoutY="23.0" prefHeight="318.0" prefWidth="427.0" style="-fx-background-color: #eceff1;">
+               <children>
+                  <ImageView fx:id="RD_Img" fitHeight="312.0" fitWidth="415.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </VBox>
+            <Label fx:id="RD_Name" layoutX="585.0" layoutY="25.0" prefHeight="22.0" prefWidth="224.0" text="성 별">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="RD_Kind" layoutX="585.0" layoutY="64.0" prefHeight="22.0" prefWidth="224.0" text="성 별">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+            <FontAwesomeIcon fx:id="Icon_F" fill="#ee6262" iconName="VENUS" layoutX="589.0" layoutY="142.0" size="3em" text="" />
+            <FontAwesomeIcon fx:id="Icon_M" fill="#3f89dd" iconName="MARS" layoutX="589.0" layoutY="139.0" size="3em" text="" />
+            <Label layoutX="492.0" layoutY="195.0" text="등록 날짜" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="492.0" layoutY="233.0" text="보호 기관" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="RD_Num" layoutX="588.0" layoutY="159.0" prefHeight="22.0" prefWidth="224.0" text="성 별">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="RD_Date" layoutX="588.0" layoutY="197.0" prefHeight="22.0" prefWidth="224.0" text="성 별">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="RD_Shel" layoutX="590.0" layoutY="235.0" prefHeight="22.0" prefWidth="224.0" text="성 별">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="Hide_Lbl" alignment="CENTER" layoutX="699.0" layoutY="140.0" prefHeight="62.0" prefWidth="227.0" rotate="-9.0" style="-fx-border-color: red; -fx-border-width: 4;" text="입양 완료" textFill="#d70d0d">
+               <font>
+                  <Font name="HCR Dotum" size="38.0" />
+               </font>
+            </Label>
+            <JFXTextArea fx:id="RD_Info" editable="false" focusColor="WHITE" layoutX="588.0" layoutY="271.0" prefHeight="85.0" prefWidth="376.0" promptText="특이사항" unFocusColor="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+            </JFXTextArea>
+            <Label layoutX="491.0" layoutY="275.0" text="특이 사항" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="Goto_Adopt" layoutX="868.0" layoutY="498.0" prefHeight="41.0" prefWidth="146.0" ripplerFill="BLACK" style="-fx-background-color: #eceff1;" text="    목록">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="Adopt_Request_Btn" layoutX="704.0" layoutY="497.0" prefHeight="41.0" prefWidth="146.0" style="-fx-background-color: #535962;" text="  입양 신청" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="#fb7777" iconName="HEART" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <JFXHamburger layoutX="901.0" layoutY="509.0" opacity="0.8" prefHeight="17.0" prefWidth="17.0" />
+   </children>
+</AnchorPane>

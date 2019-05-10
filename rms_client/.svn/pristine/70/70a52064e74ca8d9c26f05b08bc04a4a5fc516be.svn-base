@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="410.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.mainpage.sign_up.Signup_Page_Controller">
+   <children>
+      <Text layoutX="88.0" layoutY="202.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="소속기관">
+         <font>
+            <Font name="HCR Dotum" size="22.0" />
+         </font>
+      </Text>
+      <JFXRadioButton fx:id="Signup_User_Btn" layoutX="220.0" layoutY="158.0" text="일반회원">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="choice" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="Signup_Shel_Btn" layoutX="220.0" layoutY="193.0" text="보호기관" toggleGroup="$choice">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+      </JFXRadioButton>
+      <JFXButton fx:id="Signup_Cancel_Btn" layoutX="214.0" layoutY="298.0" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: #eceff1;" text="  취소">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="Signup_Confirm_Btn" layoutX="66.0" layoutY="298.0" prefHeight="28.0" prefWidth="130.0" style="-fx-background-color: #535962;" text="  확인" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <Text layoutX="155.0" layoutY="80.0" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="회원구분">
+         <font>
+            <Font name="HCR Dotum" size="26.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

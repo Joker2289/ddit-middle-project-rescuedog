@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.admin.service_center.notice.Notice_Admin_Add_Controller">
+   <children>
+      <JFXButton fx:id="add_btn" layoutX="813.0" layoutY="463.0" prefHeight="35.0" prefWidth="119.0" style="-fx-background-color: #607d8b;" text="  등록" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum Bold" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="cancel_btn" layoutX="941.0" layoutY="463.0" prefHeight="35.0" prefWidth="119.0" style="-fx-background-color: #eceff1;" text="   취소">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+      <Label layoutX="123.0" layoutY="26.0" text="제목 : ">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="notice_title_txtF" layoutX="182.0" layoutY="14.0" prefHeight="29.0" prefWidth="319.0" unFocusColor="#797979" />
+      <JFXTextField fx:id="notice_writer_txtF" layoutX="182.0" layoutY="44.0" prefHeight="29.0" prefWidth="319.0" unFocusColor="#797979" />
+      <Label layoutX="108.0" layoutY="58.0" text="작성자 : ">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </Label>
+      <HTMLEditor fx:id="notice_content_txtA" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="97.0" layoutY="88.0" prefHeight="355.0" prefWidth="963.0" />
+   </children>
+</AnchorPane>

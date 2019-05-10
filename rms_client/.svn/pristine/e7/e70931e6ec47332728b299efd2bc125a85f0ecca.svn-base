@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.shelter.donation_board.recruit.SponRecruitDetailController">
+   <children>
+      <AnchorPane fx:id="tempPane" layoutY="21.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane id="gride" gridLinesVisible="true" layoutX="82.0" layoutY="95.0" prefHeight="432.0" prefWidth="960.0" stylesheets="@../../../user/donation_board/gridepane.css">
+               <children>
+                  <AnchorPane prefHeight="57.0" prefWidth="958.0">
+                     <children>
+                        <Label fx:id="donate_title_lb" layoutX="21.0" layoutY="10.0" text="제목 ">
+                           <font>
+                              <Font name="HCR Dotum Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="dona_title_tf" focusColor="WHITE" layoutX="82.0" layoutY="5.0" prefHeight="31.0" prefWidth="326.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+                           <font>
+                              <Font name="HCR Dotum" size="16.0" />
+                           </font></JFXTextField>
+                        <Label layoutX="482.0" layoutY="11.0" text="목표 금액  ">
+                           <font>
+                              <Font name="HCR Dotum Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="dona_price_tf" alignment="CENTER_RIGHT" focusColor="WHITE" layoutX="618.0" layoutY="6.0" prefHeight="25.0" prefWidth="207.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font></JFXTextField>
+                        <Label layoutX="837.0" layoutY="12.0" text="원">
+                           <font>
+                              <Font name="HCR Dotum" size="17.0" />
+                           </font></Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label layoutX="18.0" layoutY="14.0" text="작성자 ">
+                           <font>
+                              <Font name="HCR Dotum Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="483.0" layoutY="12.0" text="달성률">
+                           <font>
+                              <Font name="HCR Dotum Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <ProgressBar fx:id="price_rate" layoutX="611.0" layoutY="10.0" prefHeight="31.0" prefWidth="267.0" progress="0.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </ProgressBar>
+                        <Label fx:id="rateLb" layoutX="894.0" layoutY="13.0" text="Label">
+                           <font>
+                              <Font name="HCR Dotum" size="17.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="dona_login_tf" focusColor="WHITE" layoutX="82.0" layoutY="8.0" prefHeight="34.0" prefWidth="326.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+                           <font>
+                              <Font name="HCR Dotum" size="16.0" />
+                           </font></JFXTextField>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label layoutX="19.0" layoutY="13.0" text="기간">
+                           <font>
+                              <Font name="HCR Dotum Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="241.0" layoutY="8.0" text="~">
+                           <font>
+                              <Font name="HCR Dotum Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="dona_start_date" layoutX="85.0" layoutY="11.0" prefHeight="29.0" prefWidth="137.0" promptText="시작날짜" />
+                        <DatePicker fx:id="dona_end_date" layoutX="270.0" layoutY="10.0" prefHeight="29.0" prefWidth="137.0" promptText="종료날짜" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="305.0" prefWidth="963.0" GridPane.rowIndex="3">
+                     <children>
+                        <JFXTextArea fx:id="dona_content_ta" focusColor="#fcfcfc" layoutX="9.0" layoutY="37.0" prefHeight="261.0" prefWidth="940.0" unFocusColor="WHITE">
+                           <font>
+                              <Font name="HCR Dotum" size="17.0" />
+                           </font>
+                        </JFXTextArea>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="202.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="293.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="289.0" minHeight="10.0" prefHeight="285.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <JFXButton fx:id="dona_upd_btn" cancelButton="true" layoutX="342.0" layoutY="542.0" prefHeight="41.0" prefWidth="137.0" style="-fx-background-color: #535962;" text="  수정" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#fb7777" iconName="HEART" />
+               </graphic>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+            </JFXButton>
+            <Text fill="#607f8d" layoutX="82.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="후원하기 ">
+               <font>
+                  <Font name="HCR Dotum Bold" size="25.0" />
+               </font>
+            </Text>
+            <Text fill="#727272" layoutX="206.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="유기견 후원하기">
+               <font>
+                  <Font name="HCR Dotum Bold" size="19.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="185.0" layoutY="49.0" prefHeight="22.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+            <Text fill="#fb7777" layoutX="350.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;작은 나눔 큰 행복&quot; ">
+               <font>
+                  <Font name="HCR Dotum Bold" size="19.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="dona_list_btn" layoutX="635.0" layoutY="543.0" prefHeight="41.0" prefWidth="129.0" style="-fx-background-color: #eceff1;" text="   목록">
+               <font>
+                  <Font name="HCR Dotum" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXHamburger layoutX="664.0" layoutY="555.0" prefHeight="15.0" prefWidth="20.0" />
+            <JFXButton fx:id="dona_del_btn" cancelButton="true" layoutX="486.0" layoutY="543.0" prefHeight="41.0" prefWidth="137.0" style="-fx-background-color: #535962;" text="  삭제" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+               <graphic>
+                  <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

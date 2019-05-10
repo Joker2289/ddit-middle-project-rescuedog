@@ -1,0 +1,23 @@
+package kr.or.ddit.rms.mainpage.sign_up;
+
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import java.util.List;
+
+import kr.or.ddit.rms.vo.CustomVO;
+import kr.or.ddit.rms.vo.MemberVO;
+import kr.or.ddit.rms.vo.ShelterVO;
+
+public interface ISignupService extends Remote {
+	
+	public int insertCustom(CustomVO vo) throws RemoteException; 
+	
+	public int insertShelter(ShelterVO vo) throws RemoteException; 
+	
+	public int insertMember(MemberVO vo) throws RemoteException; 
+	
+	public List<ShelterVO> getShelterAll() throws RemoteException;
+
+	public List<CustomVO> getCustomAll() throws RemoteException;
+	
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.admin.service_center.notice.Notice_Admin_Upd_Controller">
+   <children>
+      <AnchorPane fx:id="tempPane" prefHeight="350.0" prefWidth="420.0" />
+      <JFXButton fx:id="cancel_btn" layoutX="438.0" layoutY="477.0" prefHeight="38.0" prefWidth="119.0" style="-fx-background-color: #eceff1;" text="   취소">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="add_btn" layoutX="306.0" layoutY="477.0" prefHeight="38.0" prefWidth="119.0" style="-fx-background-color: #535962;" text="  확인" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <JFXTextArea fx:id="notice_content_txtA" focusColor="#838a9e" layoutX="87.0" layoutY="207.0" prefHeight="243.0" prefWidth="664.0" style="-fx-border-color: #d3d3d3;" unFocusColor="WHITE" />
+      <JFXTextField fx:id="notice_writer_txtF" focusColor="#838a9e" layoutX="296.0" layoutY="142.0" prefHeight="29.0" prefWidth="307.0" unFocusColor="#cacaca" />
+      <JFXTextField fx:id="notice_title_txtF" focusColor="#838a9e" layoutX="296.0" layoutY="99.0" prefHeight="29.0" prefWidth="307.0" unFocusColor="#cacaca" />
+      <Label layoutX="232.0" layoutY="149.0" prefHeight="19.0" prefWidth="59.0" text="작성자" textFill="#535962">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="246.0" layoutY="102.0" text="제목" textFill="#535962">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: #b3ccc8;">
+         <children>
+            <AnchorPane layoutX="11.0" layoutY="9.0" prefHeight="24.0" prefWidth="5.0" style="-fx-background-color: #5c8d89;" />
+            <Label layoutX="26.0" layoutY="7.0" text="글 수정" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

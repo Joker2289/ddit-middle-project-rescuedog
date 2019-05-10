@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.testapps.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.mypage.buylist.MyPointController">
+   <children>
+      <Text layoutX="364.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="적립금">
+         <font>
+            <Font name="HCR Dotum" size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="271.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="고객님의 사용가능 적립금 금액 입니다.">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font></Text>
+      <AnchorPane disable="true" layoutX="59.0" layoutY="153.0" prefHeight="238.0" prefWidth="673.0" style="-fx-background-color: #eaeaea;">
+         <children>
+            <AnchorPane layoutX="3.0" layoutY="2.0" prefHeight="233.0" prefWidth="667.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <AnchorPane layoutX="9.0" layoutY="8.0" prefHeight="179.0" prefWidth="650.0" style="-fx-background-color: #eceff1;">
+                     <children>
+                        <Text layoutX="35.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="· 총 적립금">
+                           <font>
+                              <Font name="HCR Dotum" size="17.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="35.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="· 사용가능 적립금">
+                           <font>
+                              <Font name="HCR Dotum" size="17.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="mypage_sum_label" layoutX="485.0" layoutY="53.0" text="Label">
+                           <font>
+                              <Font name="HCR Dotum" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="mypage_use_label" layoutX="485.0" layoutY="129.0" text="Label">
+                           <font>
+                              <Font name="HCR Dotum" size="17.0" />
+                           </font>
+                        </Label>
+                        <Text layoutX="551.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="원">
+                           <font>
+                              <Font name="HCR Dotum" size="17.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="551.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="원">
+                           <font>
+                              <Font name="HCR Dotum" size="17.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="mypage_used_label" layoutX="485.0" layoutY="198.0">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="19.0" prefWidth="790.0" style="-fx-background-color: #cfd8dc;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="66.0" prefHeight="462.0" prefWidth="1100.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fx:id="noteimg" fitHeight="37.0" fitWidth="90.0" layoutX="809.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+            <AnchorPane layoutX="58.0" layoutY="52.0" prefHeight="324.0" prefWidth="937.0" style="-fx-border-color: #c2c2c2;">
+               <children>
+                  <Label layoutX="32.0" layoutY="56.0" text="작성자" textFill="#607d8b">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="457.0" layoutY="61.0" text="성 별" textFill="#607d8b">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="457.0" layoutY="109.0" text="종 류" textFill="#607d8b">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="421.0" layoutY="162.0" text="발견 위치" textFill="#607d8b">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="457.0" layoutY="216.0" text="특 징" textFill="#607d8b">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="43.0" layoutY="21.0" text="제목" textFill="#607d8b">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="Title_Fb" alignment="CENTER" focusColor="#607d8b" layoutX="93.0" prefHeight="41.0" prefWidth="251.0" unFocusColor="#949494">
+                     <font>
+                        <Font name="HCR Dotum" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="Sex_Fb" alignment="CENTER" focusColor="#607d8b" layoutX="531.0" layoutY="54.0" prefHeight="36.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="Kind_Fb" alignment="CENTER" focusColor="#607d8b" layoutX="531.0" layoutY="104.0" prefHeight="41.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="Find_Fb" alignment="CENTER" focusColor="#607d8b" layoutX="531.0" layoutY="159.0" prefHeight="36.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="Characteristic_Fb" alignment="CENTER" focusColor="#607d8b" layoutX="531.0" layoutY="211.0" prefHeight="29.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="427.0" layoutY="269.0" text="전화번호" textFill="#607d8b">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="Tel_Fb" alignment="CENTER" focusColor="#607d8b" layoutX="532.0" layoutY="261.0" prefHeight="36.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="HCR Dotum Bold" size="17.0" />
+                     </font>
+                  </JFXTextField>
+                  <VBox fx:id="Vb_imgbox" alignment="CENTER" layoutX="38.0" layoutY="103.0" prefHeight="199.0" prefWidth="297.0" style="-fx-background-color: #eceff1;">
+                     <children>
+                        <ImageView fx:id="Pr_ImgView" fitHeight="199.0" fitWidth="297.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <Label fx:id="writer_lb" alignment="CENTER" layoutX="93.0" layoutY="54.0" prefHeight="26.0" prefWidth="251.0" text="Label" />
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="Delete_Btn" layoutX="772.0" layoutY="390.0" prefHeight="41.0" prefWidth="107.0" style="-fx-background-color: #535962;" text="  삭제" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="BAN" size="1.2em" text="" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="Update_Btn" layoutX="652.0" layoutY="390.0" prefHeight="41.0" prefWidth="107.0" style="-fx-background-color: #535962;" text="수정" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </FontAwesomeIcon>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="BoardList_Btn" layoutX="888.0" layoutY="390.0" prefHeight="41.0" prefWidth="107.0" ripplerFill="BLACK" style="-fx-background-color: #eceff1;" text="    목록">
+               <font>
+                  <Font name="HCR Dotum" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXHamburger layoutX="909.0" layoutY="402.0" opacity="0.8" prefHeight="17.0" prefWidth="17.0" />
+            <Label fx:id="Hide_Lbl" layoutX="-24.0" layoutY="-13.0" prefHeight="54.0" prefWidth="334.0" text=" " textFill="#5584c3">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="37.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="656.0" layoutY="44.0" prefHeight="22.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+      <Text fill="#607f8d" layoutX="487.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="보호동물 게시판">
+         <font>
+            <Font name="HCR Dotum Bold" size="22.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="471.0" layoutY="46.0" prefHeight="22.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+   </children>
+</AnchorPane>

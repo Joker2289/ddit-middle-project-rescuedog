@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.mypage.activeList.Adopt_log_view_controller">
+   <children>
+      <HBox layoutX="73.0" layoutY="77.0" prefHeight="32.0" prefWidth="971.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="41.0" prefWidth="54.0" style="-fx-background-color: #F8DACC;" text="번호">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="392.0" style="-fx-background-color: #F8DACC;" text="유기견 정보">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="154.0" style="-fx-background-color: #F8DACC;" text="보호기관명">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="41.0" prefWidth="161.0" style="-fx-background-color: #F8DACC;" text="신청 날짜">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="121.0" style="-fx-background-color: #F8DACC;" text="신청 상태">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="96.0" style="-fx-background-color: #F8DACC;" text="신청 취소">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <ScrollPane hbarPolicy="NEVER" layoutX="73.0" layoutY="109.0" prefHeight="314.0" prefWidth="971.0" vbarPolicy="ALWAYS">
+        <content>
+          <AnchorPane fx:id="Log_View_Pane" minHeight="0.0" minWidth="0.0" prefWidth="953.0" />
+        </content>
+      </ScrollPane>
+      <JFXButton fx:id="mypage_back_btn" layoutX="916.0" layoutY="439.0" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #eceff1;" text="   뒤로가기">
+         <font>
+            <Font name="HCR Dotum" size="17.0" />
+         </font>
+         <graphic>
+            <JFXHamburger opacity="0.46" prefHeight="17.0" prefWidth="17.0" />
+         </graphic>
+      </JFXButton>
+      <Label fx:id="Hide_Label" layoutX="597.0" layoutY="26.0" prefHeight="41.0" prefWidth="447.0" textFill="#005ba1">
+         <font>
+            <Font name="HCR Dotum Bold" size="23.0" />
+         </font>
+      </Label>
+      <Text fill="#607f8d" layoutX="87.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="입양신청내역">
+         <font>
+            <Font name="HCR Dotum Bold" size="24.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="73.0" layoutY="35.0" prefHeight="22.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+   </children>
+</AnchorPane>

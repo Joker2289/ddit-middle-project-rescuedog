@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<TabPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController"> 
+    <tabs> 
+     <Tab fx:id="tabA" text="Tab A"> 
+     <content> 
+      <AnchorPane fx:id="anchA" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"> 
+       <children> 
+        <ComboBox fx:id="comboBox" layoutX="225.0" layoutY="82.0" prefWidth="150.0" /> 
+       </children> 
+      </AnchorPane> 
+     </content> 
+     </Tab> 
+     <Tab fx:id="tabB" text="Tab B"> 
+     <content> 
+      <AnchorPane fx:id="anchB" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"> 
+       <children> 
+        <GridPane fx:id="gridPane" gridLinesVisible="true" layoutX="150.0" layoutY="62.0"> 
+        <columnConstraints> 
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" /> 
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" /> 
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" /> 
+        </columnConstraints> 
+        <rowConstraints> 
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+        </rowConstraints> 
+        <children> 
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A" textAlignment="CENTER" wrappingWidth="91.67529296875" /> 
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="B" textAlignment="CENTER" wrappingWidth="93.5986328125" GridPane.columnIndex="1" /> 
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="C" textAlignment="CENTER" wrappingWidth="95.287109375" GridPane.columnIndex="2" /> 
+        </children> 
+        </GridPane> 
+       </children> 
+      </AnchorPane> 
+     </content> 
+     </Tab> 
+    </tabs> 
+</TabPane>

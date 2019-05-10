@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextField fx:id="report_IdFrom_tf" focusColor="#5e6886" layoutX="274.0" layoutY="72.0" prefHeight="29.0" prefWidth="285.0" unFocusColor="#a89b9b">
+         <font>
+            <Font name="HCR Dotum" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="report_IdTo_tf" focusColor="#afafb2" layoutX="273.0" layoutY="115.0" prefHeight="29.0" prefWidth="285.0" promptText=" 신고대상" unFocusColor="#a4a0a0">
+         <font>
+            <Font name="HCR Dotum" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextArea fx:id="report_reason_ta" focusColor="WHITE" layoutX="137.0" layoutY="178.0" prefHeight="255.0" prefWidth="527.0" promptText="   신고의 사유와 하실 말씀을 적어주세요." style="-fx-border-color: #cacaca;" unFocusColor="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="13.0" />
+         </font></JFXTextArea>
+      <JFXButton fx:id="report_cancel_btn" layoutX="410.0" layoutY="460.0" prefHeight="38.0" prefWidth="119.0" style="-fx-background-color: #eceff1;" text="   취소">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="report_ok_btn" layoutX="277.0" layoutY="460.0" prefHeight="38.0" prefWidth="119.0" style="-fx-background-color: #535962;" text="  확인" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <AnchorPane prefHeight="45.0" prefWidth="800.0" style="-fx-background-color: #b3ccc8;">
+         <children>
+            <AnchorPane layoutX="11.0" layoutY="11.0" prefHeight="24.0" prefWidth="5.0" style="-fx-background-color: #5c8d89;" />
+            <Label layoutX="26.0" layoutY="9.0" text="신고하기" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

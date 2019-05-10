@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.shelter.adopt_board.Add_RD_controller">
+   <children>
+      <JFXTextField fx:id="Path_Img_Txt" focusColor="WHITE" layoutX="348.0" layoutY="560.0" prefHeight="33.0" prefWidth="315.0" unFocusColor="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <AnchorPane layoutX="77.0" layoutY="176.0" prefHeight="366.0" prefWidth="947.0" style="-fx-border-color: #c2c2c2;">
+         <children>
+            <Label layoutX="437.0" layoutY="37.0" text="유기견 명" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="466.0" layoutY="89.0" text="종 류" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="465.0" layoutY="180.0" text="특 징" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="RD_Name" alignment="CENTER" focusColor="#607d8b" layoutX="539.0" layoutY="31.0" prefHeight="36.0" prefWidth="381.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </JFXTextField>
+            <JFXComboBox fx:id="Kind_Select" focusColor="#607f8d" layoutX="539.0" layoutY="84.0" prefHeight="36.0" prefWidth="381.0" promptText="견종 선택" />
+            <JFXCheckBox fx:id="F_Check" checkedColor="#607f8d" layoutX="623.0" layoutY="137.0" prefHeight="35.0" prefWidth="73.0" text="암컷">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="M_Check" checkedColor="#607f8d" layoutX="539.0" layoutY="137.0" prefHeight="35.0" prefWidth="73.0" text="수컷">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXTextArea fx:id="RD_Info" focusColor="#f58ed6" layoutX="465.0" layoutY="210.0" prefHeight="142.0" prefWidth="460.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE">
+               <font>
+                  <Font name="Apple Braille" size="20.0" />
+               </font>
+            </JFXTextArea>
+            <Label layoutX="465.0" layoutY="140.0" text="성 별" textFill="#607d8b">
+               <font>
+                  <Font name="HCR Dotum Bold" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="RD_Img_Iv" fitHeight="307.0" fitWidth="381.0" layoutX="25.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+            <Text fill="#979494" layoutX="27.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 이미지 미리보기">
+               <font>
+                  <Font name="HCR Dotum" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="Find_Img_Btn" layoutX="77.0" layoutY="556.0" prefHeight="37.0" prefWidth="251.0" style="-fx-border-color: #c2c2c2;" text="          + 사진추가">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="Goto_RDList_Btn" layoutX="888.0" layoutY="553.0" prefHeight="35.0" prefWidth="134.0" style="-fx-background-color: #eceff1;" text="  목록">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <JFXHamburger opacity="0.46" prefHeight="17.0" prefWidth="17.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="Add_RD_Btn" layoutX="734.0" layoutY="553.0" prefHeight="35.0" prefWidth="134.0" style="-fx-background-color: #535962;" text="  등록" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <Label fx:id="Hide_Lbl" layoutX="688.0" layoutY="104.0" prefHeight="54.0" prefWidth="334.0" text=" " textFill="#5584c3">
+         <font>
+            <Font name="HCR Dotum Bold" size="18.0" />
+         </font>
+      </Label>
+      <Text fill="#607f8d" layoutX="77.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="유기견등록">
+         <font>
+            <Font name="HCR Dotum Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#979494" layoutX="211.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="유기견을 입양 등록하는 공간 입니다">
+         <font>
+            <Font name="HCR Dotum Bold" size="20.0" />
+         </font>
+      </Text>
+      <FontAwesomeIcon iconName="CAMERA" layoutX="132.0" layoutY="585.0" size="1.7em" text="" />
+      <AnchorPane layoutX="194.0" layoutY="69.0" prefHeight="22.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+      <Text fill="#979494" layoutX="77.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 유기견 사진등록은 필수 사항 입니다">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#979494" layoutX="77.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 입양게시판에서 등록한 유기견을 확인 할 수 있습니다">
+         <font>
+            <Font name="HCR Dotum" size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

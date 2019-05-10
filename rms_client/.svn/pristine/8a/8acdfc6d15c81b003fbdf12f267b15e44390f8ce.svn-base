@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="560.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.mainpage.find_pw.Find_pw_controller">
+   <children>
+      <Label layoutX="210.0" layoutY="58.0" text="비밀번호 찾기" textFill="#393939">
+         <font>
+            <Font name="HCR Dotum" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="181.0" layoutY="98.0" text="비밀번호 찾기 1단계 정보 입력" textFill="#838080">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="Findpw_Id_Txt" focusColor="#5c7893" layoutX="226.0" layoutY="197.0" prefHeight="38.0" prefWidth="260.0" style="-fx-background-color: #eceff1;" unFocusColor="#d7d7d7">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="Findpw_Email_Txt" focusColor="#5c7893" layoutX="226.0" layoutY="271.0" prefHeight="38.0" prefWidth="260.0" style="-fx-background-color: #eceff1;" unFocusColor="#d7d7d7">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </JFXTextField>
+      <Text layoutX="99.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
+         <font>
+            <Font name="HCR Dotum" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="78.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="∙">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="75.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="∙">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="95.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이메일로 찾기">
+         <font>
+            <Font name="HCR Dotum" size="19.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="Findpw_Cancel_Btn" layoutX="295.0" layoutY="460.0" prefHeight="47.0" prefWidth="182.0" style="-fx-background-color: #eceff1;" text="   닫기">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="Findpw_Findpw_Btn" layoutX="102.0" layoutY="460.0" prefHeight="47.0" prefWidth="182.0" style="-fx-background-color: #535962;" text="  비밀번호 찾기" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="226.0" layoutY="327.0" text="* 이메일로 임시 비밀번호 전송" textFill="#807f82">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

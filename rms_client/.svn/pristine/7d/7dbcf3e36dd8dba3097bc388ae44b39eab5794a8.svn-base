@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.shelter.donation_board.recruit.SponRecruitAddController">
+   <children>
+      <AnchorPane fx:id="tempPane" prefHeight="530.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="51.0" layoutY="40.0" text="제목" />
+            <Label layoutX="51.0" layoutY="76.0" text="기간" />
+            <Label layoutX="775.0" layoutY="40.0" text="목표금액" />
+            <JFXTextField fx:id="dona_price_tf" layoutX="839.0" layoutY="35.0" />
+            <JFXTextField fx:id="dona_title_tf" layoutX="101.0" layoutY="35.0" prefHeight="23.0" prefWidth="457.0" />
+            <DatePicker fx:id="dona_start_date" layoutX="101.0" layoutY="69.0" prefHeight="29.0" prefWidth="203.0" promptText="시작날짜" />
+            <Label layoutX="330.0" layoutY="76.0" text="~" />
+            <DatePicker fx:id="dona_end_date" layoutX="355.0" layoutY="69.0" prefHeight="29.0" prefWidth="203.0" promptText="종료날짜" />
+            <HTMLEditor fx:id="dona_content_ta" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="40.0" layoutY="105.0" prefHeight="355.0" prefWidth="963.0" />
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="dona_add_btn" layoutX="813.0" layoutY="463.0" prefHeight="35.0" prefWidth="119.0" style="-fx-background-color: #607d8b;" text="  등록" textFill="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="dona_cancel_btn" layoutX="941.0" layoutY="463.0" prefHeight="35.0" prefWidth="119.0" style="-fx-background-color: #eceff1;" text="   취소">
+         <font>
+            <Font name="HCR Dotum" size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

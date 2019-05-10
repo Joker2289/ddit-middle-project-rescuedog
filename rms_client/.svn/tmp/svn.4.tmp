@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1100.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.main.MainItemsController">
+   <children>
+      <MediaView fx:id="main_mediaview" fitHeight="260.0" fitWidth="399.0" layoutX="351.0" layoutY="52.0" />
+      <JFXButton fx:id="main_media_btn" layoutX="392.0" layoutY="64.0" prefHeight="235.0" prefWidth="316.0" text=" " />
+      <JFXTabPane fx:id="RD_View" layoutX="35.0" layoutY="76.0" prefHeight="248.0" prefWidth="238.0" />
+      <JFXTabPane fx:id="MD_View" layoutX="781.0" layoutY="68.0" prefHeight="336.0" prefWidth="286.0" />
+      <AnchorPane layoutX="54.0" layoutY="399.0" prefHeight="2.0" prefWidth="530.0" style="-fx-background-color: #c3c3c3;" />
+      <HBox layoutX="51.0" layoutY="415.0" prefHeight="28.0" prefWidth="535.0" style="-fx-border-color: #c2c2c2;">
+         <children>
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="44.0" text="번호" textFill="#323232">
+               <font>
+                  <Font name="HCR Dotum" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="282.0" text="제목" textFill="#323232">
+               <font>
+                  <Font name="HCR Dotum" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="115.0" text="작성일시" textFill="#323232">
+               <font>
+                  <Font name="HCR Dotum" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="71.0" text="작성자" textFill="#323232">
+               <font>
+                  <Font name="HCR Dotum" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ScrollPane hbarPolicy="NEVER" layoutX="51.0" layoutY="443.0" prefHeight="173.0" prefWidth="535.0" vbarPolicy="ALWAYS">
+         <content>
+            <AnchorPane fx:id="Notice_View" minHeight="0.0" minWidth="0.0" prefHeight="2.0" prefWidth="533.0" />
+         </content>
+      </ScrollPane>
+      <Label layoutX="59.0" layoutY="364.0" prefHeight="28.0" prefWidth="231.0" text="NOTICE">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="40.0" prefHeight="28.0" prefWidth="231.0" text="유기동물 공고">
+         <font>
+            <Font name="HCR Dotum" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="54.0" layoutY="397.0" prefHeight="4.0" prefWidth="73.0" style="-fx-background-color: #494949;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.shelter.donation_board.recruit.SponRecruitController">
+   <children>
+      <AnchorPane fx:id="tempPane1" layoutX="10.0" layoutY="7.0" prefHeight="44.0" prefWidth="1100.0">
+         <children>
+            <Text fill="#41474a" layoutX="100.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="후원하기">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="HCR Dotum" size="26.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="208.0" layoutY="32.0" prefHeight="26.0" prefWidth="4.0" style="-fx-background-color: #6B7B8E;" />
+            <Text fill="#808080" layoutX="234.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="후원금을 모집 할 수 있는 게시판입니다.">
+               <font>
+                  <Font name="HCR Dotum" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <JFXTextField fx:id="Table_search_tf" alignment="CENTER" focusColor="#535962" layoutX="728.0" layoutY="96.0" prefHeight="27.0" prefWidth="158.0" promptText="Search" />
+      <JFXButton fx:id="Table_add_btn" layoutX="873.0" layoutY="485.0" prefHeight="28.0" prefWidth="121.0" style="-fx-background-color: #607d8b;" text="  글쓰기" textFill="WHITE">
+         <font>
+            <Font name="HYGraphic-Medium" size="17.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="PENCIL" size="1.2em" text="">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="Table_search_btn" layoutX="892.0" layoutY="99.0" prefHeight="24.0" prefWidth="102.0" style="-fx-background-color: #798697;" text=" 검색" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="SEARCH" size="1.2em" text="" wrappingWidth="25.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <Pagination fx:id="Table_paging" layoutX="107.0" layoutY="134.0" prefHeight="366.0" prefWidth="887.0" />
+      <TableView fx:id="recuruit_table" layoutX="107.0" layoutY="134.0" prefHeight="311.0" prefWidth="887.0" stylesheets="@../../../user/free_board/app.css">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <columns>
+            <TableColumn fx:id="recuruit_numCol1" prefWidth="128.0" text="번호" />
+            <TableColumn fx:id="recuruit_titleCol2" prefWidth="212.0" text="제목" />
+            <TableColumn fx:id="recuruit_nameCol3" prefWidth="75.0" text="기관명" />
+            <TableColumn fx:id="recuruit_sdateCol4" prefWidth="75.0" text="시작일" />
+            <TableColumn fx:id="recuruit_edateCol5" prefWidth="75.0" text="종료일" />
+            <TableColumn fx:id="recuruit_priceCol6" prefWidth="75.0" text="목표 금액" />
+         </columns>
+      </TableView>
+      <Label layoutX="637.0" layoutY="100.0" prefHeight="23.0" prefWidth="97.0" text="제목 / 작성자" />
+   </children>
+</AnchorPane>

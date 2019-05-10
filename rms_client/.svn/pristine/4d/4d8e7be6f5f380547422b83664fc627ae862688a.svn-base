@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.adopt_board.Adopt_viewController">
+   <children>
+      <AnchorPane fx:id="tempPane" layoutY="8.0" prefHeight="44.0" prefWidth="1100.0">
+         <children>
+            <Text fill="#41474a" layoutX="58.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="입양 게시판">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="HCR Dotum" size="26.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="199.0" layoutY="31.0" prefHeight="26.0" prefWidth="4.0" style="-fx-background-color: #628290;" />
+            <Text fill="#808080" layoutX="217.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="보호기관이 등록한 유기견목록을 확인 할 수 있습니다">
+               <font>
+                  <Font name="HCR Dotum" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="scPane" hbarPolicy="NEVER" layoutX="61.0" layoutY="186.0" prefHeight="400.0" prefWidth="978.0" vbarPolicy="ALWAYS">
+         <content>
+            <AnchorPane fx:id="Adopt_Main_Pane" minHeight="0.0" minWidth="0.0" prefWidth="1036.0" />
+         </content>
+      </ScrollPane>
+      <HBox layoutX="61.0" layoutY="152.0" prefHeight="36.0" prefWidth="978.0" style="-fx-background-color: #628290;">
+         <children>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="63.0" text="번호" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="407.0" text="유기견 정보" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="170.0" text="보호기관명" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="202.0" text="등록 날짜" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="141.0" text="입양 상태" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Text fill="#807a7a" layoutX="62.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 보호기관이 등록한 유기견목록을 확인 할 수 있습니다">
+         <font>
+            <Font name="HCR Dotum" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#807a7a" layoutX="60.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 이미지 클릭시 유기견 상세정보를 확인 할 수 있습니다">
+         <font>
+            <Font name="HCR Dotum" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="Search_Comb" focusColor="#748c99" layoutX="577.0" layoutY="109.0" prefHeight="34.0" prefWidth="153.0" promptText=" 검색 조건" style="-fx-border-color: #c3c3c3;" unFocusColor="WHITE" />
+      <JFXTextField fx:id="Search_Txt" focusColor="#748c99" layoutX="743.0" layoutY="112.0" prefHeight="28.0" prefWidth="202.0" promptText="Search" style="-fx-text-inner-color: #00000; -fx-prompt-text-fill: #00000;" />
+      <JFXButton fx:id="Search_Btn" layoutX="956.0" layoutY="109.0" prefHeight="34.0" prefWidth="83.0" style="-fx-background-color: #748C99;" text=" 검색" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="SEARCH" />
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="Hide_Lbl" layoutX="379.0" layoutY="597.0" text=" " textFill="#979494">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

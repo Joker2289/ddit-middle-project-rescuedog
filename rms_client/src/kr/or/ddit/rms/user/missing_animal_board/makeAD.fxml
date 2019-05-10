@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="kr.or.ddit.rms.user.missing_animal_board.MakeADController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="842.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutY="19.0" prefHeight="65.0" prefWidth="660.0" style="-fx-background-color: #c52020;" text="강아지를 찾습니다" textFill="WHITE">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="39.0" />
+         </font>
+      </Label>
+      <JFXTextField alignment="CENTER_RIGHT" focusColor="WHITE" layoutX="322.0" layoutY="385.0" prefHeight="24.0" prefWidth="168.0" promptText="입력" unFocusColor="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fx:id="adAddImg_iv" fitHeight="288.0" fitWidth="485.0" layoutX="88.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="60.0" layoutY="406.0" text="사례금 ">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="509.0" layoutY="406.0" text="만원">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="48.0" />
+         </font>
+      </Label>
+      <FontAwesomeIcon iconName="WON" layoutX="252.0" layoutY="450.0" size="4em" />
+      <FontAwesomeIcon iconName="PHONE" layoutX="55.0" layoutY="729.0" size="5em" />
+      <JFXTextField fx:id="makeADPhone_tf"  alignment="CENTER" focusColor="WHITE" layoutX="129.0" layoutY="670.0" prefHeight="68.0" prefWidth="468.0" promptText="연락처 입력" unFocusColor="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="makeADdog_tf"  focusColor="WHITE" layoutX="216.0" layoutY="471.0" prefHeight="40.0" prefWidth="400.0" promptText="이름 입력" unFocusColor="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="makeADgender_tf" focusColor="WHITE" layoutX="216.0" layoutY="511.0" prefHeight="40.0" prefWidth="400.0" promptText="견종 입력" unFocusColor="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField focusColor="WHITE" layoutX="216.0" layoutY="551.0" prefHeight="40.0" prefWidth="409.0" promptText="실종 날짜 입력" unFocusColor="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="makeADLoc_tf" focusColor="WHITE" layoutX="216.0" layoutY="590.0" prefHeight="40.0" prefWidth="400.0" promptText="실종 위치 입력" unFocusColor="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="135.0" layoutY="477.0" text="이름 : ">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="135.0" layoutY="517.0" text="견종 : ">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="81.0" layoutY="557.0" text="실종 시간 : ">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="81.0" layoutY="596.0" text="실종 위치 : ">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="81.0" layoutY="631.0" text="특이 사항 : ">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="makeADcontent_ta" focusColor="WHITE" layoutX="216.0" layoutY="627.0" prefHeight="40.0" prefWidth="409.0" promptText="특이 사항 입력" unFocusColor="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="adImg_btn" layoutX="77.0" layoutY="106.0" prefHeight="272.0" prefWidth="501.0" text=" " />
+      <JFXButton fx:id="makeADok_btn" layoutX="129.0" layoutY="780.0" prefHeight="40.0" prefWidth="119.0" style="-fx-background-color: #000000;" text="제작하기" textFill="WHITE">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="makeADcancel_btn" layoutX="379.0" layoutY="780.0" prefHeight="40.0" prefWidth="119.0" style="-fx-background-color: #000000;" text="취 소" textFill="WHITE">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </JFXButton>
+      <ImageView fx:id="adBgImg_iv" fitHeight="765.0" fitWidth="666.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="kr.or.ddit.rms.shelter.protected_animal_board.Protected_Note_Send_Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextField fx:id="idTo_tf" focusColor="#535962" layoutX="306.0" layoutY="79.0" prefHeight="29.0" prefWidth="250.0" text="  " unFocusColor="#b5abab" />
+      <JFXTextField fx:id="title_tf" focusColor="#535962" layoutX="303.0" layoutY="118.0" prefHeight="29.0" prefWidth="250.0" promptText="TITLE" unFocusColor="#b5b5b5">
+         <font>
+            <Font name="HCR Dotum Bold" size="13.0" />
+         </font></JFXTextField>
+      <JFXTextArea fx:id="content_ta" focusColor="#cacaca" layoutX="151.0" layoutY="175.0" prefHeight="251.0" prefWidth="516.0" promptText="  내용을 입력하세요." style="-fx-border-color: #cacaca;" unFocusColor="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="13.0" />
+         </font></JFXTextArea>
+      <JFXButton fx:id="close_btn1" layoutX="438.0" layoutY="461.0" prefHeight="38.0" prefWidth="119.0" style="-fx-background-color: #eceff1;" text="   취소">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="send_btn" layoutX="306.0" layoutY="461.0" prefHeight="38.0" prefWidth="119.0" style="-fx-background-color: #535962;" text="보내기" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="38.0" fitWidth="29.0" layoutX="255.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="kr\or\ddit\rms\user\mypage\note\note.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="-6.0" prefHeight="45.0" prefWidth="800.0" style="-fx-background-color: #b3ccc8;">
+         <children>
+            <AnchorPane layoutX="11.0" layoutY="11.0" prefHeight="24.0" prefWidth="5.0" style="-fx-background-color: #5c8d89;" />
+            <Label layoutX="26.0" layoutY="9.0" text="쪽지보내기" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.web.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="forRemove_vb" prefHeight="530.0" prefWidth="1100.0">
+         <children>
+            <AnchorPane layoutX="219.0" prefHeight="133.0" prefWidth="739.0">
+               <children>
+                  <JFXButton fx:id="report_btn" layoutX="649.0" layoutY="69.0" prefHeight="29.0" prefWidth="62.0" style="-fx-background-color: #ef9a9a;" text="신고" textFill="WHITE" />
+                  <Label layoutX="176.0" layoutY="31.0" text="제목">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="164.0" layoutY="75.0" text="작성자">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="freeboard_title_tf" focusColor="#c0c6da" layoutX="228.0" layoutY="27.0" prefHeight="29.0" prefWidth="313.0" style="-fx-background-color: #eceff1;" unFocusColor="#eceff1" />
+                  <JFXTextField fx:id="freeboard_id_tf" focusColor="#c0c6da" layoutX="228.0" layoutY="69.0" prefHeight="29.0" prefWidth="313.0" style="-fx-background-color: #eceff1;" unFocusColor="#eceff1" />
+                  <ImageView fx:id="Layout_logo_note_img" fitHeight="83.0" fitWidth="36.0" layoutX="598.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="kr/or/ddit/rms/user/free_board/note.png" />
+                     </image>
+                  </ImageView>
+                  <HBox layoutX="-84.0" layoutY="80.0" prefHeight="21.0" prefWidth="218.0" spacing="10.0">
+                     <children>
+                        <Label text="작성일" />
+                        <Label fx:id="freeboard_upd_date_label" text="Label" />
+                        <Label text="조회수" />
+                        <Label fx:id="freeboard_cnt_label" text="Label" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="91.0" layoutY="121.0" prefHeight="144.0" prefWidth="926.0">
+               <children>
+                  <WebView fx:id="freeboard_content_wv" layoutX="174.0" prefHeight="144.0" prefWidth="752.0" />
+                  <ImageView fx:id="freeboard_content_iv" fitHeight="144.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <ScrollPane layoutX="91.0" layoutY="366.0" prefHeight="116.0" prefWidth="926.0">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="722.0">
+                     <children>
+                        <TableView fx:id="comment_table" layoutX="-4.0" layoutY="-1.0" prefHeight="116.0" prefWidth="914.0">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <columns>
+                              <TableColumn fx:id="comment_table_col1" prefWidth="75.0" text="번호" />
+                              <TableColumn fx:id="comment_table_col2" prefWidth="75.0" text="글번호" />
+                              <TableColumn fx:id="comment_table_col3" prefWidth="75.0" text="작성자" />
+                              <TableColumn fx:id="comment_table_col4" prefWidth="75.0" text="날짜" />
+                              <TableColumn fx:id="comment_table_col5" prefWidth="75.0" text="내용" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <HBox alignment="CENTER_RIGHT" layoutX="832.0" layoutY="482.0" prefHeight="35.0" prefWidth="185.0">
+               <children>
+                  <JFXButton fx:id="freeboard_upd_btn" text="수정" />
+                  <JFXButton fx:id="freeboard_del_btn" text="삭제" />
+                  <JFXButton fx:id="freeboard_gotolist_btn" text="목록" />
+               </children>
+            </HBox>
+            <AnchorPane layoutX="91.0" layoutY="273.0" prefHeight="86.0" prefWidth="926.0" style="-fx-background-color: #EAEAEA;">
+               <children>
+                  <JFXTextField fx:id="freeboard_comment_name_textfield" layoutX="7.0" layoutY="51.0" prefHeight="23.0" prefWidth="104.0" style="-fx-background-color: #ffffff;" unFocusColor="WHITE" />
+                  <JFXTextArea fx:id="freeboard_comment_add_ta" layoutX="116.0" layoutY="6.0" prefHeight="75.0" prefWidth="687.0" style="-fx-background-color: #ffffff;" unFocusColor="WHITE" />
+                  <Label layoutX="11.0" layoutY="14.0" prefHeight="21.0" prefWidth="83.0" text="이름입력">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="freeboard_comment_add_btn" cancelButton="true" layoutX="808.0" layoutY="7.0" prefHeight="73.0" prefWidth="115.0" style="-fx-background-color: #5e5f7c;" text="댓글등록" textFill="WHITE">
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

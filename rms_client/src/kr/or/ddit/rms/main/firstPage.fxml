@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="mainPane" fx:controller="kr.or.ddit.rms.main.firstPageController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #507FB7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="0.0" prefWidth="1102.0" style="-fx-background-color: #393939;">
+         <children>
+            <Label layoutX="528.0" layoutY="3.0" prefHeight="23.0" prefWidth="102.0" text="      접속ID : " textFill="#70acf2">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="16.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="Layout_logout_btn" layoutX="828.0" text="로그아웃" textFill="#70acf2">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="Layout_mypage_btn" layoutX="910.0" text="마이페이지" textFill="#70acf2">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="Layout_memCenter_btn" layoutX="1007.0" text="고객센터" textFill="#70acf2">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="16.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="layout_name_label" layoutX="628.0" layoutY="3.0" prefHeight="23.0" prefWidth="206.0" textFill="#70acf2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="Layout_logo_img" fitHeight="153.0" fitWidth="190.0" layoutX="-3.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="kr/or/ddit/rms/admin/free_board/ddd1.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="122.0" layoutY="88.0" prefHeight="36.0" prefWidth="981.0">
+         <children>
+            <JFXButton fx:id="Layout_rd_btn" prefHeight="36.0" prefWidth="139.0" text="실종동물찾기" textFill="#393939">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="Layout_protect_btn" prefHeight="36.0" prefWidth="139.0" text="보호동물공고" textFill="#393939">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="Layout_adopt_btn" prefHeight="36.0" prefWidth="139.0" text="유기동물 입양" textFill="#393939">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="Layout_vb_btn" prefHeight="36.0" prefWidth="139.0" text="자원봉사" textFill="#393939">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="Layout_spon_btn" prefHeight="36.0" prefWidth="139.0" text="후원하기" textFill="#393939">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="Layout_shop_btn" prefHeight="36.0" prefWidth="139.0" text="굿즈몰" textFill="#393939">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="Layout_comu_btn" prefHeight="36.0" prefWidth="139.0" text="커뮤니티" textFill="#393939">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

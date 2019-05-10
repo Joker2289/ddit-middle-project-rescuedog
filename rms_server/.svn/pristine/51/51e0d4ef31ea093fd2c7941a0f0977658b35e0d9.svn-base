@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할 때 같이 사용된다. -->			
+<sqlMap namespace="ask_log">
+	<!-- 
+		이 영역에 sql문에 맞는 태그를 사용하여 SQL문을 기술한다.
+		
+		사용할 수 있는 기본적인 태그들
+		<select> ~~~ </select>
+		<insert> ~~~ </insert>
+		<update> ~~~ </update>
+		<delete> ~~~ </delete>
+	 -->
+	 
+	 <!-- 
+	 	위 태그에서 사용되는 속성들
+	 		1) id속성 : 해당 태그를 호출할 때 <sqlMap>태그의 namespace와
+	 							  연결하여 사용하는 이름
+	 		2) parameterClass속성 : sql문에 사용될 데이터가 들어있는 객체를
+	 							  지정한다. 
+	 							  (보통 VO클래스, 자바의 자료형이름 등이 사용된다.)
+	 							  (typeAlia로 지정한 alias명을 사용할 수 있다.)							  
+			3) resultClass속성 : select문을 실행한 결과를 담을 객체를 지정한다.
+									(보통 VO클래스나 자바의 자료형이름을 사용한다.)							 
+	 -->
+	 
+	 <!-- insert 연습 -->
+	 <insert id="insertAsk_log" parameterClass="Ask_logVO">
+	 		insert into ask_log (custom_id,ask_date,ask_content)
+	 		values (#custom_id#, #ask_date#,#ask_content#)
+	 </insert>
+	 
+	 <!-- update 연습 (parameterClass에 alias를 지정할 수 있다.) -->
+	 <update id="updateAsk_log" parameterClass="Ask_logVO">
+	 		update ask_log set custom_id=#custom_id#,
+	 										ask_date=to_date(#ask_date#,'yyyy-MM-dd HH24:MI:SS'),
+	 										ask_content=#ask_content#
+	 		where custom_id=#custom_id#
+	 </update>
+	 
+	 <!-- 
+	 		parameterClass에 설정되는 값이 단일값(즉 1개의 데이터)이면
+	 		SQL문에 이 값을 나타내는 변수는 특별히 이름이 정해지지 않았다.
+	 		(즉, 사용자가 임의로 지정할 수 있다.)
+	 -->
+	 <!-- delete 연습 -->
+	 <delete id="deleteAsk_log" parameterClass="String">
+<!-- 	 		delete from mymember where mem_id=#mem_id# -->
+			delete from ask_log where custom_id=#sss# 
+	 </delete>
+	 
+	 <!-- select 연습 -->
+	 <select id="getAsk_logAll" resultClass="Ask_logVO">
+	 		select custom_id,ask_date,ask_content from ask_log
+	 </select>
+	 
+	 <select id="getAsk_log" resultClass="int" parameterClass="String">
+	 		select count(*) from ask_log where mem_id=#mem_id#
+	 </select>
+	 		
+	 <select id="getSearchAsk_log" parameterClass="Ask_logVO" resultClass="Ask_logVO">
+	 		select custom_id,ask_date,ask_content from ask_log
+	 		<dynamic prepend="where">
+		 		<isNotEmpty property="custom_id" prepend="and">
+					custom_id = #custom_id#
+				</isNotEmpty>
+					<isNotEmpty property="ask_date" prepend="and">
+	 				ask_date = #ask_date#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="ask_content" prepend="and">
+					ask_content = #ask_content#
+				</isNotEmpty>
+	 			
+	 			
+	 			
+	 		</dynamic>
+	 </select>
+
+</sqlMap>			
+
+
+
+
+

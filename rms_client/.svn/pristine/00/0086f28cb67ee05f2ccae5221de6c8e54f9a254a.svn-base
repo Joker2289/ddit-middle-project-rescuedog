@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="1023.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.admin.goods_mall.goods_view.A_goods_detail_view_controller">
+   <children>
+      <Label fx:id="Detail_Pname_Lbl" layoutX="588.0" layoutY="87.0" prefHeight="41.0" prefWidth="390.0" text="핸드폰 케이스" textAlignment="CENTER">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="39.0" />
+         </font>
+      </Label>
+      <Label fx:id="Detail_Price_Lbl" layoutX="588.0" layoutY="189.0" prefHeight="41.0" prefWidth="204.0" text="27000 WON" textAlignment="CENTER">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="Detail_Point_Lbl" layoutX="642.0" layoutY="230.0" prefHeight="41.0" prefWidth="141.0" text="0 WON" textAlignment="CENTER">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </Label>
+      <JFXTextArea fx:id="Detail_Content_Txt" editable="false" focusColor="WHITE" layoutX="588.0" layoutY="309.0" prefHeight="108.0" prefWidth="358.0" text="내용" unFocusColor="WHITE">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </JFXTextArea>
+      <Label layoutX="593.0" layoutY="231.0" prefHeight="36.0" prefWidth="55.0" text="적립금 :">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="Detail_Goods_imgv" fitHeight="403.0" fitWidth="530.0" layoutX="30.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="Close_Btn" layoutX="923.0" layoutY="23.0" text=" ">
+         <graphic>
+            <FontAwesomeIcon iconName="CLOSE" size="3em" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

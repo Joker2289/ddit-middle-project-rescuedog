@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할 때 같이 사용된다. -->			
+<sqlMap namespace="protected">
+	<!-- 
+		이 영역에 sql문에 맞는 태그를 사용하여 SQL문을 기술한다.
+		
+		사용할 수 있는 기본적인 태그들
+		<select> ~~~ </select>
+		<insert> ~~~ </insert>
+		<update> ~~~ </update>
+		<delete> ~~~ </delete>
+	 -->
+	 
+	 <!-- 
+	 	위 태그에서 사용되는 속성들
+	 		1) id속성 : 해당 태그를 호출할 때 <sqlMap>태그의 namespace와
+	 							  연결하여 사용하는 이름
+	 		2) parameterClass속성 : sql문에 사용될 데이터가 들어있는 객체를
+	 							  지정한다. 
+	 							  (보통 VO클래스, 자바의 자료형이름 등이 사용된다.)
+	 							  (typeAlia로 지정한 alias명을 사용할 수 있다.)							  
+			3) resultClass속성 : select문을 실행한 결과를 담을 객체를 지정한다.
+									(보통 VO클래스나 자바의 자료형이름을 사용한다.)							 
+	 -->
+	 
+	 <!-- insert 연습 -->
+	 <insert id="insertboard" parameterClass="Protected_boardVO">
+	 		insert into protected_board (board_num,title,upd_date,mem_id,img,com_idx,find_loc,characteristic,gender,kind,name,tel)
+	 		values (protectedboard_seq.nextval, #title#, sysdate, #mem_id#,
+	 		#img#, 0, #find_loc#,#characteristic#,#gender#,#kind#,#name#,#tel#)
+	 </insert>
+	 
+	 <!-- update 연습 (parameterClass에 alias를 지정할 수 있다.) -->
+	 <update id="updateboard" parameterClass="Protected_boardVO">
+	 		update protected_board set board_num=#board_num#,
+	 										title=#title#,
+	 										upd_date=to_date(#upd_date#,'yyyy-MM-dd HH24:MI:SS'),
+	 										mem_id=#mem_id#,
+	 										img=#img#,
+	 										com_idx=#com_idx#,
+	 										find_loc=#find_loc#,
+	 										characteristic=#characteristic#,
+	 										gender=#gender#,
+	 										kind=#kind#,
+	 										name=#name#,
+	 					
+	 										tel=#tel#
+	 										
+	 										
+	 		where board_num=#board_num#
+	 </update>
+	 
+	 <!-- 
+	 		parameterClass에 설정되는 값이 단일값(즉 1개의 데이터)이면
+	 		SQL문에 이 값을 나타내는 변수는 특별히 이름이 정해지지 않았다.
+	 		(즉, 사용자가 임의로 지정할 수 있다.)
+	 -->
+	 <!-- delete 연습 -->
+	 <delete id="deleteboard" parameterClass="Protected_boardVO">
+<!-- 	 		delete from mymember where mem_id=#mem_id# -->
+			delete from protected_board where board_num=#board_num# 
+	 </delete>
+	 
+	 <!-- select 연습 -->
+	 <select id="getboardAll" resultClass="Protected_boardVO">
+	 		select board_num,title,upd_date,mem_id,img,com_idx,find_loc,characteristic,gender,kind,name,tel
+	 		from protected_board 
+	 		
+	 </select>
+	 
+	 <select id="getboard" resultClass="int" parameterClass="String">
+	 		select count(*) from protected_board where board_num=#board_num#
+	 </select>
+	 		
+	 <select id="getprotectedTextSearch" resultClass="Protected_boardVO" parameterClass="Protected_boardVO">
+	 			select board_num,title,upd_date,mem_id,img,com_idx,find_loc,characteristic,gender,kind,name,tel
+	 		from protected_board 
+	 		<dynamic prepend="where">
+		 		<isNotEmpty property="title" prepend="or">
+					title like '%' || #title# || '%'
+				</isNotEmpty>
+				
+					<isNotEmpty property="mem_id" prepend="or">
+	 				mem_id like '%' || #mem_id# || '%'
+					
+	 			</isNotEmpty>
+	 			
+                <isNotEmpty property="find_loc" prepend="or">
+	 				find_loc like '%' || #find_loc# || '%'
+					
+	 			</isNotEmpty>
+	 			
+                <isNotEmpty property="characteristic" prepend="or">
+	 				characteristic like '%' || #characteristic# || '%'
+	 			</isNotEmpty>
+                <isNotEmpty property="gender" prepend="or">
+	 				gender like '%' || #gender# || '%'
+	 			</isNotEmpty>
+                <isNotEmpty property="kind" prepend="or">
+	 				kind like '%' || #kind# || '%'
+	 			</isNotEmpty>
+                <isNotEmpty property="name" prepend="or">
+	 				name like '%' || #name# || '%'
+	 			</isNotEmpty>
+                <isNotEmpty property="tel" prepend="or">
+	 				tel like '%' || #tel# || '%'
+	 			</isNotEmpty>
+
+			</dynamic>
+	 </select>
+	 
+	 		
+	 <select id="getSearchprotected" parameterClass="Protected_boardVO" resultClass="Protected_boardVO">
+	 		select board_num ,title,upd_date,mem_id,img,com_idx,find_loc,characteristic,gender,kind,name
+from protected_board
+	 		<dynamic prepend="where">
+		 		<isNotEmpty property="board_num" prepend="and">
+					board_num = #board_num#
+				</isNotEmpty>
+					<isNotEmpty property="title" prepend="and">
+	 				title = #title#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="upd_date" prepend="and">
+					upd_date = #upd_date#
+				</isNotEmpty>
+				<isNotEmpty property="mem_id" prepend="and">
+	 				mem_id = #mem_id#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="img" prepend="and">
+					img = #img#
+				</isNotEmpty>
+					<isNotEmpty property="com_idx" prepend="and">
+	 				com_idx = #com_idx#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="find_loc" prepend="and">
+					find_loc = #find_loc#
+				</isNotEmpty>
+				<isNotEmpty property="characteristic" prepend="and">
+					characteristic = #characteristic#
+				</isNotEmpty>
+				<isNotEmpty property="gender" prepend="and">
+					gender = #gender#
+				</isNotEmpty>
+				<isNotEmpty property="name" prepend="and">
+					kind = #kind#
+				</isNotEmpty>
+				<isNotEmpty property="kind" prepend="and">
+					name = #name#
+				</isNotEmpty>
+				<isNotEmpty property="kind" prepend="and">
+					tel = #tel#
+				</isNotEmpty>
+
+				
+				
+				
+	 			
+	 
+	 			
+	 		</dynamic>
+	 </select>
+	 			
+
+</sqlMap>			
+
+
+
+
+

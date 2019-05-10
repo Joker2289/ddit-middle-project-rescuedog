@@ -1,0 +1,923 @@
+package kr.or.ddit.rms.mainpage.main_page;
+
+import java.io.IOException;
+import java.net.URL;
+import java.rmi.RemoteException;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDrawer;
+
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import javafx.animation.FadeTransition;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.effect.Bloom;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.media.MediaPlayer;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
+import kr.or.ddit.rms.admin.adopt_board.IAdoptBoardAdminService;
+import kr.or.ddit.rms.admin.donation_board.ISponRecruitAService;
+import kr.or.ddit.rms.admin.free_board.Free_boardTbController;
+import kr.or.ddit.rms.admin.goods_mall.delivery_management.Delivery_management_controller;
+import kr.or.ddit.rms.admin.goods_mall.goods_management.Add_goods_controller;
+import kr.or.ddit.rms.admin.goods_mall.goods_view.A_goods_view_controller;
+import kr.or.ddit.rms.admin.goods_mall.sales_management.Sales_management_controller;
+import kr.or.ddit.rms.admin.member_management.Member_managementController;
+import kr.or.ddit.rms.admin.missing_animal_board.Missing_animal_boardTbAController;
+import kr.or.ddit.rms.admin.protected_animal_board.IProtectedBoardAdminService;
+import kr.or.ddit.rms.admin.review_board.Review_boardService;
+import kr.or.ddit.rms.admin.service_center.notice.INoticeAdminService;
+import kr.or.ddit.rms.admin.sharing_info_board.Sharing_info_boardService;
+import kr.or.ddit.rms.admin.volunteer_board.IVolunteerBoardAdmin_Service;
+import kr.or.ddit.rms.main.ChangePane;
+import kr.or.ddit.rms.main.Main;
+import kr.or.ddit.rms.main.MainItemsController;
+import kr.or.ddit.rms.mainpage.login.Login_controller;
+import kr.or.ddit.rms.member.map.Map_capture_controller;
+import kr.or.ddit.rms.member.note.Note_viewController;
+import kr.or.ddit.rms.question.QuestionController;
+import kr.or.ddit.rms.shelter.adopt_board.Add_RD_controller;
+import kr.or.ddit.rms.shelter.adopt_board.Request_view_controller;
+import kr.or.ddit.rms.shelter.adopt_board.S_adopt_view_controller;
+import kr.or.ddit.rms.shelter.donation_board.IDonationBoardSService;
+import kr.or.ddit.rms.shelter.donation_board.recruit.ISponRecruitSService;
+import kr.or.ddit.rms.shelter.free_board.Free_boardTbSController;
+import kr.or.ddit.rms.shelter.missing_animal_board.IMissing_animalSService;
+import kr.or.ddit.rms.shelter.mypage.break_away.IBreak_AwaySService;
+import kr.or.ddit.rms.shelter.mypage.updateshelter.UpdatePWSController;
+import kr.or.ddit.rms.shelter.mypage.updateshelter.UpdateShelterController;
+import kr.or.ddit.rms.shelter.protected_animal_board.IProtectedBoardShelterService;
+import kr.or.ddit.rms.shelter.review_board.Review_boardSService;
+import kr.or.ddit.rms.shelter.service_center.notice.INoticeShelService;
+import kr.or.ddit.rms.shelter.sharing_info_board.Sharing_info_boardSService;
+import kr.or.ddit.rms.shelter.volunteer_board.IVolunteerBoardShelter_Service;
+import kr.or.ddit.rms.shelter.volunteer_log.IVolunteerLogShelter_Serivce;
+import kr.or.ddit.rms.user.adopt_board.IAdoptBoardUserService;
+import kr.or.ddit.rms.user.donation_board.DonationBoard_Controller;
+import kr.or.ddit.rms.user.free_board.Free_boardUService;
+import kr.or.ddit.rms.user.goods_mall.cart_view.Cart_view_controller;
+import kr.or.ddit.rms.user.goods_mall.goods_view.U_goods_view_controller;
+import kr.or.ddit.rms.user.goods_mall.order_history.Order_historyController;
+import kr.or.ddit.rms.user.locating_animal_hospitals.MapController;
+import kr.or.ddit.rms.user.missing_animal_board.IMissing_animalService;
+import kr.or.ddit.rms.user.missing_animal_board.MakeADController;
+import kr.or.ddit.rms.user.missing_animal_board.Missing_animal_boardTbController;
+import kr.or.ddit.rms.user.mypage.activeList.Active_controller;
+import kr.or.ddit.rms.user.mypage.break_away.Break_AwayController;
+import kr.or.ddit.rms.user.mypage.buylist.BuyListController;
+import kr.or.ddit.rms.user.mypage.note.NoteController;
+import kr.or.ddit.rms.user.mypage.updatecustom.UpdateCustomController;
+import kr.or.ddit.rms.user.mypage.updatecustom.UpdatePWController;
+import kr.or.ddit.rms.user.protected_animal_board.IProtectedBoardUserService;
+import kr.or.ddit.rms.user.review_board.Review_boardUService;
+import kr.or.ddit.rms.user.service_center.notice.INoticeUserService;
+import kr.or.ddit.rms.user.sharing_info_board.Sharing_info_boardUService;
+import kr.or.ddit.rms.user.volunteer_board.IVolunteerBoardUser_Service;
+import kr.or.ddit.rms.user.volunteer_log.IVolunteerLogUser_Service;
+import kr.or.ddit.rms.vo.NoteVO;
+
+public class Main_page_controller implements Initializable {
+
+	@FXML
+	FontAwesomeIcon PAW; // 내 장난감
+
+	@FXML
+	Label Main_Logid_Lbl; // 로그인시 아이디 라벨
+	@FXML
+	Label Main_Logat_Lbl; // 로그인시 주체 라벨
+
+	@FXML
+	JFXButton Main_Logout_Btn; // 로그아웃 버튼
+	@FXML
+	JFXButton Main_Mypage_btn; // 마이페이지 버튼
+	@FXML
+	JFXButton Main_SC_Btn; // 고객센터 버튼
+
+	@FXML
+	JFXButton Main_MAB_Btn; // 실종동물찾기 버튼
+	@FXML
+	JFXButton Main_PAB_Btn; // 보호동물공고 버튼
+	@FXML
+	JFXButton Main_AAB_Btn; // 유기동물 입양 버튼
+	@FXML
+	JFXButton Main_VRB_Btn; // 자원봉사 버튼
+	@FXML
+	JFXButton Main_Donate_Btn; // 후원하기 버튼
+	@FXML
+	JFXButton Main_Goodsmall_Btn; // 굿즈몰 버튼
+	@FXML
+	JFXButton Main_Comunity_Btn; // 커뮤니티 버튼
+	@FXML
+	JFXButton Main_MM_Btn; // 회원 관리
+	@FXML
+	JFXButton gotoMain_btn; // 메인버튼
+	@FXML
+	JFXButton main_note_iconbtn; // 쪽지버튼
+	@FXML
+	JFXButton main_map_iconbtn; // 지도 버튼
+	@FXML
+	FontAwesomeIcon main_note_icon; // 지도 버튼
+
+	@FXML
+	JFXDrawer Main_Manu_Drawer;
+
+	@FXML
+	AnchorPane mainPane;
+	@FXML
+	public static AnchorPane loadPane;
+	boolean mediaFlag;
+	MediaPlayer player;
+
+	// 민규방법 굿즈몰 장바구니
+	// public static FXMLLoader fxmlLoad;
+
+	// 민규방법 굿즈몰 장바구니
+	public static FXMLLoader fxmlLoad;
+	public static Stage WritePage;
+
+	Class locate;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		VBox box = null;
+		gotoMain_btn.setOnAction(e -> gotoMain());
+		gotoMain();
+		iconSet();
+
+		// 요거두 지우지마
+		PAW.setVisible(true);
+
+		// 요거 지우지마
+		mainPane.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
+			foodPrint(e);
+
+			// if(PAW.is);{
+			// fadeTransition.stop();
+			// }
+
+			// double yx = myNode.getLocalToSceneTransform().getMyx();
+			// double yy = myNode.getLocalToSceneTransform().getMyy();
+			// double angle = Math.atan2(yx, yy);
+			// angle = Math.toDegrees(angle);
+			// angle = angle < 0 ? angle + 360 : angle;
+
+		});
+
+		// 로그인 ID, Author Label 텍스트 입력
+		Main_Logid_Lbl.setText(Login_controller.log.getMem_id());
+
+		// Author로 구분할때 fxml파일 들어있는 패키지(locate) 지정해줌
+		// fxml파일명 똑같아도 상관없더라
+		if (Login_controller.log.getMem_author().equals("1")) {
+			Main_Logat_Lbl.setText("(일반회원)");
+			locate = kr.or.ddit.rms.mainpage.main_page.menus_Custom.C.class;
+			Main_MM_Btn.setVisible(false); // 회원관리(관리자 기능버튼 비활성화)
+		} else if (Login_controller.log.getMem_author().equals("2")) {
+			Main_Logat_Lbl.setText("(보호기관)");
+			locate = kr.or.ddit.rms.mainpage.main_page.menus_Shelter.S.class;
+			Main_Goodsmall_Btn.setVisible(false); // 굿즈몰 비활성화
+			Main_MM_Btn.setVisible(false); // 회원관리(관리자 기능버튼 비활성화)
+		} else if (Login_controller.log.getMem_author().equals("3")) {
+			Main_Logat_Lbl.setText("(관리자)");
+			locate = kr.or.ddit.rms.mainpage.main_page.menus_Admin.A.class;
+			Main_Mypage_btn.setVisible(false); // 메인페이지 비활성화
+		}
+
+		// 로그아웃 버튼 클릭
+		Main_Logout_Btn.setOnAction(e -> {
+			Class sc = Main.class;
+			ChangeScene.ChangeView(sc, "login_page.fxml", true);
+		});
+
+		main_map_iconbtn.setOnAction(e -> {
+			modalMap();
+			Main_Manu_Drawer.toFront();
+		});
+
+		main_note_iconbtn.setOnAction(e -> {
+			modalNote();
+			Main_Manu_Drawer.toFront();
+		});
+
+		// 버튼 기능 추가 구역
+		Main_Mypage_btn.setOnAction(e -> {
+			if(Login_controller.log.getMem_author().equals("1")) {
+				ChangePane.selFxml = "activeList_main.fxml";
+				ChangePane.fxmlClass = Active_controller.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				Main_Manu_Drawer.close();
+			}else {
+				showMenu(Main_Mypage_btn.getText(), box);
+				Main_Manu_Drawer.toFront();
+				hideMenu();
+			}
+		});
+
+		Main_SC_Btn.setOnAction(e -> {
+			showMenu(Main_SC_Btn.getText(), box);
+			Main_Manu_Drawer.toFront();
+			hideMenu();
+		});
+
+		Main_MAB_Btn.setOnAction(e -> {
+			showMenu(Main_MAB_Btn.getText(), box);
+			Main_Manu_Drawer.toFront();
+			hideMenu();
+		});
+
+		Main_PAB_Btn.setOnAction(e -> {
+			showMenu(Main_PAB_Btn.getText(), box);
+			Main_Manu_Drawer.toFront();
+			hideMenu();
+		});
+
+		Main_AAB_Btn.setOnAction(e -> {
+			showMenu(Main_AAB_Btn.getText(), box);
+			Main_Manu_Drawer.toFront();
+			hideMenu();
+		});
+
+		Main_VRB_Btn.setOnAction(e -> {
+			showMenu(Main_VRB_Btn.getText(), box);
+			Main_Manu_Drawer.toFront();
+			hideMenu();
+		});
+
+		Main_Donate_Btn.setOnAction(e -> {
+			showMenu(Main_Donate_Btn.getText(), box);
+			Main_Manu_Drawer.toFront();
+			hideMenu();
+		});
+
+		Main_Goodsmall_Btn.setOnAction(e -> {
+			showMenu(Main_Goodsmall_Btn.getText(), box);
+			Main_Manu_Drawer.toFront();
+			hideMenu();
+		});
+
+		Main_Comunity_Btn.setOnAction(e -> {
+			showMenu(Main_Comunity_Btn.getText(), box);
+			Main_Manu_Drawer.toFront();
+			hideMenu();
+		});
+
+		Main_MM_Btn.setOnAction(e -> {
+			ChangePane.selFxml = "member_manage.fxml";
+			ChangePane.fxmlClass = Member_managementController.class;
+			loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+			Main_Manu_Drawer.close();
+		});
+
+	}
+
+	private void iconSet() {
+		try {
+			List<NoteVO> list = Main.ns.getNoteTo(Login_controller.log.getMem_id());
+			if (!list.isEmpty()) {
+				for (int i = 0; i < list.size(); i++) {
+					if (!(list.get(i).getNote_cnt().equals("Y"))) {
+						Bloom l = new Bloom();
+						// Light.Spot e = new Light.Spot();
+						// e.setColor(Color.CORNFLOWERBLUE);
+						// Lighting l =new Lighting();
+						// e.setX(70);
+						// e.setY(55);
+						// e.setZ(500);
+						// l.setLight(e);
+						// Effect e =new Effect;
+						main_note_icon.setEffect(l);
+					}
+				}
+			}
+		} catch (RemoteException e1) {
+			e1.printStackTrace();
+		}
+
+	}
+
+	private void foodPrint(MouseEvent e) {
+		FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), PAW);
+		fadeTransition.setFromValue(0.5);
+		fadeTransition.setToValue(0.0);
+		fadeTransition.setCycleCount(1);
+		fadeTransition.play();
+
+		int ran = (int) (Math.random() * 3);
+
+		if (ran == 0) {
+			PAW.setRotate(35.0);
+		} else if (ran == 1) {
+			PAW.setRotate(325.0);
+		} else {
+			PAW.setRotate(0.0);
+		}
+
+		PAW.setLayoutX(e.getX());
+		PAW.setLayoutY(e.getY());
+		PAW.toBack();
+	}
+
+	private void modalMap() {
+		WritePage = new Stage(StageStyle.UTILITY);
+		WritePage.initModality(Modality.APPLICATION_MODAL);
+
+		Parent parent = null;
+		try {
+			fxmlLoad = new FXMLLoader(Map_capture_controller.class.getResource("map_capture.fxml"));
+			parent = fxmlLoad.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// JFXButton cancel = (JFXButton) parent.lookup("#close_btn");
+		// JFXButton newNote = (JFXButton) parent.lookup("#note_write_btn");
+
+		Scene scene = new Scene(parent);
+		WritePage.setTitle("지도 보기");
+		WritePage.setScene(scene);
+		WritePage.show();
+	}
+
+	private void modalNote() {
+		WritePage = new Stage(StageStyle.UTILITY);
+		WritePage.initModality(Modality.APPLICATION_MODAL);
+
+		Parent parent = null;
+		try {
+			fxmlLoad = new FXMLLoader(Note_viewController.class.getResource("note_view.fxml"));
+			parent = fxmlLoad.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		Scene scene = new Scene(parent);
+		WritePage.setTitle("쪽지 보내기");
+		WritePage.setScene(scene);
+		WritePage.show();
+
+	}
+
+	private void modalQuestion() {
+		WritePage = new Stage(StageStyle.UTILITY);
+		WritePage.initModality(Modality.APPLICATION_MODAL);
+
+		Parent parent = null;
+		try {
+			fxmlLoad = new FXMLLoader(QuestionController.class.getResource("question.fxml"));
+			parent = fxmlLoad.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		Scene scene = new Scene(parent);
+		WritePage.setTitle("문의 하기");
+		WritePage.setScene(scene);
+		WritePage.show();
+
+	}
+
+	private void modalMakeAD() {
+		WritePage = new Stage(StageStyle.UTILITY);
+		WritePage.initModality(Modality.APPLICATION_MODAL);
+
+		Parent parent = null;
+		try {
+			fxmlLoad = new FXMLLoader(MakeADController.class.getResource("makeAD.fxml"));
+			parent = fxmlLoad.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		Scene scene = new Scene(parent);
+		WritePage.setTitle("전단지 제작");
+		WritePage.setScene(scene);
+		WritePage.show();
+
+	}
+	
+	private void gotoMain() {
+		if (loadPane != null) {
+			loadPane.getChildren().clear();
+			this.mainPane.getChildren().remove(loadPane);
+		}
+		try {
+			fxmlLoad = new FXMLLoader(Main.class.getResource("mainItems.fxml"));
+			loadPane = fxmlLoad.load();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
+		this.mainPane.setOnMouseClicked(e -> {
+			MainItemsController.player.stop();
+		});
+		this.mainPane.getChildren().add(loadPane);
+		loadPane.setLayoutX(0.0);
+		loadPane.setLayoutY(150.0);
+
+	}
+
+	private void showMenu(String menu, VBox box) {
+		try {
+
+			switch (menu) {
+			case "마이페이지":
+				box = FXMLLoader.load(locate.getResource("mypage_menu.fxml"));
+				Main_Manu_Drawer.setSidePane(box);
+				Main_Manu_Drawer.toFront();
+				break;
+			case "고객센터":
+				box = FXMLLoader.load(locate.getResource("service_cneter_menu.fxml"));
+				Main_Manu_Drawer.setSidePane(box);
+				Main_Manu_Drawer.toFront();
+				break;
+			case "실종동물 찾기":
+				box = FXMLLoader.load(locate.getResource("missing_animal_menu.fxml"));
+				Main_Manu_Drawer.setSidePane(box);
+				Main_Manu_Drawer.toFront();
+				break;
+			case "보호동물공고":
+				box = FXMLLoader.load(locate.getResource("protected_animal_menu.fxml"));
+				Main_Manu_Drawer.setSidePane(box);
+				Main_Manu_Drawer.toFront();
+				break;
+			case "유기동물입양":
+				box = FXMLLoader.load(locate.getResource("adopt_animal_menu.fxml"));
+				Main_Manu_Drawer.setSidePane(box);
+				Main_Manu_Drawer.toFront();
+				break;
+			case "자원봉사":
+				box = FXMLLoader.load(locate.getResource("volunteer_menu.fxml"));
+				Main_Manu_Drawer.setSidePane(box);
+				Main_Manu_Drawer.toFront();
+				break;
+			case "후원하기":
+				box = FXMLLoader.load(locate.getResource("donate_menu.fxml"));
+				Main_Manu_Drawer.setSidePane(box);
+				Main_Manu_Drawer.toFront();
+				break;
+			case "굿즈몰":
+				box = FXMLLoader.load(locate.getResource("goods_mall_menu.fxml"));
+				Main_Manu_Drawer.setSidePane(box);
+				Main_Manu_Drawer.toFront();
+				break;
+			case "커뮤니티":
+				box = FXMLLoader.load(locate.getResource("community_menu.fxml"));
+				Main_Manu_Drawer.setSidePane(box);
+				Main_Manu_Drawer.toFront();
+				break;
+			case "회원 관리":
+				box = FXMLLoader.load(locate.getResource("member_management_menu.fxml"));
+				Main_Manu_Drawer.setSidePane(box);
+				Main_Manu_Drawer.toFront();
+				break;
+			default:
+				break;
+			}
+
+			// 이거 알나내느라 밤샜다 준호야.. 너가 일궈놓은 땅에 형이 꽃 이쁘게 피웟다
+			// 버튼마다 AccessibleText()를 text와 동일하게 압력!!(헷갈리지 않기 위해)
+			// AccessibleText() + Athour값을 입력해, 로그인 주체의 메뉴를 확실하게 구분지을수 있음
+			// ex) 정보수정 & 탈퇴1 -> 정보수정 & 탈퇴(회원)창 / 정보수정 & 탈퇴2 -> 정보수정 & 탈퇴(보호기관)창
+			// node추가와동시에 각노드에 클릭 이벤트 핸들러 추가 -> child add 안해도 이벤트 추가가능!!
+			for (Node node : box.getChildren()) {
+				if (node.getAccessibleText() != null) {
+					menuSel(node);
+				}
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	private void menuSel(Node node) {
+		node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) -> {
+			MainItemsController.player.stop();
+			switch (node.getAccessibleText() + Login_controller.log.getMem_author()) {
+
+			// 회원부분
+			case "취소1":
+				System.out.println(node.getAccessibleText());
+				hideMenu();
+				break;
+
+			// 마이페이지
+			case "회원정보수정1":
+				loadPaneSel(UpdateCustomController.class.getResource("usermodify.fxml"));
+				UpdateCustomController ucc = fxmlLoad.getController();
+				JFXButton modify_ok_btn = (JFXButton) loadPane.lookup("#modify_ok_btn");
+				JFXButton modify_no_btn = (JFXButton) loadPane.lookup("#modify_no_btn");
+
+				modify_ok_btn.setOnAction(e1 -> ucc.modifyCutom());
+				modify_no_btn.setOnAction(e1 -> gotoMain());
+				System.out.println(node.getAccessibleText());
+				break;
+			case "비밀번호 변경1":
+				loadPaneSel(UpdateCustomController.class.getResource("updatePW.fxml"));
+				UpdatePWController upwc = fxmlLoad.getController();
+				JFXButton mypage_ok_btn = (JFXButton) loadPane.lookup("#mypage_ok_btn");
+				JFXButton mypage_no_btn = (JFXButton) loadPane.lookup("#mypage_no_btn");
+				mypage_ok_btn.setOnAction(e1 -> upwc.updPassword());
+				mypage_no_btn.setOnAction(e1 -> gotoMain());
+				System.out.println(node.getAccessibleText());
+				break;
+			case "활동 내역1":
+				loadPaneSel(Active_controller.class.getResource("activeList_main.fxml"));
+				break;
+			case "구매 내역1":
+				loadPaneSel(BuyListController.class.getResource("buylist_view.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+			case "탈퇴1":
+				ChangePane.selFxml = "break_away.fxml";
+				ChangePane.fxmlClass = Break_AwayController.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+			// 고객센터
+			case "공지 사항1":
+				ChangePane.selFxml = "notice_table.fxml";
+				ChangePane.fxmlClass = INoticeUserService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "1 : 1 문의1":
+				System.out.println(node.getAccessibleText());
+				modalQuestion();
+				Main_Manu_Drawer.toFront();
+				hideMenu();
+				break;
+
+			// 실종동물찾기
+			case "실종동물 게시판1":
+				ChangePane.selFxml = "missingTable.fxml";
+				ChangePane.fxmlClass = Missing_animal_boardTbController.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "실종동물 등록1":
+				ChangePane.selFxml = "missing_add_view.fxml";
+				ChangePane.fxmlClass = IMissing_animalService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "실종위치 찾기1":
+				Main_Manu_Drawer.toFront();
+				System.out.println(node.getAccessibleText());
+				break;
+			case "전단지 제작1":
+				Main_Manu_Drawer.toFront();
+				modalMakeAD();
+				hideMenu();
+				System.out.println(node.getAccessibleText());
+				break;
+			// 보호동물 공고
+			case "보호동물 게시판1":
+				System.out.println(node.getAccessibleText());
+				loadPaneSel(IProtectedBoardUserService.class.getResource("protectedBoard_View.fxml"));
+				break;
+			case "보호동물 등록1":
+				System.out.println(node.getAccessibleText());
+				loadPaneSel(IProtectedBoardUserService.class.getResource("Protected_Register.fxml"));
+				break;
+			
+			// 유기동물 입양
+			case "입양 게시판1":
+				loadPaneSel(IAdoptBoardUserService.class.getResource("adopt_view.fxml"));
+				break;
+
+			// 후원하기
+			case "후원 모집 게시판1":
+				ChangePane.selFxml = "donation_list.fxml";
+				ChangePane.fxmlClass = DonationBoard_Controller.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+
+			// 굿즈몰
+			case "상품 조회1":
+				loadPaneSel(U_goods_view_controller.class.getResource("goods_view.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+			case "장바구니1":
+				System.out.println(node.getAccessibleText());
+				loadPaneSel(Cart_view_controller.class.getResource("cart_view.fxml"));
+				break;
+			case "주문 내역1":
+				loadPaneSel(Order_historyController.class.getResource("order_history.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+			// 커뮤니티
+			case "자유 게시판1":
+				ChangePane.selFxml = "free_board_table.fxml";
+				ChangePane.fxmlClass = Free_boardUService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "입양 후기 게시판1":
+				ChangePane.selFxml = "review_board_table.fxml";
+				ChangePane.fxmlClass = Review_boardUService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "정보 공유 게시판1":
+				ChangePane.selFxml = "share_table.fxml";
+				ChangePane.fxmlClass = Sharing_info_boardUService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+
+			case "동물병원 찾기1":
+				loadPaneSel(MapController.class.getResource("map.fxml"));
+				break;
+
+			// 자원봉사
+			case "모집 게시판1":
+				loadPaneSel(IVolunteerBoardUser_Service.class.getResource("Volunteerboard_SelectPage.fxml"));
+				break;
+			case "봉사 내역1":
+				loadPaneSel(IVolunteerLogUser_Service.class.getResource("Volunteerboard_RegisterPage.fxml"));
+				break;
+
+			// 보호기관부분
+			case "취소2":
+				System.out.println(node.getAccessibleText());
+				Main_Manu_Drawer.toFront();
+				hideMenu();
+				break;
+
+			// 마이페이지
+			case "회원정보수정2":
+				loadPaneSel(UpdateShelterController.class.getResource("sheltermodify.fxml"));
+				UpdateShelterController usc = fxmlLoad.getController();
+				modify_ok_btn = (JFXButton) loadPane.lookup("#modify_ok_btn");
+				modify_no_btn = (JFXButton) loadPane.lookup("#modify_no_btn");
+
+				modify_ok_btn.setOnAction(e1 -> usc.modifyShelter());
+				modify_no_btn.setOnAction(e1 -> gotoMain());
+				System.out.println(node.getAccessibleText());
+				break;
+			case "비밀번호 변경2":
+				loadPaneSel(UpdateShelterController.class.getResource("updatePWS.fxml"));
+				UpdatePWSController upwsc = fxmlLoad.getController();
+				mypage_ok_btn = (JFXButton) loadPane.lookup("#mypage_ok_btn");
+				mypage_no_btn = (JFXButton) loadPane.lookup("#mypage_no_btn");
+				mypage_ok_btn.setOnAction(e1 -> upwsc.updPassword());
+				mypage_no_btn.setOnAction(e1 -> gotoMain());
+				System.out.println(node.getAccessibleText());
+				break;
+			case "탈퇴2":
+				ChangePane.selFxml = "Sbreak_away.fxml";
+				ChangePane.fxmlClass = IBreak_AwaySService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+			// 고객센터
+			case "공지 사항2":
+				ChangePane.selFxml = "notice_table.fxml";
+				ChangePane.fxmlClass = INoticeShelService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+			case "1 : 1 문의2":
+				System.out.println(node.getAccessibleText());
+				Main_Manu_Drawer.toFront();
+				modalQuestion();
+				hideMenu();
+				break;
+
+			// 실종동물 찾기
+			case "실종동물 게시판2":
+				ChangePane.selFxml = "missingSTable.fxml";
+				ChangePane.fxmlClass = IMissing_animalSService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "전단지 제작2":
+				Main_Manu_Drawer.toFront();
+				modalMakeAD();
+				System.out.println(node.getAccessibleText());
+				hideMenu();
+				break;
+
+			// 보호동물 공고
+			case "보호동물 게시판2":
+				loadPaneSel(IProtectedBoardShelterService.class.getResource("protectedBoard_View.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+			case "보호동물 등록2":
+				loadPaneSel(IProtectedBoardShelterService.class.getResource("Protected_Register.fxml"));
+				break;
+
+			// 유기동물 입양
+				case "입양 게시판2":ChangePane.selFxml = "adopt_view.fxml";
+				ChangePane.fxmlClass = S_adopt_view_controller.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+			case "유기견 등록2":
+				ChangePane.selFxml = "add_RD.fxml";
+				ChangePane.fxmlClass = Add_RD_controller.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+
+			case "입양 신청 심사2":
+				loadPaneSel(Request_view_controller.class.getResource("request_view.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+			// 자원봉사
+			case "모집 게시판2":
+				loadPaneSel(IVolunteerBoardShelter_Service.class.getResource("Volunteerboard_SelectPage.fxml"));
+				break;
+
+			case "자원봉사 신청 심사2":
+				loadPaneSel(IVolunteerLogShelter_Serivce.class.getResource("Volunteerboard_RegisterPage.fxml"));
+				break;
+
+			// 후원하기
+			case "후원 모집 게시판2":
+				ChangePane.selFxml = "recruit_list.fxml";
+				ChangePane.fxmlClass = ISponRecruitSService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+
+			case "후원 내역 조회2":
+				loadPaneSel(IDonationBoardSService.class.getResource("donation_log_list.fxml"));
+				break;
+
+			// 커뮤니티
+			case "자유 게시판2":
+				ChangePane.selFxml = "free_board_table.fxml";
+				ChangePane.fxmlClass = Free_boardTbSController.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "입양 후기 게시판2":
+				ChangePane.selFxml = "review_board_table.fxml";
+				ChangePane.fxmlClass = Review_boardSService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "정보 공유 게시판2":
+				ChangePane.selFxml = "share_table.fxml";
+				ChangePane.fxmlClass = Sharing_info_boardSService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "동물병원 찾기2":
+				loadPaneSel(MapController.class.getResource("map.fxml"));
+				break;
+
+			// 관리자부분
+			case "취소3":
+				System.out.println(node.getAccessibleText());
+				Main_Manu_Drawer.toFront();
+				hideMenu();
+				break;
+
+			// 고객센터
+			case "공지 사항3":
+				ChangePane.selFxml = "notice_table.fxml";
+				ChangePane.fxmlClass = INoticeAdminService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+
+			case "1 : 1 문의3":
+				System.out.println(node.getAccessibleText());
+				modalQuestion();
+				Main_Manu_Drawer.toFront();
+				hideMenu();
+				break;
+
+			// 실종동물 찾기
+			case "실종동물 게시판3":
+				ChangePane.selFxml = "missingTable_A.fxml";
+				ChangePane.fxmlClass = Missing_animal_boardTbAController.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+
+			
+			// 보호동물 공고
+			case "보호동물 게시판3":
+				loadPaneSel(IProtectedBoardAdminService.class.getResource("protectedBoard_View.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+			// 입양 게시판
+			case "입양 게시판3":
+				ChangePane.selFxml = "adopt_view.fxml";
+				ChangePane.fxmlClass = IAdoptBoardAdminService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+
+			// 자원봉사
+			case "모집 게시판3":
+				loadPaneSel(IVolunteerBoardAdmin_Service.class.getResource("Volunteerboard_SelectPage.fxml"));
+				break;
+			// 후원하기
+			case "후원 모집 게시판3":
+				ChangePane.selFxml = "recruit_listA.fxml";
+				ChangePane.fxmlClass = ISponRecruitAService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+
+
+			// 굿즈몰
+			case "상품 조회3":
+				loadPaneSel(A_goods_view_controller.class.getResource("goods_view.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+			case "상품 관리3":
+				ChangePane.selFxml = "add_goods.fxml";
+				ChangePane.fxmlClass = Add_goods_controller.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+
+			case "배송 관리3":
+				loadPaneSel(Delivery_management_controller.class.getResource("delivery_management.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+			case "매출 내역3":
+				loadPaneSel(Sales_management_controller.class.getResource("sales_management.fxml"));
+				System.out.println(node.getAccessibleText());
+				break;
+
+			// 커뮤니티
+			case "자유 게시판3":
+				ChangePane.selFxml = "free_board_table.fxml";
+				ChangePane.fxmlClass = Free_boardTbController.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "입양 후기 게시판3":
+				ChangePane.selFxml = "review_board_table.fxml";
+				ChangePane.fxmlClass = Review_boardService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "정보 공유 게시판3":
+				ChangePane.selFxml = "share_table.fxml";
+				ChangePane.fxmlClass = Sharing_info_boardService.class;
+				loadPaneSel(ChangePane.class.getResource("mainPane.fxml"));
+				break;
+			case "동물병원 찾기3":
+				loadPaneSel(MapController.class.getResource("map.fxml"));
+				break;
+
+//			// 회원 관리
+//			case "회원 조회3":
+//				loadPaneSel(Member_managementController.class.getResource("member_manage.fxml"));
+//				break;
+//
+//			case "블랙리스트 관리3":
+//				System.out.println(node.getAccessibleText());
+//				Main_Manu_Drawer.toFront();
+//				hideMenu();
+//				break;
+
+			default:
+				break;
+			}
+		});
+
+	}
+
+	private void loadPaneSel(URL resource) {
+		loadPane.getChildren().clear();
+		mainPane.getChildren().remove(loadPane);
+		try {
+			fxmlLoad = new FXMLLoader(resource);
+			loadPane = fxmlLoad.load();
+			loadPane.setLayoutX(0.0);
+			loadPane.setLayoutY(180.0);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		mainPane.getChildren().add(loadPane);
+		Main_Manu_Drawer.toFront();
+		hideMenu();
+	}
+
+	// 메뉴바 숨기기 메서드
+	private void hideMenu() {
+		if (Main_Manu_Drawer.isOpened()) {
+			Main_Manu_Drawer.close();
+			Main_Manu_Drawer.setDisable(true); // 메뉴바가 들어가도 메뉴바 범위판이 덮고있어서 그 영역
+		} else { // 노드들 사용블가 하므로 메뉴바 들어가면 사용불가 상태로 만들어줌
+			Main_Manu_Drawer.open();
+			Main_Manu_Drawer.setDisable(false);
+		}
+	}
+
+}

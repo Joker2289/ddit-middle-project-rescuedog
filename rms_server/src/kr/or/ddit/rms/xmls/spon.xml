@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할 때 같이 사용된다. -->			
+<sqlMap namespace="spon">
+	<!-- 
+		이 영역에 sql문에 맞는 태그를 사용하여 SQL문을 기술한다.
+		
+		사용할 수 있는 기본적인 태그들
+		<select> ~~~ </select>
+		<insert> ~~~ </insert>
+		<update> ~~~ </update>
+		<delete> ~~~ </delete>
+	 -->
+	 
+	 <!-- 
+	 	위 태그에서 사용되는 속성들
+	 		1) id속성 : 해당 태그를 호출할 때 <sqlMap>태그의 namespace와
+	 							  연결하여 사용하는 이름
+	 		2) parameterClass속성 : sql문에 사용될 데이터가 들어있는 객체를
+	 							  지정한다. 
+	 							  (보통 VO클래스, 자바의 자료형이름 등이 사용된다.)
+	 							  (typeAlia로 지정한 alias명을 사용할 수 있다.)							  
+			3) resultClass속성 : select문을 실행한 결과를 담을 객체를 지정한다.
+									(보통 VO클래스나 자바의 자료형이름을 사용한다.)							 
+	 -->
+	 
+	 <!-- insert 연습 -->
+	 <insert id="insertSpon" parameterClass="SponVO">
+	 		insert into spon_board (spon_num,shel_id,last_date,upd_date,money,content,title)
+	 		values (spon_num_seq.nextval, #shel_id#,to_date(#last_date#,'yyyy-MM-dd'), to_date(#upd_date#,'yyyy-MM-dd'),#money#,#content#,#title#)
+	 </insert>
+	 
+	  <select id="getBetweenDate" resultClass="SponVO" parameterClass="SponVO">
+	 		select spon_num,shel_id,last_date,upd_date,money,content,title
+	 		from spon_board
+	 		where to_date(upd_date,'yy/mm/dd') between to_date(#last_date#,'yy/mm/dd')
+	 		and to_date(#post_date#,'yy/mm/dd')
+	 </select>
+	 
+	 <!-- update 연습 (parameterClass에 alias를 지정할 수 있다.) -->
+	 <update id="updateSpon" parameterClass="SponVO">
+	 		update spon_board set spon_num=#spon_num#,
+	 										shel_id=#shel_id#,
+	 										last_date=to_date(#last_date#,'yyyy-MM-dd'),
+	 										upd_date=to_date(#upd_date#,'yyyy-MM-dd'),
+	 										money=#money#,
+	 										content=#content#,
+	 										title=#title#
+	 		where spon_num=#spon_num#
+	 </update>
+	 
+	 <!-- 
+	 		parameterClass에 설정되는 값이 단일값(즉 1개의 데이터)이면
+	 		SQL문에 이 값을 나타내는 변수는 특별히 이름이 정해지지 않았다.
+	 		(즉, 사용자가 임의로 지정할 수 있다.)
+	 -->
+	 <!-- delete 연습 -->
+	 <delete id="deleteSpon" parameterClass="SponVO">
+<!-- 	 		delete from mymember where mem_id=#mem_id# -->
+			delete from spon_board where spon_num=#spon_num# 
+	 </delete>
+	 
+	 <!-- select 연습 -->
+	 <select id="getSponAll" resultClass="SponVO">
+	 		select spon_num,shel_id,last_date,upd_date,money,content,title from spon_board
+	 		order by spon_num
+	 </select>
+	 
+	 <select id="getSpon" resultClass="int" parameterClass="String">
+	 		select count(*) from spon_board where spon_num=#spon_num#
+	 </select>
+	 
+	<!--  <select id="getSponshelname" resultClass="String" parameterClass="SponVO">
+		 select distinct shel_name
+			from spon, shelter
+			where custom_id = #custom_id# 
+			and spon.shel_id = shelter.shel_id
+	</select> -->
+	 		
+	 <select id="getSearchSpon" parameterClass="SponVO" resultClass="SponVO">
+	 		select spon_num,shel_id,last_date,upd_date,money,content,title from spon_board
+	 		<dynamic prepend="where">
+		 		<isNotEmpty property="spon_num" prepend="and">
+					spon_num = #spon_num#
+				</isNotEmpty>
+					<isNotEmpty property="shel_id" prepend="and">
+	 				shel_id = #shel_id#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="last_date" prepend="and">
+					last_date = #last_date#
+				</isNotEmpty>
+				<isNotEmpty property="upd_date" prepend="and">
+	 				upd_date = #upd_date#
+	 			</isNotEmpty>
+	 			<isNotEmpty property="money" prepend="and">
+					money = #money#
+				</isNotEmpty>
+	 			<isNotEmpty property="content" prepend="and">
+					content = #content#
+				</isNotEmpty>
+	 			<isNotEmpty property="title" prepend="and">
+					title = #title#
+				</isNotEmpty>
+	 		</dynamic>
+	 		
+	 		<!-- select * from mymember where 1=1
+	 			<isNotEmpty property="mem_id">
+					and mem_id = #mem_id#
+				</isNotEmpty>
+				<isNotEmpty property="mem_name">
+	 				and mem_name = #mem_name#
+	 			</isNotEmpty>
+ 				<isNotEmpty property="mem_tel">
+	 				and mem_tel = #mem_tel#
+	 			</isNotEmpty>
+ 				<isNotEmpty property="mem_addr">
+	 				and mem_addr like '%' || #mem_addr# || '%'
+	 			</isNotEmpty>
+	 			 -->
+	 </select>
+	 
+	 <select id="getSearchSponText" resultClass="SponVO" parameterClass="SponVO">
+	 		select spon_num,shel_id,last_date,upd_date,money,title from spon_board
+	 		<dynamic prepend="where">
+	 		
+	 			<isNotEmpty property="spon_num" prepend="or">
+					spon_num like '%' || #spon_num# || '%'
+				</isNotEmpty>
+	 		
+		 		<isNotEmpty property="shel_id" prepend="or">
+					shel_id like '%' || #shel_id# || '%'
+				</isNotEmpty>
+				
+				<isNotEmpty property="last_date" prepend="or">
+	 				last_date like '%' || #last_date# || '%'
+	 			</isNotEmpty>
+	 			
+                <isNotEmpty property="upd_date" prepend="or">
+	 				upd_date like '%' || #upd_date# || '%'
+	 			</isNotEmpty>
+	 			
+                <isNotEmpty property="money" prepend="or">
+	 				money like '%' || #money# || '%'
+	 			</isNotEmpty>
+	 			
+	 			<isNotEmpty property="title" prepend="or">
+	 				title like '%' || #title# || '%'
+	 			</isNotEmpty>
+			</dynamic>
+	 </select>
+
+</sqlMap>			
+
+
+
+
+

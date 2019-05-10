@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="addPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.shelter.free_board.Free_board_addSController">
+	<children>
+		<VBox layoutY="8.0" prefHeight="530.0" prefWidth="1100.0">
+			<children>
+            <AnchorPane prefHeight="524.0" prefWidth="1100.0">
+               <children>
+      						<JFXTextField fx:id="freeboard_newtitle_tf" layoutX="140.0" layoutY="4.0" prefHeight="29.0" prefWidth="311.0" />
+            				<HTMLEditor fx:id="freeboard_content_ta" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="87.0" layoutY="49.0" prefHeight="355.0" prefWidth="963.0" />
+      						<Label layoutX="94.0" layoutY="17.0" text="제목 : ">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+						<JFXButton fx:id="freeboard_cancel_btn" layoutX="931.0" layoutY="459.0" prefHeight="38.0" prefWidth="119.0" style="-fx-background-color: #eceff1;" text="   취소">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+                     </graphic></JFXButton>
+						<JFXButton fx:id="freeboard_add_btn" layoutX="803.0" layoutY="459.0" prefHeight="38.0" prefWidth="119.0" style="-fx-background-color: #5e5f7c;" text="  등록" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </FontAwesomeIcon>
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font></JFXButton>
+                  <AnchorPane layoutX="86.0" layoutY="415.0" prefHeight="55.0" prefWidth="609.0">
+                     <children>
+            						<Label layoutX="6.0" layoutY="12.0" text="첨부파일">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+            						<JFXTextField fx:id="freeboard_newfile_tf" layoutX="75.0" prefHeight="29.0" prefWidth="299.0" />
+            						<JFXButton fx:id="freeboard_filefind_btn" layoutX="382.0" layoutY="5.0" style="-fx-background-color: #eceff1;" text="찾아보기..">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+			</children>
+		</VBox>
+	</children>
+</AnchorPane>

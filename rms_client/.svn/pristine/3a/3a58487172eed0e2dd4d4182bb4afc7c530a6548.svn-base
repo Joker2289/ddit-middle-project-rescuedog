@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.admin.member_management.Member_managementController">
+   <children>
+      <AnchorPane prefHeight="68.0" prefWidth="1100.0" style="-fx-background-color: #393939;">
+         <children>
+            <JFXTextField fx:id="search_tf" alignment="CENTER" focusColor="WHITE" layoutX="677.0" layoutY="11.0" prefHeight="47.0" prefWidth="329.0" promptText="Search" style="-fx-text-inner-color: #5584c3; -fx-prompt-text-fill: #5584c3;" unFocusColor="#5584c3">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="26.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="search_btn" layoutX="1015.0" layoutY="11.0" prefHeight="47.0" prefWidth="60.0" text=" " textFill="#5584c3">
+               <graphic>
+                  <FontAwesomeIcon fill="#5584c3" iconName="SEARCH" size="3em" wrappingWidth="34.14285659790039" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1.0" layoutY="68.0" minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="1098.0">
+         <children>
+            <TableView fx:id="mem_tv" layoutX="16.0" layoutY="38.0" prefHeight="334.0" prefWidth="418.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <columns>
+                  <TableColumn fx:id="mem_tv_col1" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="mem_tv_col2" prefWidth="75.0" text="권한" />
+                  <TableColumn fx:id="mem_tv_col3" prefWidth="75.0" text="신고횟수" />
+               </columns>
+            </TableView>
+            <JFXButton fx:id="gotoblack_btn" layoutX="449.0" layoutY="349.0" text="추가" />
+            <Pagination fx:id="mem_pg" layoutX="14.0" layoutY="16.0" prefHeight="429.0" prefWidth="423.0" />
+            <Pagination fx:id="black_pg" layoutX="549.0" layoutY="16.0" prefHeight="429.0" prefWidth="423.0" />
+            <JFXButton fx:id="memDel_btn" layoutX="984.0" layoutY="349.0" text="회원 강제 탈퇴" />
+            <TableView fx:id="blacklist_tv" layoutX="551.0" layoutY="38.0" prefHeight="334.0" prefWidth="418.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <columns>
+                  <TableColumn fx:id="black_tv_col1" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="black_tv_col2" prefWidth="75.0" text="사유" />
+                  <TableColumn fx:id="black_tv_col3" prefWidth="75.0" text="신고일" />
+               </columns>
+            </TableView>
+            <JFXButton fx:id="reportDel_btn" layoutX="984.0" layoutY="326.0" text="신고글 삭제" />
+            <JFXButton fx:id="ref_btn" layoutX="462.0" layoutY="182.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

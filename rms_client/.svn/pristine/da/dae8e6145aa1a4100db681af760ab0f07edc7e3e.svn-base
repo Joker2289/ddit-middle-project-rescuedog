@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="813.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.member.note.Note_send_viewController">
+   <children>
+      <AnchorPane prefHeight="52.0" prefWidth="813.0" style="-fx-background-color: #b3ccc8;">
+         <children>
+            <Label layoutX="32.0" layoutY="11.0" prefHeight="32.0" prefWidth="199.0" text="쪽지 쓰기" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="close_btn" layoutX="753.0" layoutY="4.0" prefHeight="45.0" prefWidth="40.0" text=" ">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CLOSE" size="2.5em" text="" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="88.0" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: #b3ccc8;" text="받는 ID" textFill="WHITE">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="145.0" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: #b3ccc8;" text="제 목" textFill="WHITE">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="203.0" prefHeight="32.0" prefWidth="127.0" style="-fx-background-color: #b3ccc8;" text="내 용" textFill="WHITE">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="idTo_tf" focusColor="#5682c2" layoutX="170.0" layoutY="85.0" prefHeight="32.0" prefWidth="176.0" unFocusColor="#4a4646">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="title_tf" focusColor="#5682c2" layoutX="168.0" layoutY="141.0" prefHeight="35.0" prefWidth="329.0" unFocusColor="#4a4646">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+      </JFXTextField>
+      <AnchorPane layoutX="22.0" layoutY="15.0" prefHeight="27.0" prefWidth="5.0" style="-fx-background-color: #5c8d89;" />
+      <JFXButton fx:id="send_btn" layoutX="295.0" layoutY="487.0" prefHeight="38.0" prefWidth="119.0" style="-fx-background-color: #535962;" text="보내기" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="close_btn1" layoutX="427.0" layoutY="487.0" prefHeight="38.0" prefWidth="119.0" style="-fx-background-color: #eceff1;" text="   취소">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+         </graphic>
+      </JFXButton>
+      <JFXTextArea fx:id="content_ta" focusColor="#cacaca" layoutX="27.0" layoutY="247.0" prefHeight="228.0" prefWidth="765.0" promptText="  내용을 입력하세요." style="-fx-border-color: #cacaca;" unFocusColor="WHITE">
+         <font>
+            <Font name="HCR Dotum" size="13.0" />
+         </font>
+      </JFXTextArea>
+   </children>
+</AnchorPane>

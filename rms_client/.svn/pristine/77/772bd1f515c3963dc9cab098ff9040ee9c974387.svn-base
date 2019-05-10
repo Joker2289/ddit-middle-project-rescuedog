@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1100.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.main.MainItemsController">
+   <children>
+      <MediaView fx:id="main_mediaview" fitHeight="260.0" fitWidth="399.0" layoutX="351.0" layoutY="52.0" />
+      <JFXButton fx:id="main_media_btn" layoutX="392.0" layoutY="64.0" prefHeight="235.0" prefWidth="316.0" text=" " />
+      <Label layoutX="435.0" layoutY="24.0" prefHeight="28.0" prefWidth="231.0" text="유기견 보호 공익광고">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="465.0" prefHeight="28.0" prefWidth="231.0" text="공지 사항">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <JFXTabPane fx:id="RD_View" layoutX="35.0" layoutY="76.0" prefHeight="336.0" prefWidth="238.0" />
+      <Label layoutX="43.0" layoutY="32.0" prefHeight="28.0" prefWidth="231.0" text="유기견 목록">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <JFXTabPane fx:id="MD_View" layoutX="781.0" layoutY="68.0" prefHeight="336.0" prefWidth="286.0" />
+      <Label layoutX="781.0" layoutY="32.0" prefHeight="28.0" prefWidth="231.0" text="유기견 목록">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <ScrollPane hbarPolicy="NEVER" layoutX="27.0" layoutY="536.0" prefHeight="109.0" prefWidth="535.0" vbarPolicy="ALWAYS">
+        <content>
+          <AnchorPane fx:id="Notice_View" minHeight="0.0" minWidth="0.0" prefHeight="2.0" prefWidth="533.0" />
+        </content>
+      </ScrollPane>
+      <HBox layoutX="27.0" layoutY="515.0" prefHeight="21.0" prefWidth="518.0" style="-fx-background-color: #6b7b8e;">
+         <children>
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="44.0" text="번호" textFill="WHITE" />
+            <HBox prefHeight="26.0" prefWidth="2.0" style="-fx-background-color: #FFFFFF;" />
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="282.0" text="제목" textFill="WHITE" />
+            <HBox prefHeight="26.0" prefWidth="2.0" style="-fx-background-color: #FFFFFF;" />
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="115.0" text="작성일시" textFill="WHITE" />
+            <HBox prefHeight="26.0" prefWidth="2.0" style="-fx-background-color: #FFFFFF;" />
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="71.0" text="작성자" textFill="WHITE" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

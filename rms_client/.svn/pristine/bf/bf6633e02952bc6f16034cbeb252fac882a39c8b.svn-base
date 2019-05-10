@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="813.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.member.note.Note_viewController">
+   <children>
+      <AnchorPane prefHeight="52.0" prefWidth="813.0" style="-fx-background-color: #b3ccc8;">
+         <children>
+            <Label layoutX="23.0" layoutY="10.0" prefHeight="37.0" prefWidth="133.0" text="쪽지함" textFill="WHITE">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="31.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="close_btn" layoutX="753.0" layoutY="4.0" prefHeight="45.0" prefWidth="40.0" text=" ">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CLOSE" size="2.5em" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="25.0" layoutY="72.0" prefHeight="32.0" prefWidth="763.0" style="-fx-background-color: #b3ccc8;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="44.0" text="체크" textFill="WHITE">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="344.0" text="제목" textFill="WHITE">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="127.0" text="보낸이" textFill="WHITE">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="172.0" text="받은 날짜" textFill="WHITE">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="76.0" text="읽음" textFill="WHITE">
+               <font>
+                  <Font name="Apple SD GothicNeo ExtraBold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ScrollPane hbarPolicy="NEVER" layoutX="25.0" layoutY="104.0" prefHeight="364.0" prefWidth="763.0" style="-fx-background-color: white;" vbarPolicy="ALWAYS">
+        <content>
+          <AnchorPane fx:id="viewPane" minHeight="0.0" minWidth="0.0" prefWidth="761.0" />
+        </content>
+      </ScrollPane>
+      <JFXButton fx:id="note_allDel_btn" layoutX="477.0" layoutY="481.0" prefHeight="39.0" prefWidth="152.0" style="-fx-background-color: #eceff1;" text=" 전체 삭제">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="REMOVE" size="1.2em" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="note_selDel_btn" layoutX="637.0" layoutY="481.0" prefHeight="39.0" prefWidth="152.0" style="-fx-background-color: #eceff1;" text=" 선택 삭제">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon iconName="REMOVE" size="1.2em" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="note_write_btn" layoutX="25.0" layoutY="481.0" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: #535962;" text="쪽지 쓰기" textFill="WHITE">
+         <font>
+            <Font name="Apple SD GothicNeo ExtraBold" size="19.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </FontAwesomeIcon>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="servicePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.rms.user.mypage.break_away.Break_AwayController">
+   <children>
+    <AnchorPane fx:id="tempPane" prefHeight="530.0" prefWidth="1094.0">
+         <children>
+            <AnchorPane layoutX="155.0" layoutY="193.0" prefHeight="144.0" prefWidth="792.0" style="-fx-background-color: #eaeaea;">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="140.0" prefWidth="787.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <AnchorPane layoutX="3.0" layoutY="3.0" prefHeight="42.0" prefWidth="245.0" style="-fx-background-color: #eaeaea;">
+                           <children>
+                              <Label layoutX="5.0" layoutY="11.0" prefHeight="16.0" prefWidth="103.0" text="  회원 ID">
+                                 <font>
+                                    <Font name="HCR Dotum" size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="3.0" layoutY="49.0" prefHeight="42.0" prefWidth="245.0" style="-fx-background-color: #eaeaea;">
+                           <children>
+                              <Label layoutX="2.0" layoutY="11.0" text="  비밀번호">
+                                 <font>
+                                    <Font name="HCR Dotum" size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="3.0" layoutY="95.0" prefHeight="42.0" prefWidth="245.0" style="-fx-background-color: #eaeaea;">
+                           <children>
+                              <Label layoutX="1.0" layoutY="10.0" text="  비밀번호확인">
+                                 <font>
+                                    <Font name="HCR Dotum" size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label fx:id="out_id_label" layoutX="262.0" layoutY="14.0" text="Label">
+                           <font>
+                              <Font name="HCR Dotum" size="17.0" />
+                           </font>
+                        </Label>
+                        <JFXPasswordField fx:id="out_pw_txt" focusColor="WHITE" layoutX="261.0" layoutY="56.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE" />
+                        <JFXPasswordField fx:id="out_pwcheck_txt" focusColor="WHITE" layoutX="261.0" layoutY="100.0" style="-fx-border-color: #c2c2c2;" unFocusColor="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Label layoutX="170.0" layoutY="59.0" text="회원탈퇴" textFill="#5b5656">
+               <font>
+                  <Font name="HCR Dotum" size="23.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="155.0" layoutY="64.0" prefHeight="26.0" prefWidth="5.0" style="-fx-background-color: #628290;" />
+            <JFXButton fx:id="mypage_out_btn" layoutX="368.0" layoutY="439.0" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #535962;" text="  탈퇴하기" textFill="WHITE">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CHECK" size="1.2em">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </FontAwesomeIcon>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="mypage_back_btn" layoutX="652.0" layoutY="439.0" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #eceff1;" text="   뒤로가기">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+               <graphic>
+                  <JFXHamburger opacity="0.46" prefHeight="17.0" prefWidth="17.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="mypage_no_btn" layoutX="511.0" layoutY="439.0" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #eceff1;" text="   탈퇴취소">
+               <font>
+                  <Font name="HCR Dotum" size="17.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon iconName="BAN" size="1.2em" text="" />
+               </graphic>
+            </JFXButton>
+         </children></AnchorPane>
+      <Pane layoutX="3.0" layoutY="150.0" prefHeight="329.0" prefWidth="0.0" style="-fx-background-color: black;" />
+   </children>
+</AnchorPane>
